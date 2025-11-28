@@ -96,7 +96,7 @@ export const Hero: React.FC = () => {
   const minigamesStatus = simStep >= 5 ? 'active' : 'sleeping';
 
   return (
-    <header className="relative min-h-screen flex items-center px-6 pt-20 pb-12">
+    <header className="relative min-h-screen flex items-center px-6 pt-20 pb-12 notranslate" translate="no">
       {/* Fondo de hexágonos isométricos - Patrón tipo panal */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">

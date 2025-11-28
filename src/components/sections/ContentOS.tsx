@@ -13,7 +13,7 @@ export const ContentOS: React.FC = () => (
           <span className="text-purple-400 text-xs font-bold tracking-wide uppercase">Strategic Partnership</span>
         </div>
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Hytahub: Your Content Marketplace
+          <a href="https://hytahub.com/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">Hytahub</a>: Your Content Marketplace
         </h2>
         <p className="text-[#8B9BB4] text-lg max-w-2xl mx-auto mb-4">
           An independent project building the largest Hytale content repository. 
@@ -29,7 +29,7 @@ export const ContentOS: React.FC = () => (
 
       <div className="grid lg:grid-cols-2 gap-10 items-center">
         {/* Left: Content cards */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* Mod Pack Card */}
           <div className="bg-gradient-to-br from-[#0F1623] to-[#1A1F2E] border border-purple-500/30 rounded-xl p-4 hover:border-purple-400/50 transition-all">
             <div className="h-16 bg-gradient-to-br from-purple-900/60 to-purple-600/30 rounded-lg mb-3 flex items-center justify-center">

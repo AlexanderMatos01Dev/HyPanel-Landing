@@ -122,15 +122,15 @@ export const CommunityAndBusiness: React.FC = () => (
 
       {/* Bottom message */}
       <div className="text-center mt-10">
-        <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-green-500/10 to-[#EDA333]/10 border border-[#2A3B4C] rounded-xl">
-          <Users size={18} className="text-green-400" />
-          <span className="text-white font-medium">Creators</span>
+        <div className="inline-flex flex-wrap justify-center items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 bg-gradient-to-r from-green-500/10 to-[#EDA333]/10 border border-[#2A3B4C] rounded-xl">
+          <Users size={18} className="text-green-400 hidden sm:block" />
+          <span className="text-white font-medium text-sm sm:text-base">Creators</span>
           <span className="text-[#8B9BB4]">+</span>
-          <span className="text-white font-medium">Communities</span>
+          <span className="text-white font-medium text-sm sm:text-base">Communities</span>
           <span className="text-[#8B9BB4]">+</span>
-          <span className="text-white font-medium">Servers</span>
+          <span className="text-white font-medium text-sm sm:text-base">Servers</span>
           <span className="text-[#8B9BB4]">=</span>
-          <span className="text-[#EDA333] font-bold">Everyone wins</span>
+          <span className="text-[#EDA333] font-bold text-sm sm:text-base">Everyone wins</span>
         </div>
       </div>
     </div>

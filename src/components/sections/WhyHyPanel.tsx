@@ -1,5 +1,5 @@
 import React from 'react';
-import { Server, Box, Palette, Users, Coins, ArrowRight, Zap, Shield, Globe, ChevronRight } from 'lucide-react';
+import { Server, Box, Palette, Users, Coins, ArrowRight, Zap, Shield, Globe, ChevronRight, ExternalLink } from 'lucide-react';
 
 interface PillarProps {
   icon: React.ReactNode;
@@ -7,10 +7,12 @@ interface PillarProps {
   description: string;
   bgColor: string;
   href: string;
+  external?: boolean;
 }
 
-const Pillar: React.FC<PillarProps> = ({ icon, title, description, bgColor, href }) => {
+const Pillar: React.FC<PillarProps> = ({ icon, title, description, bgColor, href, external }) => {
   const handleClick = (e: React.MouseEvent) => {
+    if (external) return; // Let the browser handle external links
     e.preventDefault();
     const element = document.querySelector(href);
     if (element) {
@@ -22,6 +24,8 @@ const Pillar: React.FC<PillarProps> = ({ icon, title, description, bgColor, href
     <a 
       href={href}
       onClick={handleClick}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
       className="group p-6 rounded-2xl bg-gradient-to-br from-[#0F1623] to-[#0B0F19] border border-[#2A3B4C] hover:border-opacity-50 transition-all duration-300 hover:-translate-y-1 cursor-pointer block"
       style={{ borderColor: `${bgColor}30` }}
       onMouseEnter={(e) => (e.currentTarget.style.borderColor = `${bgColor}80`)}
@@ -32,7 +36,11 @@ const Pillar: React.FC<PillarProps> = ({ icon, title, description, bgColor, href
       </div>
       <h4 className="text-white font-bold text-lg mb-2 flex items-center gap-2">
         {title}
-        <ChevronRight size={16} className="text-[#4A5B74] group-hover:text-white group-hover:translate-x-1 transition-all" />
+        {external ? (
+          <ExternalLink size={14} className="text-[#4A5B74] group-hover:text-white transition-all" />
+        ) : (
+          <ChevronRight size={16} className="text-[#4A5B74] group-hover:text-white group-hover:translate-x-1 transition-all" />
+        )}
       </h4>
       <p className="text-[#8B9BB4] text-sm leading-relaxed">{description}</p>
     </a>
@@ -53,7 +61,8 @@ export const WhyHyPanel: React.FC = () => {
       title: "Hytahub",
       description: "The Hytale content marketplace. Partner project bringing mods, assets and configurations to your servers.",
       bgColor: "#A78BFA",
-      href: "#content-os"
+      href: "https://hytahub.com/",
+      external: true
     },
     {
       icon: <Palette size={28} />,

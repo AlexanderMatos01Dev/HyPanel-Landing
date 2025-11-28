@@ -25,7 +25,7 @@ const FAQ_ITEMS: FAQItem[] = [
   },
   {
     question: "What is Hytahub?",
-    answer: "Hytahub is an independent partner project building the largest content marketplace for Hytale. Mods, assets, maps and configurations from the community, integrated directly with HyPanel for seamless installation."
+    answer: "Hytahub is an independent partner project building the largest content marketplace for Hytale. Mods, assets, maps and configurations from the community, integrated directly with HyPanel for seamless installation. <a href='https://hytahub.com/' target='_blank' rel='noopener noreferrer' class='text-purple-400 hover:underline'>Visit Hytahub →</a>"
   },
   {
     question: "Can I use my own mods and content?",
@@ -63,7 +63,7 @@ const FAQItemComponent: React.FC<{ item: FAQItem; isOpen: boolean; onToggle: () 
     </button>
     <div className={`overflow-hidden transition-all duration-200 ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
       <div className="px-5 py-4 bg-[#0B0F19] border-t border-[#2A3B4C]">
-        <p className="text-[#8B9BB4] text-sm leading-relaxed">{item.answer}</p>
+        <p className="text-[#8B9BB4] text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: item.answer }}></p>
       </div>
     </div>
   </div>
