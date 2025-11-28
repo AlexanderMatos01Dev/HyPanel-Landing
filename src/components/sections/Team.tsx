@@ -21,7 +21,7 @@ const TeamMemberCard: React.FC<{ member: TeamMember; index: number }> = ({ membe
 
   return (
     <div 
-      className="group relative p-6 rounded-2xl bg-gradient-to-br from-[#0F1623] to-[#0B0F19] border border-[#2A3B4C] hover:border-opacity-50 transition-all duration-500 hover:-translate-y-2"
+      className="group relative p-6 rounded-2xl bg-gradient-to-br from-[#0F1623] to-[#0B0F19] border border-[#2A3B4C] hover:border-opacity-50 transition-all duration-500 hover:-translate-y-2 flex flex-col h-full"
       style={{ borderColor: isHovered ? `${member.color}50` : undefined }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -46,11 +46,11 @@ const TeamMemberCard: React.FC<{ member: TeamMember; index: number }> = ({ membe
         </div>
       </div>
 
-      {/* Info */}
-      <div className="text-center relative z-10">
+      {/* Info - flex-grow to push socials to bottom */}
+      <div className="text-center relative z-10 flex flex-col flex-grow">
         <h3 className="text-lg font-bold text-white mb-1">{member.name}</h3>
         <p className="text-sm font-medium mb-3" style={{ color: member.color }}>{member.role}</p>
-        <p className="text-[#8B9BB4] text-xs leading-relaxed mb-4">{member.description}</p>
+        <p className="text-[#8B9BB4] text-xs leading-relaxed mb-4 min-h-[48px]">{member.description}</p>
 
         {/* Skills */}
         <div className="flex flex-wrap justify-center gap-1.5 mb-4">
@@ -65,8 +65,11 @@ const TeamMemberCard: React.FC<{ member: TeamMember; index: number }> = ({ membe
           ))}
         </div>
 
-        {/* Socials */}
-        <div className="flex justify-center gap-2">
+        {/* Spacer to push socials to bottom */}
+        <div className="flex-grow"></div>
+
+        {/* Socials - always at bottom */}
+        <div className="flex justify-center gap-2 mt-auto pt-2">
           {member.socials.github && (
             <a 
               href={member.socials.github} 

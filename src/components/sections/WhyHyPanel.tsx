@@ -107,7 +107,7 @@ export const WhyHyPanel: React.FC = () => {
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#0F1623] border border-[#2A3B4C]">
               <Shield size={16} className="text-[#4DA6FF]" />
-              <span className="text-white text-sm">Open Source</span>
+              <span className="text-white text-sm">Build in Public</span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#0F1623] border border-[#2A3B4C]">
               <Users size={16} className="text-[#4DA6FF]" />

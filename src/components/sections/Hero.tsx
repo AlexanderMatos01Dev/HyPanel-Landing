@@ -148,7 +148,7 @@ export const Hero: React.FC = () => {
         <div className="space-y-6 animate-fade-in-up relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A3A5A]/50 border border-[#2A3B4C] backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-[#4DA6FF] animate-pulse"></span>
-            <span className="text-[#4DA6FF] text-xs font-bold tracking-wide uppercase">Open Source • Community Driven</span>
+            <span className="text-[#4DA6FF] text-xs font-bold tracking-wide uppercase">Build in Public • Community Driven</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white tracking-tight">
             <span 

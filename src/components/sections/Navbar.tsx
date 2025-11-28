@@ -69,6 +69,10 @@ export const Navbar: React.FC = () => {
             <a href="#roadmap" onClick={(e) => handleNavClick(e, 'roadmap')} className="relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full">Roadmap</a>
             <a href="#team" onClick={(e) => handleNavClick(e, 'team')} className="relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full">Team</a>
             <a href="#faq" onClick={(e) => handleNavClick(e, 'faq')} className="relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full">FAQ</a>
+            <span className="relative py-1 cursor-default">
+              <span className="text-[#4A5B74]">Blog</span>
+              <span className="absolute -top-1 -right-8 px-1.5 py-0.5 bg-[#EDA333]/20 text-[#EDA333] text-[8px] font-bold rounded">SOON</span>
+            </span>
           </div>
           <div className="flex items-center gap-2 md:gap-3">
             <div className="hidden md:flex items-center gap-0.5 border-r border-[#2A3B4C] pr-2 md:pr-3">

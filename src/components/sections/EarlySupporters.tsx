@@ -152,7 +152,7 @@ export const EarlySupporters: React.FC = () => {
               <div className="w-10 h-10 bg-[#4DA6FF]/10 rounded-lg flex items-center justify-center">
                 <Github size={20} className="text-[#4DA6FF]" />
               </div>
-              <span className="px-2 py-0.5 bg-[#4DA6FF]/20 border border-[#4DA6FF]/30 rounded-full text-[#4DA6FF] text-[9px] font-bold">OPEN SOURCE</span>
+              <span className="px-2 py-0.5 bg-[#4DA6FF]/20 border border-[#4DA6FF]/30 rounded-full text-[#4DA6FF] text-[9px] font-bold">BUILD IN PUBLIC</span>
             </div>
             
             <h3 className="text-lg font-bold text-white mb-1">Contribute with code</h3>

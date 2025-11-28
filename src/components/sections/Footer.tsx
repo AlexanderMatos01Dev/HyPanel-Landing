@@ -61,18 +61,18 @@ export const Footer: React.FC = () => (
         <div>
           <h5 className="text-white font-bold mb-4">Product</h5>
           <ul className="space-y-2">
-            <li><a href="#features" className="hover:text-[#EDA333]">Benefits</a></li>
-            <li><a href="#" className="hover:text-[#EDA333]">Pricing (Soon)</a></li>
-            <li><a href="#hytahub" className="hover:text-[#EDA333]">Ecosystem</a></li>
-            <li><a href="#editor" className="hover:text-[#EDA333]">The Forge</a></li>
+            <li><a href="#why-hypanel" className="hover:text-[#EDA333]">About</a></li>
+            <li><span className="text-[#4A5B74]">Pricing <span className="text-[8px] bg-[#EDA333]/20 text-[#EDA333] px-1.5 py-0.5 rounded ml-1">SOON</span></span></li>
+            <li><a href="#ecosystem" className="hover:text-[#EDA333]">Ecosystem</a></li>
+            <li><a href="#the-forge" className="hover:text-[#EDA333]">The Forge</a></li>
           </ul>
         </div>
         <div>
           <h5 className="text-white font-bold mb-4">Resources</h5>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-[#EDA333]">API Documentation</a></li>
-            <li><a href="https://github.com/HyPanel/hypanel-landing" target="_blank" rel="noopener noreferrer" className="hover:text-[#EDA333]">Open Source (Repo)</a></li>
-            <li><a href="#" className="hover:text-[#EDA333]">System Status</a></li>
+            <li><span className="text-[#4A5B74]">API Documentation <span className="text-[8px] bg-[#EDA333]/20 text-[#EDA333] px-1.5 py-0.5 rounded ml-1">SOON</span></span></li>
+            <li><a href="https://github.com/HyPanel/hypanel-landing" target="_blank" rel="noopener noreferrer" className="hover:text-[#EDA333]">Build in Public (Repo)</a></li>
+            <li><span className="text-[#4A5B74]">System Status <span className="text-[8px] bg-[#EDA333]/20 text-[#EDA333] px-1.5 py-0.5 rounded ml-1">SOON</span></span></li>
           </ul>
         </div>
         <div>
@@ -87,9 +87,9 @@ export const Footer: React.FC = () => (
         <div>
           <h5 className="text-white font-bold mb-4">Company</h5>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-[#EDA333]">About Us</a></li>
-            <li><a href="#" className="hover:text-[#EDA333]">Tech Blog</a></li>
-            <li><a href="#" className="hover:text-[#EDA333]">Collaboration</a></li>
+            <li><a href="#team" className="hover:text-[#EDA333]">Team</a></li>
+            <li><span className="text-[#4A5B74]">Blog <span className="text-[8px] bg-[#EDA333]/20 text-[#EDA333] px-1.5 py-0.5 rounded ml-1">SOON</span></span></li>
+            <li><a href="#roadmap" className="hover:text-[#EDA333]">Roadmap</a></li>
           </ul>
         </div>
         <div>

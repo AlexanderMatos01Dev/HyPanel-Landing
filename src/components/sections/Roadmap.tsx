@@ -1,8 +1,8 @@
 import React from 'react';
-import { Rocket, Calendar, CheckCircle2, Circle, Clock, Sparkles, Flag, Zap, Users, Box, Palette, Globe, Shield } from 'lucide-react';
+import { Rocket, Calendar, CheckCircle2, Circle, Clock, Sparkles, Flag, Zap, Users, Target, Gamepad2, ArrowRight } from 'lucide-react';
 
 interface MilestoneProps {
-  quarter: string;
+  date: string;
   title: string;
   description: string;
   items: string[];
@@ -10,69 +10,79 @@ interface MilestoneProps {
   icon: React.ReactNode;
 }
 
-const Milestone: React.FC<MilestoneProps> = ({ quarter, title, description, items, status, icon }) => {
+const Milestone: React.FC<MilestoneProps> = ({ date, title, description, items, status, icon }) => {
   const statusStyles = {
     completed: {
       border: 'border-[#22C55E]/50',
       bg: 'bg-[#22C55E]/5',
       dot: 'bg-[#22C55E]',
       text: 'text-[#22C55E]',
-      badge: 'bg-[#22C55E]/20 text-[#22C55E] border-[#22C55E]/30'
+      badge: 'bg-[#22C55E]/20 text-[#22C55E] border-[#22C55E]/30',
+      line: 'bg-[#22C55E]'
     },
     current: {
       border: 'border-[#EDA333]/50',
       bg: 'bg-[#EDA333]/5',
       dot: 'bg-[#EDA333] animate-pulse',
       text: 'text-[#EDA333]',
-      badge: 'bg-[#EDA333]/20 text-[#EDA333] border-[#EDA333]/30'
+      badge: 'bg-[#EDA333]/20 text-[#EDA333] border-[#EDA333]/30',
+      line: 'bg-gradient-to-r from-[#EDA333] to-[#2A3B4C]'
     },
     upcoming: {
       border: 'border-[#2A3B4C]',
       bg: 'bg-[#0F1623]/50',
       dot: 'bg-[#4A5B74]',
       text: 'text-[#8B9BB4]',
-      badge: 'bg-[#2A3B4C]/50 text-[#8B9BB4] border-[#2A3B4C]'
+      badge: 'bg-[#2A3B4C]/50 text-[#8B9BB4] border-[#2A3B4C]',
+      line: 'bg-[#2A3B4C]'
     }
   };
 
   const style = statusStyles[status];
 
   return (
-    <div className={`relative p-6 rounded-2xl border ${style.border} ${style.bg} transition-all duration-300 hover:scale-[1.02]`}>
-      {/* Status dot on timeline */}
-      <div className={`absolute -left-[41px] top-8 w-4 h-4 rounded-full ${style.dot} border-4 border-[#0B0F19] z-10`}></div>
-      
-      {/* Quarter badge */}
-      <div className="flex items-center justify-between mb-4">
-        <span className={`px-3 py-1 rounded-full text-xs font-bold border ${style.badge}`}>
-          {quarter}
-        </span>
-        <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${style.bg} border ${style.border}`}>
-          <div className={style.text}>{icon}</div>
-        </div>
+    <div className="flex flex-col items-center min-w-[260px] max-w-[280px] flex-shrink-0">
+      {/* Timeline dot and line */}
+      <div className="flex items-center w-full mb-4">
+        <div className={`h-0.5 flex-1 ${style.line}`}></div>
+        <div className={`w-5 h-5 rounded-full ${style.dot} border-4 border-[#0B0F19] z-10 flex-shrink-0`}></div>
+        <div className={`h-0.5 flex-1 ${status === 'upcoming' ? 'bg-[#2A3B4C]' : style.line}`}></div>
       </div>
 
-      {/* Content */}
-      <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
-      <p className="text-[#8B9BB4] text-sm mb-4">{description}</p>
+      {/* Card */}
+      <div className={`relative p-5 rounded-2xl border ${style.border} ${style.bg} transition-all duration-300 hover:scale-[1.02] w-full h-full flex flex-col`}>
+        {/* Date badge */}
+        <div className="flex items-center justify-between mb-3">
+          <span className={`px-3 py-1 rounded-full text-xs font-bold border ${style.badge}`}>
+            {date}
+          </span>
+          <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${style.bg} border ${style.border}`}>
+            <div className={style.text}>{icon}</div>
+          </div>
+        </div>
 
-      {/* Items */}
-      <ul className="space-y-2">
-        {items.map((item, index) => (
-          <li key={index} className="flex items-start gap-2 text-sm">
-            {status === 'completed' ? (
-              <CheckCircle2 size={16} className="text-[#22C55E] mt-0.5 flex-shrink-0" />
-            ) : status === 'current' ? (
-              <Clock size={16} className="text-[#EDA333] mt-0.5 flex-shrink-0" />
-            ) : (
-              <Circle size={16} className="text-[#4A5B74] mt-0.5 flex-shrink-0" />
-            )}
-            <span className={status === 'completed' ? 'text-[#8B9BB4]' : status === 'current' ? 'text-white' : 'text-[#6B7B94]'}>
-              {item}
-            </span>
-          </li>
-        ))}
-      </ul>
+        {/* Content */}
+        <h3 className="text-lg font-bold text-white mb-1">{title}</h3>
+        <p className="text-[#8B9BB4] text-xs mb-3">{description}</p>
+
+        {/* Items */}
+        <ul className="space-y-1.5 flex-grow">
+          {items.map((item, index) => (
+            <li key={index} className="flex items-start gap-2 text-xs">
+              {status === 'completed' ? (
+                <CheckCircle2 size={14} className="text-[#22C55E] mt-0.5 flex-shrink-0" />
+              ) : status === 'current' ? (
+                <Clock size={14} className="text-[#EDA333] mt-0.5 flex-shrink-0" />
+              ) : (
+                <Circle size={14} className="text-[#4A5B74] mt-0.5 flex-shrink-0" />
+              )}
+              <span className={status === 'completed' ? 'text-[#8B9BB4]' : status === 'current' ? 'text-white' : 'text-[#6B7B94]'}>
+                {item}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
@@ -80,69 +90,69 @@ const Milestone: React.FC<MilestoneProps> = ({ quarter, title, description, item
 export const Roadmap: React.FC = () => {
   const milestones: MilestoneProps[] = [
     {
-      quarter: 'Q4 2024',
-      title: 'Foundation',
-      description: 'Building the community and laying the groundwork.',
+      date: 'NOV 2024',
+      title: 'Project Kickoff',
+      description: 'Building the community and foundations.',
       items: [
-        'Community Discord launch',
-        'Landing page & branding',
+        'Landing page launch',
+        'Discord community',
         'Early supporters program',
-        'Core team formation'
+        'Brand identity'
       ],
       status: 'completed',
-      icon: <Flag size={20} />
+      icon: <Flag size={18} />
     },
     {
-      quarter: 'Q1 2025',
-      title: 'Hytale Early Access',
-      description: 'Hytale launches Jan 13. Real development begins.',
+      date: 'DEC 2024',
+      title: 'Pre-Launch Prep',
+      description: 'Getting ready for Hytale EA.',
       items: [
-        'Hytale EA research & analysis',
-        'Server architecture design',
+        'Architecture planning',
         'The Forge prototype',
-        'Hytahub partnership integration'
+        'Hytahub partnership',
+        'Infrastructure design'
       ],
       status: 'current',
-      icon: <Rocket size={20} />
+      icon: <Target size={18} />
     },
     {
-      quarter: 'Q2 2025',
+      date: 'JAN 13, 2025',
+      title: 'Hytale EA Launch',
+      description: 'Game launches. Integration begins.',
+      items: [
+        'Hytale EA deep dive',
+        'Server integration MVP',
+        'Basic panel features',
+        'Alpha for supporters'
+      ],
+      status: 'upcoming',
+      icon: <Gamepad2 size={18} />
+    },
+    {
+      date: 'Q1 2025',
       title: 'Alpha Release',
-      description: 'First internal version for testing.',
+      description: 'First working version.',
       items: [
-        'Basic server management',
         'One-click deployment',
-        'The Forge v1 (visual editor)',
-        'Closed alpha for supporters'
+        'The Forge v1',
+        'Content installation',
+        'Closed alpha testing'
       ],
       status: 'upcoming',
-      icon: <Zap size={20} />
+      icon: <Rocket size={18} />
     },
     {
-      quarter: 'Q3 2025',
-      title: 'Beta Launch',
-      description: 'Public beta with core features.',
+      date: 'Q2 2025',
+      title: 'Public Beta',
+      description: 'Open to all users.',
       items: [
-        'Smart hibernation system',
-        'Hytahub content integration',
-        'Community tools beta',
-        'Public beta access'
+        'Smart hibernation',
+        'Hytahub integration',
+        'Community tools',
+        'Monetization beta'
       ],
       status: 'upcoming',
-      icon: <Users size={20} />
-    },
-    {
-      quarter: 'Q4 2025',
-      title: 'Full Launch',
-      description: 'Production-ready platform.',
-      items: [
-        'Monetization features',
-        'Template Marketplace',
-        'Enterprise features',
-        'Global CDN deployment'
-      ],
-      status: 'upcoming',
-      icon: <Globe size={20} />
+      icon: <Users size={18} />
     }
   ];
 
@@ -152,43 +162,50 @@ export const Roadmap: React.FC = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(77,166,255,0.05),transparent_50%)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(237,163,51,0.05),transparent_50%)]"></div>
 
-      <div className="max-w-5xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#4DA6FF]/10 border border-[#4DA6FF]/30 backdrop-blur-sm mb-6">
             <Calendar size={16} className="text-[#4DA6FF]" />
             <span className="text-[#4DA6FF] text-xs font-bold tracking-wide uppercase">Roadmap</span>
           </div>
           
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
             The journey to <span className="text-[#EDA333]">launch</span>
           </h2>
           
           <p className="text-[#8B9BB4] text-lg max-w-2xl mx-auto">
-            Transparent development. Every milestone brings us closer to the complete HyPanel ecosystem.
+            Building in public. Every milestone brings us closer to the complete HyPanel ecosystem.
           </p>
         </div>
 
-        {/* Timeline */}
+        {/* Horizontal Timeline */}
         <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#22C55E] via-[#EDA333] to-[#2A3B4C]"></div>
-
-          {/* Milestones */}
-          <div className="space-y-8 pl-16">
-            {milestones.map((milestone, index) => (
-              <Milestone key={index} {...milestone} />
-            ))}
+          {/* Scroll container */}
+          <div className="overflow-x-auto pb-4 -mx-6 px-6 scrollbar-thin scrollbar-thumb-[#2A3B4C] scrollbar-track-transparent">
+            <div className="flex gap-4 min-w-max">
+              {milestones.map((milestone, index) => (
+                <Milestone key={index} {...milestone} />
+              ))}
+            </div>
+          </div>
+          
+          {/* Scroll hint */}
+          <div className="flex justify-center mt-4 lg:hidden">
+            <div className="flex items-center gap-2 text-[#4A5B74] text-xs">
+              <ArrowRight size={14} />
+              <span>Scroll to see more</span>
+            </div>
           </div>
         </div>
 
         {/* Bottom note */}
-        <div className="mt-16 text-center">
+        <div className="mt-12 text-center">
           <div className="inline-flex items-center gap-3 px-6 py-4 rounded-2xl bg-[#0F1623]/80 border border-[#2A3B4C]">
             <Sparkles size={20} className="text-[#EDA333]" />
             <p className="text-[#8B9BB4] text-sm">
-              <span className="text-white font-bold">Timeline is flexible.</span> We prioritize quality over speed. 
-              Join Discord to follow real-time progress.
+              <span className="text-white font-bold">Building in public.</span> Timeline adapts to Hytale's development. 
+              Join Discord for real-time updates.
             </p>
           </div>
         </div>
