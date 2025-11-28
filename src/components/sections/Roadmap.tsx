@@ -136,6 +136,7 @@ export const Roadmap: React.FC = () => {
         'One-click deployment',
         'The Forge v1',
         'Content installation',
+        'Hytahub integration',
         'Closed alpha testing'
       ],
       status: 'upcoming',
@@ -147,7 +148,6 @@ export const Roadmap: React.FC = () => {
       description: 'Open to all users.',
       items: [
         'Smart hibernation',
-        'Hytahub integration',
         'Community tools',
         'Monetization beta'
       ],
