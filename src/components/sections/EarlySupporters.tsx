@@ -176,12 +176,12 @@ export const EarlySupporters: React.FC = () => {
             </ul>
             
             <a 
-              href="https://github.com/hypanel" 
+              href="https://github.com/HyPanel/hypanel-landing" 
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-2.5 bg-[#4DA6FF] text-[#0B0F19] text-sm font-bold rounded-lg hover:bg-[#3b8fd9] transition-all mt-auto"
             >
-              <Github size={16} /> Ver en GitHub
+              <Github size={16} /> View on GitHub
             </a>
           </div>
         </div>
