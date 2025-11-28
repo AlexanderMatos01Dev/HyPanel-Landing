@@ -137,7 +137,16 @@ export const Hytahub: React.FC = () => {
             <span className="text-purple-400 text-[10px] font-bold tracking-wide uppercase">Integrated Marketplace</span>
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-white">
-            <a href="https://hytahub.com/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">Hytahub</a>: Your content store
+            <a 
+              href="https://hytahub.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors group"
+            >
+              Hytahub
+              <ExternalLink size={20} className="opacity-60 group-hover:opacity-100 transition-opacity" />
+            </a>
+            <span className="text-white">: Your content store</span>
           </h2>
           <p className="text-[#8B9BB4] text-sm leading-relaxed">
             Mods, maps, scripts and servers. <strong className="text-white">Search, install and play</strong>. Everything verified and ready to use.

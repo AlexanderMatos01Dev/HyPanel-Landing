@@ -12,17 +12,55 @@ export const Hero: React.FC = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [submittedEmail, setSubmittedEmail] = useState('');
   const [waitTime, setWaitTime] = useState(0);
-  const [simStep, setSimStep] = useState<0 | 1 | 2 | 3 | 4 | 5>(0);
+  const [simStep, setSimStep] = useState(0);
+  const [scenario, setScenario] = useState(0);
   const [msgIndex, setMsgIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
+  // Escenarios de demostración
+  const scenarios = [
+    {
+      name: 'multiworld',
+      title: 'Multi-World Server',
+      nodes: ['Lobby', 'Survival', 'Minigames', 'Creative'],
+      steps: 8,
+      coreMessages: ['💤 All sleeping', '⚡ Player joins', '✓ Lobby ready', '→ Moving to Survival', '✓ Survival ready', '→ Another joins Creative', '✓ Creative ready', '✓ Full activity']
+    },
+    {
+      name: 'event',
+      title: 'Live Event',
+      nodes: ['Queue', 'Event Arena', 'Spectators', 'VIP Lounge'],
+      steps: 7,
+      coreMessages: ['💤 Event scheduled', '⚡ Gates opening', '✓ Queue active', '→ Players entering', '✓ Arena live', '→ VIPs arriving', '🎮 Event running']
+    },
+    {
+      name: 'rpg',
+      title: 'RPG Server',
+      nodes: ['Spawn', 'Dungeons', 'PvP Zone', 'Trading Hub'],
+      steps: 8,
+      coreMessages: ['💤 Night time', '⚡ Adventurer logs in', '✓ Spawn ready', '→ Entering dungeon', '✓ Dungeon instance', '→ Trading time', '✓ Hub active', '⚔️ Adventure on']
+    }
+  ];
+
+  const currentScenario = scenarios[scenario];
+
   useEffect(() => {
-    // Ciclo de estados con sentido: 0=durmiendo, 1=petición, 2=lobby despierta, 3=jugador va a survival, 4=survival despierta, 5=jugador va a minijuegos
+    // Ciclo de pasos dentro del escenario
     const simInterval = setInterval(() => {
-      setSimStep((prev) => ((prev + 1) % 6) as 0 | 1 | 2 | 3 | 4 | 5);
-    }, 2500);
+      setSimStep((prev) => {
+        const next = prev + 1;
+        if (next >= currentScenario.steps) {
+          // Cambiar al siguiente escenario
+          setTimeout(() => {
+            setScenario((s) => (s + 1) % scenarios.length);
+          }, 500);
+          return 0;
+        }
+        return next;
+      });
+    }, 2000);
     return () => clearInterval(simInterval);
-  }, []);
+  }, [scenario, currentScenario.steps]);
 
   useEffect(() => {
     const msgInterval = setInterval(() => {
@@ -90,10 +128,37 @@ export const Hero: React.FC = () => {
     }
   };
 
-  // Lógica de estados de los nodos
-  const lobbyStatus = simStep >= 2 ? 'active' : simStep === 1 ? 'waking' : 'sleeping';
-  const survivalStatus = simStep >= 4 ? 'active' : simStep === 3 ? 'waking' : 'sleeping';
-  const minigamesStatus = simStep >= 5 ? 'active' : 'sleeping';
+  // Lógica de estados de los nodos basada en el escenario y paso actual
+  const getNodeStatus = (nodeIndex: number): 'sleeping' | 'waking' | 'active' => {
+    // Cada nodo se activa en diferentes pasos según el escenario
+    const activationStep = nodeIndex === 0 ? 2 : nodeIndex === 1 ? 4 : nodeIndex === 2 ? 6 : 7;
+    const wakingStep = activationStep - 1;
+    
+    if (simStep >= activationStep) return 'active';
+    if (simStep === wakingStep) return 'waking';
+    return 'sleeping';
+  };
+
+  const getNodePlayers = (nodeIndex: number): number => {
+    const activationStep = nodeIndex === 0 ? 2 : nodeIndex === 1 ? 4 : nodeIndex === 2 ? 6 : 7;
+    if (simStep < activationStep) return 0;
+    // Distribuir jugadores de forma realista
+    if (nodeIndex === 0) return simStep >= 3 ? (simStep >= 5 ? 1 : 2) : 1;
+    if (nodeIndex === 1) return simStep >= 5 ? 2 : 1;
+    if (nodeIndex === 2) return 1;
+    return simStep >= 7 ? 1 : 0;
+  };
+
+  const getCoreMessage = (): string => {
+    const messages = currentScenario.coreMessages;
+    return messages[Math.min(simStep, messages.length - 1)];
+  };
+
+  const getCoreStyle = (): string => {
+    if (simStep === 0) return 'bg-[#1A3A5A]/40 border-[#2A3B4C] text-[#8B9BB4]';
+    if (simStep === 1) return 'bg-[#EDA333]/20 border-[#EDA333]/50 text-[#EDA333]';
+    return 'bg-green-500/20 border-green-500/50 text-green-400';
+  };
 
   return (
     <header className="relative min-h-screen flex items-center px-6 pt-20 pb-12 notranslate" translate="no">
@@ -344,69 +409,69 @@ export const Hero: React.FC = () => {
             <polygon points="25,2 47,15 47,40 25,48 3,40 3,15" fill="none" stroke="rgb(74,222,128)" strokeWidth="1"/>
           </svg>
           
-          {/* Usuarios moviéndose */}
-          <div 
-            className={`absolute w-3 h-3 bg-green-400 rounded-full shadow-lg shadow-green-400/50 transition-all duration-700 z-50`}
-            style={{
-              top: simStep === 0 ? '5%' : simStep === 1 ? '15%' : simStep >= 2 && simStep < 3 ? '25%' : simStep === 3 ? '40%' : simStep >= 4 ? '60%' : '60%',
-              left: simStep === 0 ? '50%' : simStep === 1 ? '35%' : simStep >= 2 && simStep < 3 ? '20%' : simStep === 3 ? '50%' : simStep >= 4 ? '70%' : '70%',
-              opacity: simStep >= 1 ? 1 : 0,
-            }}
-          ></div>
-          <div 
-            className={`absolute w-2.5 h-2.5 bg-[#4DA6FF] rounded-full shadow-lg shadow-[#4DA6FF]/50 transition-all duration-700 z-50`}
-            style={{
-              top: simStep < 3 ? '8%' : simStep === 3 ? '25%' : simStep === 4 ? '50%' : '35%',
-              right: simStep < 3 ? '45%' : simStep === 3 ? '30%' : simStep === 4 ? '25%' : '15%',
-              opacity: simStep >= 3 ? 1 : 0,
-            }}
-          ></div>
-          
           <div className="relative w-full h-full max-w-[550px] flex items-center justify-center">
+            {/* Indicador de escenario */}
+            <div className="absolute -top-2 left-1/2 -translate-x-1/2 flex items-center gap-2 z-40">
+              <span className="px-3 py-1 bg-[#151D2C]/80 border border-[#2A3B4C] rounded-full text-[10px] font-medium text-[#8B9BB4] backdrop-blur-sm">
+                {currentScenario.title}
+              </span>
+              <div className="flex gap-1">
+                {scenarios.map((_, i) => (
+                  <div 
+                    key={i}
+                    className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                      i === scenario ? 'bg-[#EDA333] scale-125' : 'bg-[#2A3B4C]'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+
             {/* HyCore central */}
-            <div className="relative z-30 w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-[#0B0F19] to-[#151D2C] border-2 border-[#2A3B4C] rounded-full flex flex-col items-center justify-center shadow-2xl">
+            <div className="relative z-30 w-28 h-28 md:w-36 md:h-36 bg-gradient-to-br from-[#0B0F19] to-[#151D2C] border-2 border-[#2A3B4C] rounded-full flex flex-col items-center justify-center shadow-2xl">
                <div className={`absolute inset-0 rounded-full border-2 transition-all duration-700 ease-in-out ${simStep >= 1 ? 'border-[#EDA333] opacity-100 scale-110' : 'border-transparent opacity-0 scale-100'}`}></div>
                <div className={`absolute inset-0 rounded-full border-2 transition-all duration-1000 ease-in-out ${simStep >= 1 ? 'border-[#EDA333] opacity-50 scale-125' : 'border-transparent opacity-0 scale-100'}`}></div>
                <div className="relative">
-                 <Globe className={`w-12 h-12 mb-1 transition-all duration-500 ${simStep >= 1 ? 'text-[#EDA333] drop-shadow-[0_0_8px_rgba(237,163,51,0.5)]' : 'text-gray-600'}`} strokeWidth={1.5} />
+                 <Globe className={`w-10 h-10 md:w-12 md:h-12 mb-1 transition-all duration-500 ${simStep >= 1 ? 'text-[#EDA333] drop-shadow-[0_0_8px_rgba(237,163,51,0.5)]' : 'text-gray-600'}`} strokeWidth={1.5} />
                </div>
-               <span className="text-[10px] font-bold text-[#8B9BB4] tracking-[0.2em] uppercase">HyCore</span>
-               <div className={`absolute -bottom-9 px-3 py-1.5 rounded-lg text-[10px] font-medium border backdrop-blur-md shadow-xl transition-all duration-500 whitespace-nowrap ${
-                 simStep === 0 ? 'bg-[#1A3A5A]/40 border-[#2A3B4C] text-[#8B9BB4]' :
-                 simStep === 1 ? 'bg-[#EDA333]/20 border-[#EDA333]/50 text-[#EDA333]' :
-                 'bg-green-500/20 border-green-500/50 text-green-400'
-               }`}>
-                 {simStep === 0 && '💤 No activity'}
-                 {simStep === 1 && '⚡ Player connecting'}
-                 {simStep >= 2 && '✓ Routing players'}
+               <span className="text-[9px] md:text-[10px] font-bold text-[#8B9BB4] tracking-[0.2em] uppercase">HyCore</span>
+               <div className={`absolute -bottom-8 px-2.5 py-1 rounded-lg text-[9px] font-medium border backdrop-blur-md shadow-xl transition-all duration-500 whitespace-nowrap ${getCoreStyle()}`}>
+                 {getCoreMessage()}
                </div>
             </div>
             
-            {/* Líneas de conexión */}
+            {/* Líneas de conexión - 4 nodos */}
             <div className="absolute inset-0 pointer-events-none">
-              <ConnectionLine start={{x: '50%', y: '50%'}} end={{x: '10%', y: '20%'}} active={simStep >= 2} />
-              <ConnectionLine start={{x: '50%', y: '50%'}} end={{x: '85%', y: '65%'}} active={simStep >= 4} delay={0.3} />
-              <ConnectionLine start={{x: '50%', y: '50%'}} end={{x: '15%', y: '75%'}} active={simStep >= 5} delay={0.5} />
+              <ConnectionLine start={{x: '50%', y: '50%'}} end={{x: '12%', y: '15%'}} active={getNodeStatus(0) === 'active'} />
+              <ConnectionLine start={{x: '50%', y: '50%'}} end={{x: '88%', y: '15%'}} active={getNodeStatus(1) === 'active'} delay={0.2} />
+              <ConnectionLine start={{x: '50%', y: '50%'}} end={{x: '88%', y: '85%'}} active={getNodeStatus(2) === 'active'} delay={0.4} />
+              <ConnectionLine start={{x: '50%', y: '50%'}} end={{x: '12%', y: '85%'}} active={getNodeStatus(3) === 'active'} delay={0.6} />
             </div>
             
-            {/* Nodos de instancia con lógica coherente */}
+            {/* 4 Nodos de instancia */}
             <InstanceNode 
-              position={{ top: '8%', left: '-5%' }}
-              label="Lobby"
-              status={lobbyStatus}
-              playerCount={simStep >= 2 ? (simStep >= 3 ? 1 : 1) : 0}
+              position={{ top: '5%', left: '-2%' }}
+              label={currentScenario.nodes[0]}
+              status={getNodeStatus(0)}
+              playerCount={getNodePlayers(0)}
             />
             <InstanceNode 
-              position={{ bottom: '18%', right: '-8%' }}
-              label="Survival"
-              status={survivalStatus}
-              playerCount={simStep >= 4 ? 2 : 0}
+              position={{ top: '5%', right: '-2%' }}
+              label={currentScenario.nodes[1]}
+              status={getNodeStatus(1)}
+              playerCount={getNodePlayers(1)}
             />
             <InstanceNode 
-              position={{ bottom: '12%', left: '-5%' }}
-              label="Minijuegos"
-              status={minigamesStatus}
-              playerCount={simStep >= 5 ? 1 : 0}
+              position={{ bottom: '5%', right: '-2%' }}
+              label={currentScenario.nodes[2]}
+              status={getNodeStatus(2)}
+              playerCount={getNodePlayers(2)}
+            />
+            <InstanceNode 
+              position={{ bottom: '5%', left: '-2%' }}
+              label={currentScenario.nodes[3]}
+              status={getNodeStatus(3)}
+              playerCount={getNodePlayers(3)}
             />
           </div>
         </div>

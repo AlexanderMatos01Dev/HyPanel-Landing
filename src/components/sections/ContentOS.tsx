@@ -144,6 +144,17 @@ export const ContentOS: React.FC = () => (
               Hytale downloads content automatically when connecting. Your players don't need to do anything.
             </p>
           </div>
+
+          {/* CTA Button to Hytahub */}
+          <a 
+            href="https://hytahub.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white font-bold rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-lg shadow-purple-500/20 group"
+          >
+            <span className="text-lg">Visit Hytahub</span>
+            <ExternalLink size={20} className="group-hover:translate-x-1 transition-transform" />
+          </a>
         </div>
       </div>
     </div>
