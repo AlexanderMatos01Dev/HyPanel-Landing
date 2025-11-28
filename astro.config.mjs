@@ -6,6 +6,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://hypanel.dev',
+  site: 'https://hypanel.net',
   integrations: [react(), tailwind(), sitemap()]
 });
