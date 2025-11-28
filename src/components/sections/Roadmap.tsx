@@ -31,7 +31,7 @@ const Milestone: React.FC<MilestoneProps> = ({ date, title, description, items, 
     upcoming: {
       border: 'border-[#2A3B4C]',
       bg: 'bg-[#0F1623]/50',
-      dot: 'bg-[#4A5B74]',
+      dot: 'bg-[#8EA6D8]',
       text: 'text-[#8B9BB4]',
       badge: 'bg-[#2A3B4C]/50 text-[#8B9BB4] border-[#2A3B4C]',
       line: 'bg-[#2A3B4C]'
@@ -74,7 +74,7 @@ const Milestone: React.FC<MilestoneProps> = ({ date, title, description, items, 
               ) : status === 'current' ? (
                 <Clock size={14} className="text-[#EDA333] mt-0.5 flex-shrink-0" />
               ) : (
-                <Circle size={14} className="text-[#4A5B74] mt-0.5 flex-shrink-0" />
+                <Circle size={14} className="text-muted mt-0.5 flex-shrink-0" />
               )}
               <span className={status === 'completed' ? 'text-[#8B9BB4]' : status === 'current' ? 'text-white' : 'text-[#6B7B94]'}>
                 {item}
@@ -192,7 +192,7 @@ export const Roadmap: React.FC = () => {
           
           {/* Scroll hint */}
           <div className="flex justify-center mt-4 lg:hidden">
-            <div className="flex items-center gap-2 text-[#4A5B74] text-xs">
+            <div className="flex items-center gap-2 text-muted text-xs">
               <ArrowRight size={14} />
               <span>Scroll to see more</span>
             </div>

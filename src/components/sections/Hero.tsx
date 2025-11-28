@@ -196,7 +196,7 @@ export const Hero: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setStatus('idle')}
-                  className="text-xs text-[#4A5B74] hover:text-white transition-colors"
+                  className="text-xs text-muted hover:text-white transition-colors"
                 >
                   ← Register another email
                 </button>
@@ -234,7 +234,7 @@ export const Hero: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setStatus('idle')}
-                  className="text-xs text-[#4A5B74] hover:text-white transition-colors"
+                  className="text-xs text-muted hover:text-white transition-colors"
                 >
                   ← Register another email
                 </button>
@@ -268,7 +268,7 @@ export const Hero: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <p className="text-[#4A5B74] text-xs text-center">
+                <p className="text-muted text-xs text-center">
                   Already registered? <a href={SOCIAL_LINKS.discord} target="_blank" rel="noopener noreferrer" className="text-[#4DA6FF] hover:underline">Join Discord</a> while you wait.
                 </p>
               </div>
@@ -278,13 +278,13 @@ export const Hero: React.FC = () => {
             {(status === 'idle' || status === 'loading' || status === 'error') && (
               <>
                 <div className="flex-1 relative">
-                  <div className="absolute left-3 top-1/2 -translate-y-1/2 text-[#4A5B74]">
+                  <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted">
                     <Mail size={16} />
                   </div>
                   <input 
                     type="email" 
                     placeholder="your@email.com" 
-                    className={`w-full pl-10 pr-4 py-3 bg-[#151D2C] border rounded-xl focus:outline-none focus:border-[#EDA333] text-white placeholder-[#4A5B74] text-sm shadow-inner transition-colors ${
+                    className={`w-full pl-10 pr-4 py-3 bg-[#151D2C] border rounded-xl focus:outline-none focus:border-[#EDA333] text-white placeholder-muted text-sm shadow-inner transition-colors ${
                       status === 'error' ? 'border-red-500 focus:border-red-500' : 'border-[#2A3B4C]'
                     }`}
                     value={email}
@@ -315,7 +315,7 @@ export const Hero: React.FC = () => {
               </>
             )}
           </form>
-          <div className="flex items-center gap-5 text-xs font-medium text-[#4A5B74]">
+          <div className="flex items-center gap-5 text-xs font-medium text-muted">
              <div className="flex items-center gap-2">
                <Heart size={12} className="text-[#EDA333]"/> Made for the community
              </div>

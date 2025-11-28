@@ -224,7 +224,7 @@ export const AlphaModal: React.FC<AlphaModalProps> = ({ isOpen, onClose }) => {
                       if (status === 'error') setStatus('idle');
                     }}
                     placeholder="your@email.com"
-                    className="w-full px-4 py-3 bg-[#151D2C] border border-[#2A3B4C] rounded-xl focus:outline-none focus:border-[#EDA333] text-white placeholder-[#4A5B74] text-sm transition-colors"
+                    className="w-full px-4 py-3 bg-[#151D2C] border border-[#2A3B4C] rounded-xl focus:outline-none focus:border-[#EDA333] text-white placeholder-muted text-sm transition-colors"
                     disabled={status === 'loading'}
                   />
                   {status === 'error' && (
@@ -251,7 +251,7 @@ export const AlphaModal: React.FC<AlphaModalProps> = ({ isOpen, onClose }) => {
                 </button>
               </form>
 
-              <p className="text-[10px] text-[#4A5B74] text-center mt-4">
+              <p className="text-[10px] text-muted text-center mt-4">
                 No spam. We'll only notify you when Alpha is ready.
               </p>
             </>

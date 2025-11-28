@@ -33,11 +33,11 @@ const RedditIcon = () => (
 );
 
 export const Footer: React.FC = () => (
-  <footer id="community" className="bg-[#080B12] pt-16 pb-8 border-t border-[#1A2634] text-sm text-[#4A5B74]">
+  <footer id="community" className="bg-[#080B12] pt-16 pb-8 border-t border-[#1A2634] text-sm text-muted">
     <div className="max-w-7xl mx-auto px-6">
       <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-8 text-center md:text-left">
         <div>
-          <h4 className="text-white font-bold text-2xl mb-2">Built for friends, scalable for networks.</h4>
+          <h2 className="text-white font-bold text-2xl mb-2">Built for friends, scalable for networks.</h2>
           <p className="text-[#8B9BB4] max-w-md">
             Whether you want a private server for 5 friends or a network for 5,000 players, HyPanel is your foundation.
           </p>
@@ -59,24 +59,24 @@ export const Footer: React.FC = () => (
       </div>
       <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12 border-t border-[#1A2634] pt-12">
         <div>
-          <h5 className="text-white font-bold mb-4">Product</h5>
+          <h3 className="text-white font-bold mb-4 text-base uppercase tracking-wide">Product</h3>
           <ul className="space-y-2">
             <li><a href="#why-hypanel" className="hover:text-[#EDA333]">About</a></li>
-            <li><span className="text-[#4A5B74]">Pricing <span className="text-[8px] bg-[#EDA333]/20 text-[#EDA333] px-1.5 py-0.5 rounded ml-1">SOON</span></span></li>
+            <li><span className="text-muted">Pricing <span className="text-[8px] bg-[#EDA333]/20 text-[#EDA333] px-1.5 py-0.5 rounded ml-1">SOON</span></span></li>
             <li><a href="#ecosystem" className="hover:text-[#EDA333]">Ecosystem</a></li>
             <li><a href="#the-forge" className="hover:text-[#EDA333]">The Forge</a></li>
           </ul>
         </div>
         <div>
-          <h5 className="text-white font-bold mb-4">Resources</h5>
+          <h3 className="text-white font-bold mb-4 text-base uppercase tracking-wide">Resources</h3>
           <ul className="space-y-2">
-            <li><span className="text-[#4A5B74]">API Documentation <span className="text-[8px] bg-[#EDA333]/20 text-[#EDA333] px-1.5 py-0.5 rounded ml-1">SOON</span></span></li>
+            <li><span className="text-muted">API Documentation <span className="text-[8px] bg-[#EDA333]/20 text-[#EDA333] px-1.5 py-0.5 rounded ml-1">SOON</span></span></li>
             <li><a href="https://github.com/HyPanel/hypanel-landing" target="_blank" rel="noopener noreferrer" className="hover:text-[#EDA333]">Build in Public (Repo)</a></li>
-            <li><span className="text-[#4A5B74]">System Status <span className="text-[8px] bg-[#EDA333]/20 text-[#EDA333] px-1.5 py-0.5 rounded ml-1">SOON</span></span></li>
+            <li><span className="text-muted">System Status <span className="text-[8px] bg-[#EDA333]/20 text-[#EDA333] px-1.5 py-0.5 rounded ml-1">SOON</span></span></li>
           </ul>
         </div>
         <div>
-          <h5 className="text-white font-bold mb-4">Community</h5>
+          <h3 className="text-white font-bold mb-4 text-base uppercase tracking-wide">Community</h3>
           <ul className="space-y-2">
             <li><a href="https://discord.gg/QBVCzUq4TT" target="_blank" rel="noopener noreferrer" className="hover:text-[#EDA333] flex items-center gap-2"><DiscordIcon /> Discord</a></li>
             <li><a href="https://x.com/HyPanel" target="_blank" rel="noopener noreferrer" className="hover:text-[#EDA333] flex items-center gap-2"><XIcon /> X (Twitter)</a></li>
@@ -85,15 +85,15 @@ export const Footer: React.FC = () => (
           </ul>
         </div>
         <div>
-          <h5 className="text-white font-bold mb-4">Company</h5>
+          <h3 className="text-white font-bold mb-4 text-base uppercase tracking-wide">Company</h3>
           <ul className="space-y-2">
             <li><a href="#team" className="hover:text-[#EDA333]">Team</a></li>
-            <li><span className="text-[#4A5B74]">Blog <span className="text-[8px] bg-[#EDA333]/20 text-[#EDA333] px-1.5 py-0.5 rounded ml-1">SOON</span></span></li>
+            <li><span className="text-muted">Blog <span className="text-[8px] bg-[#EDA333]/20 text-[#EDA333] px-1.5 py-0.5 rounded ml-1">SOON</span></span></li>
             <li><a href="#roadmap" className="hover:text-[#EDA333]">Roadmap</a></li>
           </ul>
         </div>
         <div>
-          <h5 className="text-white font-bold mb-4">Legal</h5>
+          <h3 className="text-white font-bold mb-4 text-base uppercase tracking-wide">Legal</h3>
           <ul className="space-y-2">
             <li><a href="#" className="hover:text-[#EDA333]">Privacy</a></li>
             <li><a href="#" className="hover:text-[#EDA333]">Terms of Use</a></li>

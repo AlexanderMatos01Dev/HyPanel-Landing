@@ -9,6 +9,33 @@ body {
 	height: 100%;
 }
 
+:root {
+	--font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+	--font-mono: 'Fira Code', 'SFMono-Regular', 'Roboto Mono', ui-monospace, monospace;
+	--muted-text: #a9b9d8;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body,
+.font-sans {
+	font-family: var(--font-sans);
+}
+
+.font-mono {
+	font-family: var(--font-mono);
+}
+
+.text-muted {
+	color: var(--muted-text);
+}
+
+.placeholder-muted::placeholder {
+	color: var(--muted-text);
+}
+
 /* Roadmap custom scrollbar */
 .roadmap-scroll::-webkit-scrollbar,
 .roadmap-scrollbar::-webkit-scrollbar {

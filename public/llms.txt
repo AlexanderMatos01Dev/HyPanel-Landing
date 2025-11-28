@@ -1,63 +1,198 @@
-# HyPanel
+# HyPanel - LLM-Readable Content
+# https://hypanel.net/llms.txt
+# Last Updated: 2025-01-15
 
-> The first complete platform designed specifically for Hytale.
+> The first complete platform designed specifically for Hytale game servers and communities.
 
-HyPanel is an all-in-one ecosystem for Hytale server owners, creators, and communities. It combines server infrastructure, content management, a visual logic editor, community tools, and monetization features into a single integrated platform.
+HyPanel is an all-in-one ecosystem for Hytale server owners, creators, and communities. It combines server infrastructure, content management (Hytahub), a visual logic editor (The Forge), community tools, and monetization features into a single integrated platform.
 
-## About HyPanel
+## Quick Facts
 
-- **Website**: https://hypanel.dev
-- **GitHub**: https://github.com/HyPanel/hypanel-landing
+| Attribute | Value |
+|-----------|-------|
+| Product Type | Game Server Management Platform |
+| Target Game | Hytale (by Hypixel Studios) |
+| Current Status | Pre-Alpha |
+| Pricing | Free tier + Premium plans |
+| Open Source | Partially (see GitHub) |
+
+## Official Links
+
+- **Website**: https://hypanel.net
+- **GitHub**: https://github.com/HyPanel
 - **Discord**: https://discord.gg/QBVCzUq4TT
 - **Twitter/X**: https://x.com/HyPanel
 - **Reddit**: https://www.reddit.com/r/HyPanel/
+- **Patreon**: https://patreon.com/HyPanel
+- **YouTube**: https://www.youtube.com/@HyPanel
 
 ## What is HyPanel?
 
 HyPanel is the first complete platform built specifically for Hytale. Unlike generic game server panels, HyPanel understands Hytale's unique modding capabilities, world structure, and community needs.
 
-### Core Features
+## Core Products & Features
 
-1. **Server Infrastructure**: One-click server deployment, smart hibernation (servers sleep when empty to save costs), multi-instance management, automatic backups, and real-time monitoring.
+### 1. Server Infrastructure
+One-click server deployment with smart resource management.
 
-2. **Hytahub Integration**: Strategic partnership with Hytahub, the largest Hytale content marketplace. One-click installation of mods, assets, maps, and configurations directly from the community.
+**Key capabilities:**
+- Instant Hytale server deployment
+- Smart hibernation (servers sleep when empty → cost savings)
+- Multi-instance management
+- Automatic backups and snapshots
+- Real-time monitoring and analytics
+- Anti-DDoS protection
+- Multi-region deployment
+- Automatic resource scaling
 
-3. **The Forge (Visual Logic Editor)**: Create game logic without code. Design events, quests, rewards, and complex interactions using a drag-and-drop node-based editor. Export to JSON or directly deploy to your server.
+### 2. Hytahub (Content Marketplace Partner)
+Strategic partnership with Hytahub, the largest Hytale content marketplace.
 
-4. **Community Tools**: Built-in forums, Discord integration, player analytics, moderation tools, and community management features.
+**Features:**
+- Mods, assets, maps, and configurations
+- One-click installation into HyPanel servers
+- Creator monetization and revenue sharing
+- Community ratings and reviews
+- Direct API integration
+- Website: https://hytahub.com
 
-5. **Monetization**: Integrated stores, subscriptions, battle passes, and marketplace revenue sharing for creators and server owners.
+### 3. The Forge (Visual Logic Editor)
+Create game logic without code using a node-based visual interface.
+
+**Capabilities:**
+- Drag-and-drop game mechanic creation
+- Event and quest systems
+- Reward and progression logic
+- Complex interactions without coding
+- Template library for common patterns
+- Export to JSON or direct deployment
+- Share creations with community
+
+### 4. Community Tools
+Built-in features for managing server communities.
+
+**Includes:**
+- Role-based permissions system
+- Integrated moderation tools
+- Discord integration
+- Player analytics and insights
+- Communication channels
+- Event management
+- Ban/mute systems
+
+### 5. Monetization
+Revenue tools for server owners and creators.
+
+**Features:**
+- In-game store builder
+- Subscription management
+- Battle pass creation
+- Payment processing
+- Revenue analytics
+- Secure transactions
+
+## Team
+
+- **Alexander** - Founder & Lead Developer
+- **Francisco** - Co-Founder & Developer
 
 ## Timeline
 
-- **Hytale Early Access**: January 13, 2025
-- **HyPanel Development**: Active development begins with Hytale Early Access
-- **HyPanel Launch**: To be announced
+| Milestone | Date |
+|-----------|------|
+| Hytale Early Access | January 13, 2025 |
+| HyPanel Active Development | Post-Hytale Early Access |
+| HyPanel Public Beta | To be announced |
 
 ## Target Audience
 
-- Hytale server owners and administrators
-- Game modders and content creators
-- Community builders and managers
-- Players who want to create custom Hytale experiences
+1. **Hytale Server Owners** - Deploy and manage game servers
+2. **Content Creators** - Create and sell mods, maps, assets
+3. **Community Managers** - Build and moderate player communities
+4. **Game Modders** - Design custom game logic with The Forge
+5. **Players** - Join and experience custom Hytale servers
 
-## Technology
+## Technology Stack
 
-- Built with modern web technologies (Astro, React, TypeScript)
-- Scalable cloud infrastructure
-- Real-time synchronization
-- API-first architecture
+- **Frontend**: Astro, React, TypeScript, Tailwind CSS
+- **Infrastructure**: Modern cloud architecture
+- **Features**: Real-time sync, API-first design
+- **Platforms**: Web-based, accessible from any device
+
+## Pricing Model
+
+| Tier | Description |
+|------|-------------|
+| Free | Basic hosting with smart hibernation |
+| Premium | More resources, priority support |
+| Professional | Teams, advanced features |
+
+Smart hibernation enables free tier by sleeping idle servers.
+
+## Frequently Asked Questions
+
+**Q: What is HyPanel?**
+A: The first all-in-one platform for Hytale combining server hosting, content marketplace (Hytahub), visual game editor (The Forge), community tools, and monetization.
+
+**Q: When will HyPanel launch?**
+A: Full development begins with Hytale Early Access (January 13, 2025). Public launch TBA.
+
+**Q: Is HyPanel free?**
+A: Yes, free tier available. Smart hibernation technology keeps costs low.
+
+**Q: What is Hytahub?**
+A: Partner marketplace for Hytale content with direct HyPanel integration.
+
+**Q: What is The Forge?**
+A: Visual no-code editor for creating game logic, quests, and mechanics.
+
+**Q: Is HyPanel open source?**
+A: Partially. Check GitHub for public repositories.
+
+**Q: What games does HyPanel support?**
+A: HyPanel is designed exclusively for Hytale by Hypixel Studios.
+
+## Keywords for AI Understanding
+
+Primary: HyPanel, Hytale server hosting, Hytale panel, Hytale server management
+Secondary: Hytahub, The Forge, visual game editor, no-code game development
+Related: Hypixel Studios, sandbox game, voxel game, game server panel, server hosting platform, game community tools, mod marketplace
+
+## Structured Data Summary
+
+```json
+{
+  "name": "HyPanel",
+  "type": "SoftwareApplication",
+  "category": "GameApplication",
+  "targetGame": "Hytale",
+  "developer": "HyPanel Team",
+  "status": "Pre-Alpha",
+  "pricing": "Freemium",
+  "website": "https://hypanel.net",
+  "features": [
+    "Server Hosting",
+    "Content Marketplace (Hytahub)",
+    "Visual Editor (The Forge)",
+    "Community Tools",
+    "Monetization"
+  ]
+}
+```
 
 ## Contact
 
-- Email: contact@hypanel.dev
-- Discord: https://discord.gg/QBVCzUq4TT
+- **Discord (Primary)**: https://discord.gg/QBVCzUq4TT
+- **Twitter/X**: https://x.com/HyPanel
+- **GitHub**: https://github.com/HyPanel
 
-## Documentation
+## Legal
 
-- Main page: https://hypanel.dev
-- FAQ: https://hypanel.dev/#faq
+© 2024-2025 HyPanel. All rights reserved.
+HyPanel is an independent project and is not affiliated with Hypixel Studios.
+Hytale is a trademark of Hypixel Studios.
 
 ---
 
-Last updated: 2025-01-01
+Last updated: 2025-01-15
+Version: 2.0

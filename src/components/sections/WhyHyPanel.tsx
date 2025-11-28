@@ -34,14 +34,14 @@ const Pillar: React.FC<PillarProps> = ({ icon, title, description, bgColor, href
       <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: `${bgColor}15` }}>
         <div style={{ color: bgColor }}>{icon}</div>
       </div>
-      <h4 className="text-white font-bold text-lg mb-2 flex items-center gap-2">
+      <h3 className="text-white font-bold text-lg mb-2 flex items-center gap-2">
         {title}
         {external ? (
-          <ExternalLink size={14} className="text-[#4A5B74] group-hover:text-white transition-all" />
+          <ExternalLink size={14} className="text-muted group-hover:text-white transition-all" />
         ) : (
-          <ChevronRight size={16} className="text-[#4A5B74] group-hover:text-white group-hover:translate-x-1 transition-all" />
+          <ChevronRight size={16} className="text-muted group-hover:text-white group-hover:translate-x-1 transition-all" />
         )}
-      </h4>
+      </h3>
       <p className="text-[#8B9BB4] text-sm leading-relaxed">{description}</p>
     </a>
   );
@@ -145,7 +145,7 @@ export const WhyHyPanel: React.FC = () => {
                   <div className="flex items-start gap-3">
                     <span className="text-xl">💸</span>
                     <div>
-                      <h4 className="text-white font-bold text-sm mb-1">High costs, low flexibility</h4>
+                      <h3 className="text-white font-bold text-sm mb-1">High costs, low flexibility</h3>
                       <p className="text-[#8B9BB4] text-xs leading-relaxed">Fixed monthly payments even when no one is playing. Scaling requires expertise and more expenses.</p>
                     </div>
                   </div>
@@ -154,7 +154,7 @@ export const WhyHyPanel: React.FC = () => {
                   <div className="flex items-start gap-3">
                     <span className="text-xl">🔧</span>
                     <div>
-                      <h4 className="text-white font-bold text-sm mb-1">Technical barriers</h4>
+                      <h3 className="text-white font-bold text-sm mb-1">Technical barriers</h3>
                       <p className="text-[#8B9BB4] text-xs leading-relaxed">Want unique experiences? Learn to code. Want a community? Use 5 different tools.</p>
                     </div>
                   </div>
@@ -163,7 +163,7 @@ export const WhyHyPanel: React.FC = () => {
                   <div className="flex items-start gap-3">
                     <span className="text-xl">📦</span>
                     <div>
-                      <h4 className="text-white font-bold text-sm mb-1">Fragmented content</h4>
+                      <h3 className="text-white font-bold text-sm mb-1">Fragmented content</h3>
                       <p className="text-[#8B9BB4] text-xs leading-relaxed">Mods, assets and configs scattered everywhere. Version conflicts and hours lost.</p>
                     </div>
                   </div>
@@ -183,7 +183,7 @@ export const WhyHyPanel: React.FC = () => {
                   <div className="flex items-start gap-3">
                     <span className="text-xl">🚀</span>
                     <div>
-                      <h4 className="text-white font-bold text-sm mb-1">We're the pioneers</h4>
+                      <h3 className="text-white font-bold text-sm mb-1">We're the pioneers</h3>
                       <p className="text-[#8B9BB4] text-xs leading-relaxed">No panels exist for Hytale yet. We're building the first complete infrastructure from scratch.</p>
                     </div>
                   </div>
@@ -192,7 +192,7 @@ export const WhyHyPanel: React.FC = () => {
                   <div className="flex items-start gap-3">
                     <span className="text-xl">🌱</span>
                     <div>
-                      <h4 className="text-white font-bold text-sm mb-1">Everything is new</h4>
+                      <h3 className="text-white font-bold text-sm mb-1">Everything is new</h3>
                       <p className="text-[#8B9BB4] text-xs leading-relaxed">No ecosystems, no marketplaces, no standards. Everything needs to be created from zero.</p>
                     </div>
                   </div>
@@ -201,7 +201,7 @@ export const WhyHyPanel: React.FC = () => {
                   <div className="flex items-start gap-3">
                     <span className="text-xl">💡</span>
                     <div>
-                      <h4 className="text-white font-bold text-sm mb-1">Shape the future</h4>
+                      <h3 className="text-white font-bold text-sm mb-1">Shape the future</h3>
                       <p className="text-[#8B9BB4] text-xs leading-relaxed">Help build the foundation. Be part of the tools the entire Hytale community will use.</p>
                     </div>
                   </div>

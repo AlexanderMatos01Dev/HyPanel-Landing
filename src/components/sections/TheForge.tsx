@@ -131,7 +131,7 @@ const DraggableNode: React.FC<{
     >
       <div className="flex items-center justify-between mb-0.5 sm:mb-1">
         <div className={`text-[8px] sm:text-[9px] ${style.text} font-bold`}>{node.type.toUpperCase()}</div>
-        <GripVertical size={10} className="text-[#4A5B74] sm:w-3 sm:h-3" />
+        <GripVertical size={10} className="text-muted sm:w-3 sm:h-3" />
       </div>
       <div className="text-white text-[10px] sm:text-xs font-bold leading-tight">{node.title}</div>
       <div className="text-[#8B9BB4] text-[9px] sm:text-[10px] leading-tight">{node.detail}</div>
