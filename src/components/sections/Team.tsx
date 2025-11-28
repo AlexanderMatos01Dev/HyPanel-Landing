@@ -52,12 +52,12 @@ const TeamMemberCard: React.FC<{ member: TeamMember; index: number }> = ({ membe
         <p className="text-sm font-medium mb-3" style={{ color: member.color }}>{member.role}</p>
         <p className="text-[#8B9BB4] text-xs leading-relaxed mb-4 min-h-[48px]">{member.description}</p>
 
-        {/* Skills */}
-        <div className="flex flex-wrap justify-center gap-1.5 mb-4">
+        {/* Skills - fixed height container */}
+        <div className="flex flex-wrap justify-center gap-1.5 mb-4 min-h-[52px] content-start">
           {member.skills.map((skill, i) => (
             <span 
               key={i} 
-              className="px-2 py-0.5 rounded-full text-[10px] font-medium"
+              className="px-2 py-0.5 rounded-full text-[10px] font-medium h-fit"
               style={{ backgroundColor: `${member.color}15`, color: member.color }}
             >
               {skill}
