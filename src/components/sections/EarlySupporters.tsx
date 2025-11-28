@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Heart, Coffee, Users, Sparkles, Github, ExternalLink, ChevronRight } from 'lucide-react';
+import { Heart, Coffee, Users, Sparkles, ExternalLink } from 'lucide-react';
 
 // Iconos SVG
 const PatreonIcon = () => (
@@ -150,24 +150,24 @@ export const EarlySupporters: React.FC = () => {
           >
             <div className="flex items-center justify-between mb-3">
               <div className="w-10 h-10 bg-[#4DA6FF]/10 rounded-lg flex items-center justify-center">
-                <Github size={20} className="text-[#4DA6FF]" />
+                <Users size={20} className="text-[#4DA6FF]" />
               </div>
-              <span className="px-2 py-0.5 bg-[#4DA6FF]/20 border border-[#4DA6FF]/30 rounded-full text-[#4DA6FF] text-[9px] font-bold">BUILD IN PUBLIC</span>
+              <span className="px-2 py-0.5 bg-[#4DA6FF]/20 border border-[#4DA6FF]/30 rounded-full text-[#4DA6FF] text-[9px] font-bold">JOIN THE TEAM</span>
             </div>
             
-            <h3 className="text-lg font-bold text-white mb-1">Contribute with code</h3>
+            <h3 className="text-lg font-bold text-white mb-1">Share your ideas</h3>
             <p className="text-[#8B9BB4] text-xs mb-3 flex-grow">
-              Are you a dev? Your time and talent are just as valuable.
+              Feedback and suggestions help us build something great.
             </p>
             
             <ul className="space-y-1.5 mb-4 text-[11px] text-[#8B9BB4]">
               <li className="flex items-center gap-1.5">
                 <Sparkles size={10} className="text-[#4DA6FF] flex-shrink-0" />
-                Credit as contributor
+                Propose new features
               </li>
               <li className="flex items-center gap-1.5">
                 <Sparkles size={10} className="text-[#4DA6FF] flex-shrink-0" />
-                Access to the dev team
+                Access to dev discussions
               </li>
               <li className="flex items-center gap-1.5">
                 <Sparkles size={10} className="text-[#4DA6FF] flex-shrink-0" />
@@ -176,12 +176,12 @@ export const EarlySupporters: React.FC = () => {
             </ul>
             
             <a 
-              href="https://github.com/HyPanel/hypanel-landing" 
+              href="https://discord.gg/QBVCzUq4TT" 
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-2.5 bg-[#4DA6FF] text-[#0B0F19] text-sm font-bold rounded-lg hover:bg-[#3b8fd9] transition-all mt-auto"
             >
-              <Github size={16} /> View on GitHub
+              <DiscordIcon /> Join Dev Chat
             </a>
           </div>
         </div>

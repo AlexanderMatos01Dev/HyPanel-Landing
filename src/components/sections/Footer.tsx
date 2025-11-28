@@ -71,7 +71,6 @@ export const Footer: React.FC = () => (
           <h3 className="text-white font-bold mb-4 text-base uppercase tracking-wide">Resources</h3>
           <ul className="space-y-2">
             <li><span className="text-muted">API Documentation <span className="text-[8px] bg-[#EDA333]/20 text-[#EDA333] px-1.5 py-0.5 rounded ml-1">SOON</span></span></li>
-            <li><a href="https://github.com/HyPanel/hypanel-landing" target="_blank" rel="noopener noreferrer" className="hover:text-[#EDA333]">Build in Public (Repo)</a></li>
             <li><span className="text-muted">System Status <span className="text-[8px] bg-[#EDA333]/20 text-[#EDA333] px-1.5 py-0.5 rounded ml-1">SOON</span></span></li>
           </ul>
         </div>
