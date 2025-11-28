@@ -50,14 +50,14 @@ const TeamMemberCard: React.FC<{ member: TeamMember; index: number }> = ({ membe
       <div className="text-center relative z-10 flex flex-col flex-grow">
         <h3 className="text-lg font-bold text-white mb-1">{member.name}</h3>
         <p className="text-sm font-medium mb-3" style={{ color: member.color }}>{member.role}</p>
-        <p className="text-[#8B9BB4] text-xs leading-relaxed mb-4 min-h-[48px]">{member.description}</p>
+        <p className="text-[#8B9BB4] text-xs leading-relaxed mb-4 flex-grow">{member.description}</p>
 
-        {/* Skills - fixed height container */}
-        <div className="flex flex-wrap justify-center gap-1.5 mb-4 min-h-[52px] content-start">
+        {/* Skills - always aligned at same position from bottom */}
+        <div className="flex flex-wrap justify-center gap-1.5 mb-4">
           {member.skills.map((skill, i) => (
             <span 
               key={i} 
-              className="px-2 py-0.5 rounded-full text-[10px] font-medium h-fit"
+              className="px-2 py-0.5 rounded-full text-[10px] font-medium"
               style={{ backgroundColor: `${member.color}15`, color: member.color }}
             >
               {skill}
@@ -65,11 +65,8 @@ const TeamMemberCard: React.FC<{ member: TeamMember; index: number }> = ({ membe
           ))}
         </div>
 
-        {/* Spacer to push socials to bottom */}
-        <div className="flex-grow"></div>
-
         {/* Socials - always at bottom */}
-        <div className="flex justify-center gap-2 mt-auto pt-2">
+        <div className="flex justify-center gap-2">
           {member.socials.github && (
             <a 
               href={member.socials.github} 
