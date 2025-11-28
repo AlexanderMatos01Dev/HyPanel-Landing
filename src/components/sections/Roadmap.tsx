@@ -90,7 +90,7 @@ const Milestone: React.FC<MilestoneProps> = ({ date, title, description, items, 
 export const Roadmap: React.FC = () => {
   const milestones: MilestoneProps[] = [
     {
-      date: 'NOV 2024',
+      date: 'NOV 2025',
       title: 'Project Kickoff',
       description: 'Building the community and foundations.',
       items: [
@@ -99,11 +99,11 @@ export const Roadmap: React.FC = () => {
         'Early supporters program',
         'Brand identity'
       ],
-      status: 'completed',
+      status: 'current',
       icon: <Flag size={18} />
     },
     {
-      date: 'DEC 2024',
+      date: 'DEC 2025',
       title: 'Pre-Launch Prep',
       description: 'Getting ready for Hytale EA.',
       items: [
@@ -112,11 +112,11 @@ export const Roadmap: React.FC = () => {
         'Hytahub partnership',
         'Infrastructure design'
       ],
-      status: 'current',
+      status: 'upcoming',
       icon: <Target size={18} />
     },
     {
-      date: 'JAN 13, 2025',
+      date: 'JAN 13, 2026',
       title: 'Hytale EA Launch',
       description: 'Game launches. Integration begins.',
       items: [
@@ -129,7 +129,7 @@ export const Roadmap: React.FC = () => {
       icon: <Gamepad2 size={18} />
     },
     {
-      date: 'Q1 2025',
+      date: 'Q1 2026',
       title: 'Alpha Release',
       description: 'First working version.',
       items: [
@@ -142,7 +142,7 @@ export const Roadmap: React.FC = () => {
       icon: <Rocket size={18} />
     },
     {
-      date: 'Q2 2025',
+      date: 'Q2 2026',
       title: 'Public Beta',
       description: 'Open to all users.',
       items: [
@@ -182,7 +182,28 @@ export const Roadmap: React.FC = () => {
         {/* Horizontal Timeline */}
         <div className="relative">
           {/* Scroll container */}
-          <div className="overflow-x-auto pb-4 -mx-6 px-6 scrollbar-thin scrollbar-thumb-[#2A3B4C] scrollbar-track-transparent">
+          <div className="overflow-x-auto pb-6 -mx-6 px-6 roadmap-scroll">
+            <style>{`
+              .roadmap-scroll::-webkit-scrollbar {
+                height: 8px;
+              }
+              .roadmap-scroll::-webkit-scrollbar-track {
+                background: #0F1623;
+                border-radius: 4px;
+                border: 1px solid #2A3B4C;
+              }
+              .roadmap-scroll::-webkit-scrollbar-thumb {
+                background: linear-gradient(90deg, #4DA6FF, #EDA333);
+                border-radius: 4px;
+              }
+              .roadmap-scroll::-webkit-scrollbar-thumb:hover {
+                background: linear-gradient(90deg, #5DB3FF, #F5B347);
+              }
+              .roadmap-scroll {
+                scrollbar-width: thin;
+                scrollbar-color: #4DA6FF #0F1623;
+              }
+            `}</style>
             <div className="flex gap-4 min-w-max">
               {milestones.map((milestone, index) => (
                 <Milestone key={index} {...milestone} />

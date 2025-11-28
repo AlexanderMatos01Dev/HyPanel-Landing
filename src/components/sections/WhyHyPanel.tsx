@@ -132,7 +132,7 @@ export const WhyHyPanel: React.FC = () => {
                 </div>
               </div>
               <div className="space-y-4">
-                <div className="p-4 rounded-xl bg-[#0F1623]/80 border border-red-500/20 hover:border-red-500/40 transition-colors">
+                <div className="p-4 rounded-xl bg-[#0F1623]/80 border border-red-500/20 hover:border-red-500/40 transition-colors min-h-[100px]">
                   <div className="flex items-start gap-3">
                     <span className="text-xl">💸</span>
                     <div>
@@ -141,7 +141,7 @@ export const WhyHyPanel: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="p-4 rounded-xl bg-[#0F1623]/80 border border-red-500/20 hover:border-red-500/40 transition-colors">
+                <div className="p-4 rounded-xl bg-[#0F1623]/80 border border-red-500/20 hover:border-red-500/40 transition-colors min-h-[100px]">
                   <div className="flex items-start gap-3">
                     <span className="text-xl">🔧</span>
                     <div>
@@ -150,7 +150,7 @@ export const WhyHyPanel: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="p-4 rounded-xl bg-[#0F1623]/80 border border-red-500/20 hover:border-red-500/40 transition-colors">
+                <div className="p-4 rounded-xl bg-[#0F1623]/80 border border-red-500/20 hover:border-red-500/40 transition-colors min-h-[100px]">
                   <div className="flex items-start gap-3">
                     <span className="text-xl">📦</span>
                     <div>
@@ -170,7 +170,7 @@ export const WhyHyPanel: React.FC = () => {
                 </div>
               </div>
               <div className="space-y-4">
-                <div className="p-4 rounded-xl bg-[#0F1623]/80 border border-[#EDA333]/20 hover:border-[#EDA333]/40 transition-colors">
+                <div className="p-4 rounded-xl bg-[#0F1623]/80 border border-[#EDA333]/20 hover:border-[#EDA333]/40 transition-colors min-h-[100px]">
                   <div className="flex items-start gap-3">
                     <span className="text-xl">🚀</span>
                     <div>
@@ -179,7 +179,7 @@ export const WhyHyPanel: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="p-4 rounded-xl bg-[#0F1623]/80 border border-[#EDA333]/20 hover:border-[#EDA333]/40 transition-colors">
+                <div className="p-4 rounded-xl bg-[#0F1623]/80 border border-[#EDA333]/20 hover:border-[#EDA333]/40 transition-colors min-h-[100px]">
                   <div className="flex items-start gap-3">
                     <span className="text-xl">🌱</span>
                     <div>
@@ -188,7 +188,7 @@ export const WhyHyPanel: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                <div className="p-4 rounded-xl bg-[#0F1623]/80 border border-[#EDA333]/20 hover:border-[#EDA333]/40 transition-colors">
+                <div className="p-4 rounded-xl bg-[#0F1623]/80 border border-[#EDA333]/20 hover:border-[#EDA333]/40 transition-colors min-h-[100px]">
                   <div className="flex items-start gap-3">
                     <span className="text-xl">💡</span>
                     <div>
