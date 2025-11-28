@@ -65,14 +65,10 @@ export const Navbar: React.FC = () => {
           <div className="hidden lg:flex items-center gap-4 xl:gap-6 text-sm font-medium text-[#8B9BB4]">
             <a href="#why-hypanel" onClick={(e) => handleNavClick(e, 'why-hypanel')} className="relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap">About</a>
             <a href="#server-infrastructure" onClick={(e) => handleNavClick(e, 'server-infrastructure')} className="relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full">Infrastructure</a>
-            <a href="#content-os" onClick={(e) => handleNavClick(e, 'content-os')} className="relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full">Hytahub</a>
             <a href="#the-forge" onClick={(e) => handleNavClick(e, 'the-forge')} className="relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full">The Forge</a>
-            <a href="#community" onClick={(e) => handleNavClick(e, 'community')} className="relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full">Community</a>
+            <a href="#roadmap" onClick={(e) => handleNavClick(e, 'roadmap')} className="relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full">Roadmap</a>
+            <a href="#team" onClick={(e) => handleNavClick(e, 'team')} className="relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full">Team</a>
             <a href="#faq" onClick={(e) => handleNavClick(e, 'faq')} className="relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full">FAQ</a>
-            <span className="relative py-1 cursor-default group">
-              <span className="text-[#4A5B74]">Blog</span>
-              <span className="absolute -top-1 -right-6 px-1.5 py-0.5 bg-[#EDA333]/20 text-[#EDA333] text-[8px] font-bold rounded">SOON</span>
-            </span>
           </div>
           <div className="flex items-center gap-2 md:gap-3">
             <div className="hidden md:flex items-center gap-0.5 border-r border-[#2A3B4C] pr-2 md:pr-3">
