@@ -27,19 +27,19 @@ import Footer from '../components/sections/Footer';
 
 		<!-- Main content -->
 		<div class="relative z-10">
-			<Navbar client:only="react" />
-			<Hero client:only="react" />
-			<WhyHyPanel client:only="react" />
-			<ServerInfrastructure client:only="react" />
-			<ContentOS client:only="react" />
-			<TheForge client:only="react" />
-			<CommunityAndBusiness client:only="react" />
-			<Ecosystem client:only="react" />
-			<Roadmap client:only="react" />
-			<Team client:only="react" />
-			<FAQ client:only="react" />
-			<EarlySupporters client:only="react" />
-			<Footer client:only="react" />
+			<Navbar client:load />
+			<Hero client:load />
+			<WhyHyPanel client:visible />
+			<ServerInfrastructure client:visible />
+			<ContentOS client:visible />
+			<TheForge client:visible />
+			<CommunityAndBusiness client:visible />
+			<Ecosystem client:visible />
+			<Roadmap client:visible />
+			<Team client:visible />
+			<FAQ client:visible />
+			<EarlySupporters client:visible />
+			<Footer client:visible />
 		</div>
 
 		<style>
