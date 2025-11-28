@@ -284,19 +284,145 @@ export const TheForge: React.FC = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  // Calculate connection paths
+  // Dimensiones de los nodos
+  const NODE_WIDTH = 130;
+  const NODE_HEIGHT = 80;
+
+  // Determinar el lado de salida basado en la posición relativa de los nodos
+  const getConnectionSide = (fromNode: NodeData, toNode: NodeData): 'right' | 'left' | 'bottom' | 'top' => {
+    const dx = (toNode.x + NODE_WIDTH / 2) - (fromNode.x + NODE_WIDTH / 2);
+    const dy = (toNode.y + NODE_HEIGHT / 2) - (fromNode.y + NODE_HEIGHT / 2);
+    
+    if (Math.abs(dx) >= Math.abs(dy)) {
+      return dx >= 0 ? 'right' : 'left';
+    } else {
+      return dy >= 0 ? 'bottom' : 'top';
+    }
+  };
+
+  // Calcular el offset inteligente basado en la posición del nodo destino
+  const getSmartOffset = (nodeId: string, isOutgoing: boolean, targetId: string, side: 'right' | 'left' | 'bottom' | 'top') => {
+    const currentNode = nodes.find(n => n.id === nodeId);
+    const targetNode = nodes.find(n => n.id === targetId);
+    if (!currentNode || !targetNode) return 0;
+    
+    // Obtener todas las conexiones del mismo nodo que salen/entran por el mismo lado
+    const sameSideConnections = connections.filter(c => {
+      const connNodeId = isOutgoing ? c.from : c.to;
+      const otherNodeId = isOutgoing ? c.to : c.from;
+      
+      if (connNodeId !== nodeId) return false;
+      
+      const otherNode = nodes.find(n => n.id === otherNodeId);
+      if (!otherNode) return false;
+      
+      const connSide = isOutgoing 
+        ? getConnectionSide(currentNode, otherNode)
+        : getConnectionSide(otherNode, currentNode);
+      
+      return connSide === side;
+    });
+    
+    if (sameSideConnections.length <= 1) return 0;
+    
+    // Obtener info de posición de todos los nodos destino de las conexiones del mismo lado
+    const connectionInfos = sameSideConnections.map(c => {
+      const otherId = isOutgoing ? c.to : c.from;
+      const otherNode = nodes.find(n => n.id === otherId);
+      if (!otherNode) return { id: otherId, pos: 0 };
+      
+      // Para lados horizontales (right/left), ordenar por posición Y
+      // Para lados verticales (top/bottom), ordenar por posición X
+      if (side === 'right' || side === 'left') {
+        return { id: otherId, pos: otherNode.y };
+      } else {
+        return { id: otherId, pos: otherNode.x };
+      }
+    });
+    
+    // Ordenar por posición
+    connectionInfos.sort((a, b) => a.pos - b.pos);
+    
+    // Encontrar el índice de esta conexión en el array ordenado
+    const index = connectionInfos.findIndex(info => info.id === targetId);
+    
+    // Distribuir las conexiones uniformemente
+    const spacing = 16;
+    const totalSpan = (sameSideConnections.length - 1) * spacing;
+    return (index * spacing) - (totalSpan / 2);
+  };
+
+  // Calculate connection paths with smart routing
   const getConnectionPath = (fromId: string, toId: string) => {
     const fromNode = nodes.find(n => n.id === fromId);
     const toNode = nodes.find(n => n.id === toId);
     if (!fromNode || !toNode) return '';
     
-    const startX = fromNode.x + 130;
-    const startY = fromNode.y + 40;
-    const endX = toNode.x;
-    const endY = toNode.y + 40;
-    const midX = (startX + endX) / 2;
+    // Centros de los nodos
+    const fromCenterX = fromNode.x + NODE_WIDTH / 2;
+    const fromCenterY = fromNode.y + NODE_HEIGHT / 2;
+    const toCenterX = toNode.x + NODE_WIDTH / 2;
+    const toCenterY = toNode.y + NODE_HEIGHT / 2;
     
-    return `M ${startX} ${startY} C ${midX} ${startY}, ${midX} ${endY}, ${endX} ${endY}`;
+    // Diferencias
+    const dx = toCenterX - fromCenterX;
+    const dy = toCenterY - fromCenterY;
+    
+    // Determinar los lados de salida y entrada
+    const outSide = getConnectionSide(fromNode, toNode);
+    const inSide = getConnectionSide(toNode, fromNode);
+    
+    // Calcular offsets inteligentes basados en la posición del destino
+    const outOffset = getSmartOffset(fromId, true, toId, outSide);
+    const inOffset = getSmartOffset(toId, false, fromId, inSide);
+    
+    // Determinar el mejor lado de salida y entrada basado en la posición relativa
+    let startX: number, startY: number, endX: number, endY: number;
+    let controlOffset: number;
+    
+    // Si el nodo destino está principalmente a la derecha
+    if (Math.abs(dx) >= Math.abs(dy)) {
+      if (dx >= 0) {
+        // Destino a la derecha: salir por derecha, entrar por izquierda
+        startX = fromNode.x + NODE_WIDTH;
+        startY = fromNode.y + NODE_HEIGHT / 2 + outOffset;
+        endX = toNode.x;
+        endY = toNode.y + NODE_HEIGHT / 2 + inOffset;
+        controlOffset = Math.max(40, Math.abs(dx) * 0.4);
+        
+        return `M ${startX} ${startY} C ${startX + controlOffset} ${startY}, ${endX - controlOffset} ${endY}, ${endX} ${endY}`;
+      } else {
+        // Destino a la izquierda: salir por izquierda, entrar por derecha
+        startX = fromNode.x;
+        startY = fromNode.y + NODE_HEIGHT / 2 + outOffset;
+        endX = toNode.x + NODE_WIDTH;
+        endY = toNode.y + NODE_HEIGHT / 2 + inOffset;
+        controlOffset = Math.max(40, Math.abs(dx) * 0.4);
+        
+        return `M ${startX} ${startY} C ${startX - controlOffset} ${startY}, ${endX + controlOffset} ${endY}, ${endX} ${endY}`;
+      }
+    } else {
+      // El nodo destino está principalmente arriba o abajo
+      if (dy >= 0) {
+        // Destino abajo: salir por abajo, entrar por arriba
+        startX = fromNode.x + NODE_WIDTH / 2 + outOffset;
+        startY = fromNode.y + NODE_HEIGHT;
+        endX = toNode.x + NODE_WIDTH / 2 + inOffset;
+        endY = toNode.y;
+        controlOffset = Math.max(30, Math.abs(dy) * 0.4);
+        
+        return `M ${startX} ${startY} C ${startX} ${startY + controlOffset}, ${endX} ${endY - controlOffset}, ${endX} ${endY}`;
+      } else {
+        // Destino arriba: salir por arriba, entrar por abajo
+        startX = fromNode.x + NODE_WIDTH / 2 + outOffset;
+        startY = fromNode.y;
+        endX = toNode.x + NODE_WIDTH / 2 + inOffset;
+        endY = toNode.y + NODE_HEIGHT;
+        controlOffset = Math.max(30, Math.abs(dy) * 0.4);
+        
+        return `M ${startX} ${startY} C ${startX} ${startY - controlOffset}, ${endX} ${endY + controlOffset}, ${endX} ${endY}`;
+      }
+    }
   };
 
   return (
