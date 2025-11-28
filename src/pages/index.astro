@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/sections/Navbar';
+import Hero from '../components/sections/Hero';
+import WhyHyPanel from '../components/sections/WhyHyPanel';
+import ServerInfrastructure from '../components/sections/ServerInfrastructure';
+import ContentOS from '../components/sections/ContentOS';
+import TheForge from '../components/sections/TheForge';
+import CommunityAndBusiness from '../components/sections/CommunityAndBusiness';
+import Ecosystem from '../components/sections/Ecosystem';
+import FAQ from '../components/sections/FAQ';
+import EarlySupporters from '../components/sections/EarlySupporters';
+import Footer from '../components/sections/Footer';
+---
+
+<Layout>
+	<div class="min-h-screen bg-[#0B0F19] text-[#E0E6ED] font-sans selection:bg-[#EDA333] selection:text-[#0B0F19] overflow-x-hidden relative">
+		<!-- Fixed decorative background -->
+		<div class="fixed inset-0 pointer-events-none" style="z-index: -1;">
+			<div class="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-b from-[#151D2C]/80 via-[#0B0F19] to-[#0B0F19]"></div>
+			<div class="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:40px_40px] opacity-50"></div>
+			<div class="absolute top-20 right-0 w-[500px] h-[500px] bg-[#4DA6FF]/5 rounded-full blur-[100px]"></div>
+			<div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#EDA333]/5 rounded-full blur-[100px]"></div>
+		</div>
+
+		<!-- Main content -->
+		<div class="relative z-10">
+			<Navbar client:only="react" />
+			<Hero client:only="react" />
+			<WhyHyPanel client:only="react" />
+			<ServerInfrastructure client:only="react" />
+			<ContentOS client:only="react" />
+			<TheForge client:only="react" />
+			<CommunityAndBusiness client:only="react" />
+			<Ecosystem client:only="react" />
+			<FAQ client:only="react" />
+			<EarlySupporters client:only="react" />
+			<Footer client:only="react" />
+		</div>
+
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400&display=swap');
+			.font-sans { font-family: 'Inter', sans-serif; }
+			.font-mono { font-family: 'Fira Code', monospace; }
+			@keyframes fadeInUp {
+				from { opacity: 0; transform: translateY(20px); }
+				to { opacity: 1; transform: translateY(0); }
+			}
+			.animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+			@keyframes textSlideIn {
+				0% { opacity: 0; transform: translateY(20px); }
+				100% { opacity: 1; transform: translateY(0); }
+			}
+			.animate-text-slide-in { animation: textSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+			html { scroll-behavior: smooth; }
+		</style>
+	</div>
+</Layout>
+
