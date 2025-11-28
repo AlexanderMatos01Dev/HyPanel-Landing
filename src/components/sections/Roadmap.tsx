@@ -183,27 +183,6 @@ export const Roadmap: React.FC = () => {
         <div className="relative">
           {/* Scroll container */}
           <div className="overflow-x-auto pb-6 -mx-6 px-6 roadmap-scroll">
-            <style>{`
-              .roadmap-scroll::-webkit-scrollbar {
-                height: 8px;
-              }
-              .roadmap-scroll::-webkit-scrollbar-track {
-                background: #0F1623;
-                border-radius: 4px;
-                border: 1px solid #2A3B4C;
-              }
-              .roadmap-scroll::-webkit-scrollbar-thumb {
-                background: linear-gradient(90deg, #4DA6FF, #EDA333);
-                border-radius: 4px;
-              }
-              .roadmap-scroll::-webkit-scrollbar-thumb:hover {
-                background: linear-gradient(90deg, #5DB3FF, #F5B347);
-              }
-              .roadmap-scroll {
-                scrollbar-width: thin;
-                scrollbar-color: #4DA6FF #0F1623;
-              }
-            `}</style>
             <div className="flex gap-4 min-w-max">
               {milestones.map((milestone, index) => (
                 <Milestone key={index} {...milestone} />
