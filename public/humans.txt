@@ -1,0 +1,23 @@
+/* TEAM */
+Project: HyPanel
+Description: The first complete platform for Hytale
+Site: https://hypanel.dev
+Twitter: @HyPanel
+Discord: https://discord.gg/QBVCzUq4TT
+GitHub: https://github.com/HyPanel
+Location: Worldwide
+
+/* SITE */
+Last update: 2025/01/01
+Language: English
+Standards: HTML5, CSS3, ES6+
+Framework: Astro, React, TypeScript
+Styling: Tailwind CSS
+Hosting: TBD
+
+/* THANKS */
+Hytale by Hypixel Studios
+Astro Framework
+React
+Tailwind CSS
+Lucide Icons

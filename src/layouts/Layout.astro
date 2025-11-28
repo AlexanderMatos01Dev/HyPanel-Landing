@@ -1,19 +1,214 @@
 ---
 import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+	canonical?: string;
+}
+
+const { 
+	title = "HyPanel - The First Complete Platform for Hytale",
+	description = "The first complete platform designed specifically for Hytale. Server infrastructure, content management via Hytahub, visual logic editor (The Forge), community tools and monetization — all in one integrated ecosystem.",
+	image = "/og-image.png",
+	canonical = "https://hypanel.dev"
+} = Astro.props;
+
+const structuredData = {
+	"@context": "https://schema.org",
+	"@type": "SoftwareApplication",
+	"name": "HyPanel",
+	"applicationCategory": "GameApplication",
+	"operatingSystem": "Web",
+	"description": description,
+	"url": "https://hypanel.dev",
+	"image": "https://hypanel.dev/og-image.png",
+	"author": {
+		"@type": "Organization",
+		"name": "HyPanel",
+		"url": "https://hypanel.dev",
+		"sameAs": [
+			"https://github.com/HyPanel",
+			"https://x.com/HyPanel",
+			"https://discord.gg/QBVCzUq4TT",
+			"https://www.reddit.com/r/HyPanel/"
+		]
+	},
+	"offers": {
+		"@type": "Offer",
+		"price": "0",
+		"priceCurrency": "USD",
+		"description": "Free tier available with premium options"
+	},
+	"featureList": [
+		"One-click Hytale server deployment",
+		"Smart server hibernation",
+		"Hytahub content marketplace integration",
+		"The Forge visual logic editor",
+		"Community management tools",
+		"Monetization and store features"
+	]
+};
+
+const organizationData = {
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	"name": "HyPanel",
+	"url": "https://hypanel.dev",
+	"logo": "https://hypanel.dev/android-chrome-512x512.png",
+	"description": "Building the first complete platform for Hytale servers and communities.",
+	"foundingDate": "2024",
+	"sameAs": [
+		"https://github.com/HyPanel",
+		"https://x.com/HyPanel",
+		"https://discord.gg/QBVCzUq4TT",
+		"https://www.reddit.com/r/HyPanel/",
+		"https://patreon.com/HyPanel"
+	],
+	"contactPoint": {
+		"@type": "ContactPoint",
+		"contactType": "customer support",
+		"url": "https://discord.gg/QBVCzUq4TT"
+	}
+};
+
+const faqData = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "What is HyPanel?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "HyPanel is the first complete platform designed specifically for Hytale. It combines server infrastructure, content management (via Hytahub), a visual logic editor (The Forge), community tools and monetization — all in one integrated ecosystem."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "When will HyPanel be available?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Hytale Early Access launches January 13, 2025. From that date, we can start building with the real game. We don't have a fixed launch date for HyPanel yet, but we're building the community, infrastructure and foundations now so we're ready."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Is HyPanel free?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "There will be free plans thanks to smart resource management (servers sleep when empty) and marketplace integration. Premium plans offer more resources for larger projects and professional teams."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "What is Hytahub?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Hytahub is an independent partner project building the largest content marketplace for Hytale. Mods, assets, maps and configurations from the community, integrated directly with HyPanel for seamless installation."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "What is The Forge?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "The Forge is HyPanel's visual logic editor. It lets you create game logic, events, quests, rewards and complex interactions using a drag-and-drop node-based interface without writing code."
+			}
+		}
+	]
+};
 ---
 <!doctype html>
-<html lang="es">
+<html lang="en">
 	<head>
+		<!-- Basic Meta -->
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		
+		<!-- Primary Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<meta name="keywords" content="HyPanel, Hytale, Hytale server, Hytale hosting, Hytale mods, Hytale panel, game server, Hytahub, The Forge, visual editor, no-code, server management, Hytale community, Hytale tools, game hosting platform" />
+		<meta name="author" content="HyPanel" />
+		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+		<meta name="googlebot" content="index, follow" />
+		<link rel="canonical" href={canonical} />
+		
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+		<link rel="manifest" href="/site.webmanifest" />
+		<meta name="theme-color" content="#EDA333" />
+		<meta name="msapplication-TileColor" content="#0B0F19" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://hypanel.dev/" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={`https://hypanel.dev${image}`} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="HyPanel - The First Complete Platform for Hytale" />
+		<meta property="og:site_name" content="HyPanel" />
+		<meta property="og:locale" content="en_US" />
+		
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@HyPanel" />
+		<meta name="twitter:creator" content="@HyPanel" />
+		<meta name="twitter:url" content="https://hypanel.dev/" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={`https://hypanel.dev${image}`} />
+		<meta name="twitter:image:alt" content="HyPanel - The First Complete Platform for Hytale" />
+		
+		<!-- Discord -->
+		<meta name="discord:server" content="QBVCzUq4TT" />
+		
+		<!-- Additional SEO -->
+		<meta name="application-name" content="HyPanel" />
+		<meta name="apple-mobile-web-app-title" content="HyPanel" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="format-detection" content="telephone=no" />
+		
+		<!-- AI/LLM Friendly Meta -->
+		<meta name="ai-content-declaration" content="This website contains information about HyPanel, a platform for Hytale game servers." />
+		<meta name="llms-txt" content="/llms.txt" />
+		
+		<!-- Geo Tags -->
+		<meta name="geo.region" content="US" />
+		<meta name="geo.placename" content="United States" />
+		
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+		
+		<!-- Preload critical assets -->
+		<link rel="preload" as="image" href="/android-chrome-512x512.png" />
+		
+		<!-- DNS Prefetch for external resources -->
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+		<link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+		
+		<!-- Generator -->
 		<meta name="generator" content={Astro.generator} />
-		<title>HyPanel - Tu servidor vive cuando juegas</title>
+		
+		<!-- Structured Data -->
+		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+		<script type="application/ld+json" set:html={JSON.stringify(organizationData)} />
+		<script type="application/ld+json" set:html={JSON.stringify(faqData)} />
 	</head>
-	<body class="min-h-screen bg-[#0B0F19] text-[#E0E6ED] font-sans">
+	<body class="min-h-screen bg-[#0B0F19] text-[#E0E6ED] font-sans antialiased">
 		<slot />
 	</body>
 </html>

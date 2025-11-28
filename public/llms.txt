@@ -1,0 +1,63 @@
+# HyPanel
+
+> The first complete platform designed specifically for Hytale.
+
+HyPanel is an all-in-one ecosystem for Hytale server owners, creators, and communities. It combines server infrastructure, content management, a visual logic editor, community tools, and monetization features into a single integrated platform.
+
+## About HyPanel
+
+- **Website**: https://hypanel.dev
+- **GitHub**: https://github.com/HyPanel/hypanel-landing
+- **Discord**: https://discord.gg/QBVCzUq4TT
+- **Twitter/X**: https://x.com/HyPanel
+- **Reddit**: https://www.reddit.com/r/HyPanel/
+
+## What is HyPanel?
+
+HyPanel is the first complete platform built specifically for Hytale. Unlike generic game server panels, HyPanel understands Hytale's unique modding capabilities, world structure, and community needs.
+
+### Core Features
+
+1. **Server Infrastructure**: One-click server deployment, smart hibernation (servers sleep when empty to save costs), multi-instance management, automatic backups, and real-time monitoring.
+
+2. **Hytahub Integration**: Strategic partnership with Hytahub, the largest Hytale content marketplace. One-click installation of mods, assets, maps, and configurations directly from the community.
+
+3. **The Forge (Visual Logic Editor)**: Create game logic without code. Design events, quests, rewards, and complex interactions using a drag-and-drop node-based editor. Export to JSON or directly deploy to your server.
+
+4. **Community Tools**: Built-in forums, Discord integration, player analytics, moderation tools, and community management features.
+
+5. **Monetization**: Integrated stores, subscriptions, battle passes, and marketplace revenue sharing for creators and server owners.
+
+## Timeline
+
+- **Hytale Early Access**: January 13, 2025
+- **HyPanel Development**: Active development begins with Hytale Early Access
+- **HyPanel Launch**: To be announced
+
+## Target Audience
+
+- Hytale server owners and administrators
+- Game modders and content creators
+- Community builders and managers
+- Players who want to create custom Hytale experiences
+
+## Technology
+
+- Built with modern web technologies (Astro, React, TypeScript)
+- Scalable cloud infrastructure
+- Real-time synchronization
+- API-first architecture
+
+## Contact
+
+- Email: contact@hypanel.dev
+- Discord: https://discord.gg/QBVCzUq4TT
+
+## Documentation
+
+- Main page: https://hypanel.dev
+- FAQ: https://hypanel.dev/#faq
+
+---
+
+Last updated: 2025-01-01

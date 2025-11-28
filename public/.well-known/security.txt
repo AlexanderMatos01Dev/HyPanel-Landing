@@ -1,0 +1,20 @@
+# HyPanel Security Policy
+
+## Reporting a Vulnerability
+
+If you discover a security vulnerability, please report it to us privately:
+
+- Email: security@hypanel.dev
+- Discord: https://discord.gg/QBVCzUq4TT (DM an admin)
+
+Please do not publicly disclose security issues until we have had a chance to address them.
+
+## Scope
+
+This security policy applies to:
+- https://hypanel.dev
+- https://github.com/HyPanel/*
+
+## Response Time
+
+We aim to respond to security reports within 48 hours and provide a fix within 7 days for critical issues.
