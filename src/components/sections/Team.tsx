@@ -16,7 +16,7 @@ interface TeamMember {
   skills: string[];
 }
 
-const TeamMemberCard: React.FC<{ member: TeamMember; index: number }> = ({ member, index }) => {
+const TeamMemberCard: React.FC<{ member: TeamMember }> = ({ member }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -126,7 +126,7 @@ export const Team: React.FC = () => {
         <div className="flex md:grid md:grid-cols-3 gap-6 mb-16 overflow-x-auto roadmap-scrollbar pb-4 md:pb-0 md:overflow-visible snap-x snap-mandatory min-h-[320px] pt-4">
           {teamMembers.map((member, index) => (
             <div key={index} className="flex-shrink-0 w-[280px] md:w-auto snap-center">
-              <TeamMemberCard member={member} index={index} />
+                  <TeamMemberCard member={member} />
             </div>
           ))}
         </div>

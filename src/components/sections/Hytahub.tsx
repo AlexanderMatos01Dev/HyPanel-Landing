@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, ExternalLink, Layout, Terminal, Zap, Server, Users, Star, Download, Globe, Gamepad2, Palette, Code2 } from 'lucide-react';
+import { Box, ExternalLink, Layout,  Zap, Star, Download,  Gamepad2,  Code2 } from 'lucide-react';
 
 export const Hytahub: React.FC = () => {
   const [activeCard, setActiveCard] = useState<number | null>(null);

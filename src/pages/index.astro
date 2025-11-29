@@ -27,19 +27,19 @@ import Footer from '../components/sections/Footer';
 
 		<!-- Main content -->
 		<div class="relative z-10">
-			<Navbar client:idle />
-		<Hero client:idle />
-            <WhyHyPanel />
-            <ServerInfrastructure />
-            <ContentOS />
+			<Navbar client:visible />        
+			<Hero  client:load />                        
+			<WhyHyPanel />
+			<ServerInfrastructure />
+			<ContentOS />
 			<TheForge client:visible />
-            <CommunityAndBusiness client:visible />
-            <Ecosystem />
-            <Roadmap />
-            <Team />
-			<FAQ client:idle />
-            <EarlySupporters />
-            <Footer />
+			<CommunityAndBusiness client:visible />
+			<Ecosystem />
+			<Roadmap />
+			<Team />
+			<FAQ client:visible />           
+			<EarlySupporters />
+			<Footer />	
 		</div>
 
 		<style>

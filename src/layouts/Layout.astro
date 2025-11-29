@@ -54,173 +54,9 @@ const keywordsList = [
 ];
 const keywords = keywordsList.join(", ");
 
-// Social links for structured data
-const socialLinks = [
-	"https://github.com/HyPanel",
-	"https://x.com/HyPanel",
-	"https://twitter.com/HyPanel",
-	"https://discord.gg/QBVCzUq4TT",
-	"https://www.reddit.com/r/HyPanel/",
-	"https://patreon.com/HyPanel",
-	"https://buymeacoffee.com/hypanel_team"
-];
 
-// SoftwareApplication Schema (Primary)
-const structuredData = {
-	"@context": "https://schema.org",
-	"@type": "SoftwareApplication",
-	"name": "HyPanel",
-	"alternateName": ["HyPanel Platform", "HyPanel for Hytale"],
-	"applicationCategory": "GameApplication",
-	"applicationSubCategory": "Game Server Management",
-	"operatingSystem": "Web, Windows, macOS, Linux",
-	"description": description,
-	"abstract": shortDescription,
-	"url": SITE_URL,
-	"image": {
-		"@type": "ImageObject",
-		"url": absoluteImage,
-		"width": 1200,
-		"height": 630
-	},
-	"screenshot": absoluteImage,
-	"author": {
-		"@type": "Organization",
-		"name": SITE_NAME,
-		"url": SITE_URL,
-		"sameAs": socialLinks
-	},
-	"publisher": {
-		"@type": "Organization",
-		"name": SITE_NAME,
-		"url": SITE_URL,
-		"logo": {
-			"@type": "ImageObject",
-			"url": `${SITE_URL}/android-chrome-512x512.png`
-		}
-	},
-	"offers": {
-		"@type": "Offer",
-		"price": "0",
-		"priceCurrency": "USD",
-		"description": "Free tier available with premium options",
-		"availability": "https://schema.org/PreOrder"
-	},
-	"featureList": [
-		"One-click Hytale server deployment",
-		"Smart server hibernation (servers sleep when empty)",
-		"Hytahub content marketplace integration",
-		"The Forge visual logic editor",
-		"No-code game mechanics creation",
-		"Community management tools",
-		"Role-based permissions system",
-		"Integrated moderation tools",
-		"Monetization and store features",
-		"Discord integration",
-		"Real-time analytics and insights",
-		"Automatic backups and snapshots",
-		"Anti-DDoS protection"
-	],
-	"releaseNotes": "Building in public - Currently in pre-alpha development",
-	"softwareVersion": "Pre-Alpha",
-	"datePublished": publishedTime,
-	"dateModified": modifiedTime,
-	"inLanguage": "en",
-	"isAccessibleForFree": true,
-	"license": "https://creativecommons.org/licenses/by-nc/4.0/"
-};
 
-// Organization Schema
-const organizationData = {
-	"@context": "https://schema.org",
-	"@type": "Organization",
-	"name": SITE_NAME,
-	"legalName": "HyPanel Project",
-	"url": SITE_URL,
-	"logo": {
-		"@type": "ImageObject",
-		"url": `${SITE_URL}/android-chrome-512x512.png`,
-		"width": 512,
-		"height": 512
-	},
-	"image": absoluteImage,
-	"description": "Building the first complete platform for Hytale servers and communities. Open-source, community-driven, and designed specifically for the Hytale ecosystem.",
-	"foundingDate": "2024",
-	"founders": [
-		{
-			"@type": "Person",
-			"name": "Alexander",
-			"jobTitle": "Founder & Lead Developer"
-		},
-		{
-			"@type": "Person", 
-			"name": "Francisco",
-			"jobTitle": "Co-Founder & Developer"
-		}
-	],
-	"sameAs": socialLinks,
-	"contactPoint": [
-		{
-			"@type": "ContactPoint",
-			"contactType": "customer support",
-			"url": "https://discord.gg/QBVCzUq4TT",
-			"availableLanguage": ["English", "Spanish"]
-		}
-	],
-	"slogan": "Build Your Hytale Worlds Instantly",
-	"knowsAbout": ["Hytale", "Game Servers", "Server Hosting", "Game Development", "No-Code Tools", "Community Management"],
-	"memberOf": {
-		"@type": "Organization",
-		"name": "Hytale Community"
-	}
-};
 
-const faqData = {
-	"@context": "https://schema.org",
-	"@type": "FAQPage",
-	"mainEntity": [
-		{
-			"@type": "Question",
-			"name": "What is HyPanel?",
-			"acceptedAnswer": {
-				"@type": "Answer",
-				"text": "HyPanel is the first complete platform designed specifically for Hytale. It combines server infrastructure, content management (via Hytahub), a visual logic editor (The Forge), community tools and monetization — all in one integrated ecosystem."
-			}
-		},
-		{
-			"@type": "Question",
-			"name": "When will HyPanel be available?",
-			"acceptedAnswer": {
-				"@type": "Answer",
-				"text": "Hytale Early Access launches January 13, 2025. From that date, we can start building with the real game. We don't have a fixed launch date for HyPanel yet, but we're building the community, infrastructure and foundations now so we're ready."
-			}
-		},
-		{
-			"@type": "Question",
-			"name": "Is HyPanel free?",
-			"acceptedAnswer": {
-				"@type": "Answer",
-				"text": "There will be free plans thanks to smart resource management (servers sleep when empty) and marketplace integration. Premium plans offer more resources for larger projects and professional teams."
-			}
-		},
-		{
-			"@type": "Question",
-			"name": "What is Hytahub?",
-			"acceptedAnswer": {
-				"@type": "Answer",
-				"text": "Hytahub is an independent partner project building the largest content marketplace for Hytale. Mods, assets, maps and configurations from the community, integrated directly with HyPanel for seamless installation."
-			}
-		},
-		{
-			"@type": "Question",
-			"name": "What is The Forge?",
-			"acceptedAnswer": {
-				"@type": "Answer",
-				"text": "The Forge is HyPanel's visual logic editor. It lets you create game logic, events, quests, rewards and complex interactions using a drag-and-drop node-based interface without writing code."
-			}
-		}
-	]
-};
 ---
 <!doctype html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
@@ -393,7 +229,9 @@ const faqData = {
 		<!-- Fonts (Optimized Loading) -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="preload" href={FONT_URL} as="style" crossorigin onload="this.onload=null;this.rel='stylesheet'" />
+		<!-- Load fonts without blocking: preload + media=print swap onload -->
+		<link rel="preload" href={FONT_URL} as="style" crossorigin />
+		<link rel="stylesheet" href={FONT_URL} media="print" />
 		<noscript><link rel="stylesheet" href={FONT_URL} /></noscript>
 		
 		<!-- DNS Prefetch & Preconnect -->
@@ -414,69 +252,6 @@ const faqData = {
 		<!-- Generator -->
 		<meta name="generator" content={Astro.generator} />
 		
-		<!-- Structured Data (JSON-LD) -->
-		<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
-		<script type="application/ld+json" set:html={JSON.stringify(organizationData)} />
-		<script type="application/ld+json" set:html={JSON.stringify(faqData)} />
-		<script type="application/ld+json" set:html={JSON.stringify({
-			"@context": "https://schema.org",
-			"@type": "WebSite",
-			"name": SITE_NAME,
-			"alternateName": ["HyPanel Platform", "HyPanel for Hytale"],
-			"url": SITE_URL,
-			"description": description,
-			"publisher": {
-				"@type": "Organization",
-				"name": SITE_NAME,
-				"url": SITE_URL
-			},
-			"potentialAction": {
-				"@type": "SearchAction",
-				"target": {
-					"@type": "EntryPoint",
-					"urlTemplate": `${SITE_URL}/search?q={search_term_string}`
-				},
-				"query-input": "required name=search_term_string"
-			},
-			"inLanguage": "en-US"
-		})} />
-		<script type="application/ld+json" set:html={JSON.stringify({
-			"@context": "https://schema.org",
-			"@type": "WebPage",
-			"name": title,
-			"description": description,
-			"url": canonical,
-			"isPartOf": {
-				"@type": "WebSite",
-				"name": SITE_NAME,
-				"url": SITE_URL
-			},
-			"about": {
-				"@type": "SoftwareApplication",
-				"name": SITE_NAME,
-				"applicationCategory": "GameApplication"
-			},
-			"mainEntity": {
-				"@type": "SoftwareApplication",
-				"name": SITE_NAME
-			},
-			"breadcrumb": {
-				"@type": "BreadcrumbList",
-				"itemListElement": [{
-					"@type": "ListItem",
-					"position": 1,
-					"name": "Home",
-					"item": SITE_URL
-				}]
-			},
-			"speakable": {
-				"@type": "SpeakableSpecification",
-				"cssSelector": ["h1", "h2", ".hero-description"]
-			},
-			"datePublished": publishedTime,
-			"dateModified": modifiedTime,
-			"inLanguage": "en-US"
-		})} />
 	</head>
 	<body class="min-h-screen bg-[#0B0F19] text-[#E0E6ED] font-sans antialiased">
 		<a href="#main-content" title="Skip to main content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#EDA333] focus:text-[#0B0F19] focus:rounded-lg focus:outline-none">

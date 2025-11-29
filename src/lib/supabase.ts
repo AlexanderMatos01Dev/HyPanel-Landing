@@ -2,11 +2,6 @@
 const SUPABASE_URL = "https://iwcamtmajjwjipkzkkzq.supabase.co";
 const SUPABASE_KEY = "sb_publishable_jvVFh_g9IJ9oNganaA0WgA_i8wq9W-5";
 
-interface SubscriberData {
-  email: string;
-  ip: string;
-  origin: string;
-}
 
 interface SubscribeResult {
   success: boolean;
@@ -16,7 +11,6 @@ interface SubscribeResult {
 
 // Rate limiting storage keys
 const RATE_LIMIT_KEY = 'hypanel_rate_limit';
-const RATE_LIMIT_COUNT_KEY = 'hypanel_rate_count';
 
 interface RateLimitData {
   timestamp: number;

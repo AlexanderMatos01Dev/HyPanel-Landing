@@ -1,6 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { Hexagon } from 'lucide-react';
 import AlphaModal from '../ui/AlphaModal';
+
+const HexagonIcon = ({ className = '', size = 28, strokeWidth = 1.5 }: { className?: string; size?: number; strokeWidth?: number }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={strokeWidth}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+    aria-hidden="true"
+  >
+    <polygon points="12 2 20 7 20 17 12 22 4 17 4 7" />
+  </svg>
+);
 
 // Iconos SVG oficiales
 const XIcon = ({ size = 18 }: { size?: number }) => (
@@ -85,7 +101,7 @@ export const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
           <a href="/" onClick={handleLogoClick} title="HyPanel home" className="flex items-center gap-2 group">
             <div className="relative">
-              <Hexagon
+              <HexagonIcon
                 className={`text-[#EDA333] fill-[#EDA333]/10 w-7 h-7 md:w-8 md:h-8 transform-gpu transition-transform duration-500 ease-out origin-center ${logoAnimating ? 'scale-125 rotate-6' : 'group-hover:scale-110'}`}
                 strokeWidth={1.5}
               />

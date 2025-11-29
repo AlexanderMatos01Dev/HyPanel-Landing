@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Palette, Play, FileJson, Code, Copy, Zap, GitBranch, Swords, Gift, MessageSquare, Crown, GripVertical, X, Check } from 'lucide-react';
+import { Palette, FileJson, Code, Copy, Zap, GitBranch, Swords, Gift, MessageSquare, Crown, GripVertical,  Check } from 'lucide-react';
 
 interface NodeData {
   id: string;

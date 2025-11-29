@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Download, GitMerge, ShoppingBag, Check, Zap, Server, ExternalLink, Handshake } from 'lucide-react';
+import { Box, Download, GitMerge, ShoppingBag, Zap, Server, ExternalLink, Handshake } from 'lucide-react';
 
 export const ContentOS: React.FC = () => (
   <section id="content-os" className="py-20 bg-gradient-to-b from-[#0B0F19] to-[#0F1623] border-t border-[#2A3B4C] relative overflow-hidden scroll-mt-16">

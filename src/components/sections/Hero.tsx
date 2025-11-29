@@ -1,5 +1,72 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { ChevronRight, Globe, Heart, Zap, Loader2, Clock, AlertCircle, CheckCircle2, UserCheck, Mail } from 'lucide-react';
+
+// Inline SVG icons to avoid importing lucide-react in client bundles
+const ChevronRightIcon = ({ size = 16, className = '' }: { size?: number; className?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+    <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const MailIcon = ({ size = 16, className = '' }: { size?: number; className?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M3 6.5v11A2.5 2.5 0 0 0 5.5 20h13A2.5 2.5 0 0 0 21 17.5v-11A2.5 2.5 0 0 0 18.5 4h-13A2.5 2.5 0 0 0 3 6.5zm1.5.5L12 12l7.5-4.5" />
+  </svg>
+);
+
+const LoaderIcon = ({ size = 16, className = '' }: { size?: number; className?: string }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 50 50" aria-hidden="true">
+    <circle cx="25" cy="25" r="20" fill="none" stroke="currentColor" strokeWidth="5" strokeLinecap="round" strokeDasharray="31.4 31.4" />
+  </svg>
+);
+
+const CheckCircleIcon = ({ size = 20, className = '' }: { size?: number; className?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+    <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" />
+    <path d="M8 12l2 2 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const UserCheckIcon = ({ size = 20, className = '' }: { size?: number; className?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+    <circle cx="12" cy="8" r="3" stroke="currentColor" strokeWidth="2" />
+    <path d="M4 20c1.7-4 6.3-4 8-4s6.3 0 8 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M16 11l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const ClockIcon = ({ size = 20, className = '' }: { size?: number; className?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+    <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" />
+    <path d="M12 7v6l3 2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+const AlertCircleIcon = ({ size = 12, className = '' }: { size?: number; className?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+    <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2" />
+    <path d="M12 8v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    <path d="M12 16h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+  </svg>
+);
+
+const HeartIcon = ({ size = 12, className = '' }: { size?: number; className?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M12 21s-7-4.35-9-7.1C-1 8.5 6 3 12 8c6-5 13 0 9 5.9-2 2.75-9 7.1-9 7.1z" />
+  </svg>
+);
+
+const ZapIcon = ({ size = 12, className = '' }: { size?: number; className?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M13 2L3 14h7l-1 8L21 10h-7l-1-8z" />
+  </svg>
+);
+
+const GlobeIcon = ({ size = 24, className = '', strokeWidth = 1.5 }: { size?: number; className?: string; strokeWidth?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} className={className} aria-hidden="true">
+    <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
+    <path d="M2.05 6.05h19.9M2.05 17.95h19.9M12 2v20M7 4v16M17 4v16" />
+  </svg>
+);
 import { HERO_MESSAGES } from '../../types/hero';
 import InstanceNode from '../ui/InstanceNode';
 import ConnectionLine from '../ui/ConnectionLine';
@@ -236,7 +303,7 @@ export const Hero: React.FC = () => {
                 <div className="p-4 bg-emerald-500/10 border border-emerald-500/40 rounded-xl">
                   <div className="flex items-start gap-3">
                     <div className="p-2 bg-emerald-500/20 rounded-lg">
-                      <CheckCircle2 size={20} className="text-emerald-400" />
+                      <CheckCircleIcon size={20} className="text-emerald-400" />
                     </div>
                     <div className="flex-1">
                       <p className="text-emerald-400 font-bold text-sm">Registration successful!</p>
@@ -275,7 +342,7 @@ export const Hero: React.FC = () => {
                 <div className="p-4 bg-[#4DA6FF]/10 border border-[#4DA6FF]/40 rounded-xl">
                   <div className="flex items-start gap-3">
                     <div className="p-2 bg-[#4DA6FF]/20 rounded-lg">
-                      <UserCheck size={20} className="text-[#4DA6FF]" />
+                      <UserCheckIcon size={20} className="text-[#4DA6FF]" />
                     </div>
                     <div className="flex-1">
                       <p className="text-[#4DA6FF] font-bold text-sm">You're already registered!</p>
@@ -314,7 +381,7 @@ export const Hero: React.FC = () => {
                 <div className="p-4 bg-orange-500/10 border border-orange-500/40 rounded-xl">
                   <div className="flex items-start gap-3">
                     <div className="p-2 bg-orange-500/20 rounded-lg">
-                      <Clock size={20} className="text-orange-400 animate-pulse" />
+                      <ClockIcon size={20} className="text-orange-400 animate-pulse" />
                     </div>
                     <div className="flex-1">
                       <p className="text-orange-400 font-bold text-sm">Too many attempts</p>
@@ -346,7 +413,7 @@ export const Hero: React.FC = () => {
               <>
                 <div className="flex-1 relative">
                   <div className="absolute left-3 top-1/2 -translate-y-1/2 text-muted">
-                    <Mail size={16} />
+                    <MailIcon size={16} />
                   </div>
                   <input 
                     type="email" 
@@ -369,14 +436,14 @@ export const Hero: React.FC = () => {
                   className="px-5 py-3 bg-[#EDA333] hover:bg-[#D48F22] text-[#0B0F19] font-bold rounded-xl transition-transform hover:-translate-y-1 shadow-xl shadow-[#EDA333]/10 flex items-center justify-center gap-2 text-sm disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                 >
                   {status === 'loading' ? (
-                    <><Loader2 size={16} className="animate-spin" /> Registering...</>
+                    <><LoaderIcon size={16} className="animate-spin" /> Registering...</>
                   ) : (
-                    <>Join the Alpha <ChevronRight size={16} /></>
+                    <>Join the Alpha <ChevronRightIcon size={16} /></>
                   )}
                 </button>
                 {status === 'error' && (
                   <p className="text-red-400 text-xs flex items-center gap-1 mt-1">
-                    <AlertCircle size={12} /> {errorMessage}
+                    <AlertCircleIcon size={12} /> {errorMessage}
                   </p>
                 )}
               </>
@@ -384,10 +451,10 @@ export const Hero: React.FC = () => {
           </form>
           <div className="flex items-center gap-5 text-xs font-medium text-muted">
              <div className="flex items-center gap-2">
-               <Heart size={12} className="text-[#EDA333]"/> Made for the community
+               <HeartIcon size={12} className="text-[#EDA333]"/> Made for the community
              </div>
              <div className="flex items-center gap-2">
-               <Zap size={12} className="text-[#EDA333]"/> Hassle-free
+               <ZapIcon size={12} className="text-[#EDA333]"/> Hassle-free
              </div>
           </div>
         </div>
@@ -434,7 +501,7 @@ export const Hero: React.FC = () => {
                <div className={`absolute inset-0 rounded-full border-2 transition-all duration-700 ease-in-out ${simStep >= 1 ? 'border-[#EDA333] opacity-100 scale-110' : 'border-transparent opacity-0 scale-100'}`}></div>
                <div className={`absolute inset-0 rounded-full border-2 transition-all duration-1000 ease-in-out ${simStep >= 1 ? 'border-[#EDA333] opacity-50 scale-125' : 'border-transparent opacity-0 scale-100'}`}></div>
                <div className="relative">
-                 <Globe className={`w-10 h-10 md:w-12 md:h-12 mb-1 transition-all duration-500 ${simStep >= 1 ? 'text-[#EDA333] drop-shadow-[0_0_8px_rgba(237,163,51,0.5)]' : 'text-gray-600'}`} strokeWidth={1.5} />
+                 <GlobeIcon className={`w-10 h-10 md:w-12 md:h-12 mb-1 transition-all duration-500 ${simStep >= 1 ? 'text-[#EDA333] drop-shadow-[0_0_8px_rgba(237,163,51,0.5)]' : 'text-gray-600'}`} strokeWidth={1.5} />
                </div>
                <span className="text-[9px] md:text-[10px] font-bold text-[#8B9BB4] tracking-[0.2em] uppercase">HyCore</span>
                <div className={`absolute -bottom-8 px-2.5 py-1 rounded-lg text-[9px] font-medium border backdrop-blur-md shadow-xl transition-all duration-500 whitespace-nowrap ${getCoreStyle()}`}>

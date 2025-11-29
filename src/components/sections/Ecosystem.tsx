@@ -1,5 +1,5 @@
 import React from 'react';
-import { Server, Box, Palette, Users, Coins, ArrowRight, Hexagon, Sparkles } from 'lucide-react';
+import { Server, Box, Palette, Users, Coins, Hexagon, Sparkles } from 'lucide-react';
 
 export const Ecosystem: React.FC = () => (
   <section id="ecosystem" className="py-20 min-h-screen bg-gradient-to-b from-[#0F1623] to-[#0B0F19] border-t border-[#2A3B4C] relative overflow-hidden scroll-mt-16">

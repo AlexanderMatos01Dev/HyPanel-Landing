@@ -1,5 +1,5 @@
 import React from 'react';
-import { Rocket, Calendar, CheckCircle2, Circle, Clock, Sparkles, Flag, Zap, Users, Target, Gamepad2, ArrowRight } from 'lucide-react';
+import { Rocket, Calendar, CheckCircle2, Circle, Clock, Sparkles, Flag,  Users, Target, Gamepad2, ArrowRight } from 'lucide-react';
 
 interface MilestoneProps {
   date: string;
