@@ -41,8 +41,8 @@ const TeamMemberCard: React.FC<{ member: TeamMember; index: number }> = ({ membe
           <span style={{ color: member.color }}>{member.avatar}</span>
         </div>
         {/* Online indicator */}
-        <div className="absolute -bottom-1 -right-1 left-0 right-0 mx-auto w-fit">
-          <div className="w-4 h-4 rounded-full bg-[#22C55E] border-4 border-[#0B0F19]"></div>
+        <div className="absolute bottom-0 right-1/2 translate-x-1/2 translate-y-1/2">
+          <div className="w-4 h-4 rounded-full bg-[#22C55E] border-2 border-[#0B0F19]"></div>
         </div>
       </div>
 

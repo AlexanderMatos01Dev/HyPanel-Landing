@@ -35,12 +35,29 @@ const BuyMeCoffeeIcon = ({ size = 18 }: { size?: number }) => (
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
   const [isAlphaModalOpen, setIsAlphaModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll('section[id]');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
@@ -63,16 +80,14 @@ export const Navbar: React.FC = () => {
             <span className="font-bold text-lg md:text-xl tracking-tight text-white">HyPanel</span>
           </a>
           <div className="hidden lg:flex items-center gap-4 xl:gap-6 text-sm font-medium text-[#8B9BB4]">
-            <a href="#why-hypanel" onClick={(e) => handleNavClick(e, 'why-hypanel')} className="relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full whitespace-nowrap">About</a>
-            <a href="#server-infrastructure" onClick={(e) => handleNavClick(e, 'server-infrastructure')} className="relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full">Infrastructure</a>
-            <a href="#the-forge" onClick={(e) => handleNavClick(e, 'the-forge')} className="relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full">The Forge</a>
-            <a href="#roadmap" onClick={(e) => handleNavClick(e, 'roadmap')} className="relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full">Roadmap</a>
-            <a href="#team" onClick={(e) => handleNavClick(e, 'team')} className="relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full">Team</a>
-            <a href="#faq" onClick={(e) => handleNavClick(e, 'faq')} className="relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full">FAQ</a>
-            <span className="relative py-1 cursor-default">
-              <span className="text-muted">Blog</span>
-              <span className="absolute -top-1 -right-8 px-1.5 py-0.5 bg-[#EDA333]/20 text-[#EDA333] text-[8px] font-bold rounded">SOON</span>
-            </span>
+            <a href="#why-hypanel" onClick={(e) => handleNavClick(e, 'why-hypanel')} className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'why-hypanel' ? 'after:w-full' : 'after:w-0'} whitespace-nowrap`}>About</a>
+            <a href="#server-infrastructure" onClick={(e) => handleNavClick(e, 'server-infrastructure')} className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'server-infrastructure' ? 'after:w-full' : 'after:w-0'}`}>Infrastructure</a>
+            <a href="#the-forge" onClick={(e) => handleNavClick(e, 'the-forge')} className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'the-forge' ? 'after:w-full' : 'after:w-0'}`}>The Forge</a>
+            <a href="#ecosystem" onClick={(e) => handleNavClick(e, 'ecosystem')} className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'ecosystem' ? 'after:w-full' : 'after:w-0'}`}>Ecosystem</a>
+            <a href="#roadmap" onClick={(e) => handleNavClick(e, 'roadmap')} className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'roadmap' ? 'after:w-full' : 'after:w-0'}`}>Roadmap</a>
+            <a href="#faq" onClick={(e) => handleNavClick(e, 'faq')} className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'faq' ? 'after:w-full' : 'after:w-0'}`}>FAQ</a>
+            <span className="text-[#565b5b] py-1 cursor-default">Blog</span>
+            <a href="#supporters" onClick={(e) => handleNavClick(e, 'supporters')} className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'supporters' ? 'after:w-full' : 'after:w-0'} whitespace-nowrap`}>Support</a>
           </div>
           <div className="flex items-center gap-2 md:gap-3">
             <div className="hidden md:flex items-center gap-0.5 border-r border-[#2A3B4C] pr-2 md:pr-3">

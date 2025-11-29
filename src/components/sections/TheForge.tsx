@@ -426,7 +426,7 @@ export const TheForge: React.FC = () => {
   };
 
   return (
-    <section id="the-forge" className="py-20 bg-gradient-to-b from-[#0F1623] to-[#0B0F19] border-t border-[#2A3B4C] relative overflow-hidden scroll-mt-16">
+    <section id="the-forge" className="py-20 min-h-screen bg-gradient-to-b from-[#0F1623] to-[#0B0F19] border-t border-[#2A3B4C] relative overflow-hidden scroll-mt-16">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(237,163,51,0.05),transparent_60%)]"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
@@ -444,10 +444,10 @@ export const TheForge: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
           {/* Left: Visual Editor Preview */}
           <div className="relative order-2 lg:order-1 w-full min-w-0">
-            <div className="bg-[#0B0F19] border border-[#2A3B4C] rounded-2xl shadow-2xl">
+            <div className="bg-[#0B0F19] border border-[#2A3B4C] rounded-2xl shadow-2xl overflow-hidden flex flex-col h-full">
               {/* Editor Header */}
               <div className="bg-[#151D2C] px-3 sm:px-4 py-3 flex items-center justify-between border-b border-[#2A3B4C]">
                 <div className="flex items-center gap-2 sm:gap-3 min-w-0">
@@ -476,7 +476,7 @@ export const TheForge: React.FC = () => {
               {!showJson ? (
                 <div 
                   ref={containerRef}
-                  className={`relative h-[260px] sm:h-[300px] bg-[#080B12] overflow-x-auto overflow-y-hidden scrollbar-none ${isDraggingCanvas ? 'cursor-grabbing' : 'cursor-grab'}`}
+                  className={`relative flex-1 min-h-[300px] sm:min-h-[360px] bg-[#080B12] overflow-x-auto overflow-y-hidden scrollbar-none ${isDraggingCanvas ? 'cursor-grabbing' : 'cursor-grab'}`}
                   style={{
                     backgroundImage: 'radial-gradient(circle, #2A3B4C 1px, transparent 1px)',
                     backgroundSize: '20px 20px',

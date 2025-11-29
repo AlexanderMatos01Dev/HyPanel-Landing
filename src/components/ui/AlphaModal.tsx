@@ -13,28 +13,8 @@ export const AlphaModal: React.FC<AlphaModalProps> = ({ isOpen, onClose }) => {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error' | 'rate-limited'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
   const [waitTime, setWaitTime] = useState(0);
-  const scrollPositionRef = useRef(0);
 
-  // Manejo del scroll al abrir/cerrar modal
-  useEffect(() => {
-    if (isOpen) {
-      // Guardar posición actual ANTES de bloquear
-      scrollPositionRef.current = window.scrollY;
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollPositionRef.current}px`;
-      document.body.style.width = '100%';
-      document.body.style.overflow = 'hidden';
-    }
-    
-    return () => {
-      // Limpiar estilos
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
-
+  
   // Countdown timer para rate limiting
   useEffect(() => {
     if (status === 'rate-limited' && waitTime > 0) {
@@ -93,23 +73,11 @@ export const AlphaModal: React.FC<AlphaModalProps> = ({ isOpen, onClose }) => {
   };
 
   const handleClose = () => {
-    // Restaurar scroll a la posición guardada
-    const savedPosition = scrollPositionRef.current;
-    
-    // Limpiar estilos del body
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.width = '';
-    document.body.style.overflow = '';
-    
-    // Restaurar posición de scroll
-    window.scrollTo(0, savedPosition);
-    
     // Reset state
     setStatus('idle');
     setEmail('');
     setErrorMessage('');
-    
+
     onClose();
   };
 

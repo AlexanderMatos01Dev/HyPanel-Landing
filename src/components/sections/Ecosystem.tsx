@@ -2,7 +2,7 @@ import React from 'react';
 import { Server, Box, Palette, Users, Coins, ArrowRight, Hexagon, Sparkles } from 'lucide-react';
 
 export const Ecosystem: React.FC = () => (
-  <section id="ecosystem" className="py-20 bg-gradient-to-b from-[#0F1623] to-[#0B0F19] border-t border-[#2A3B4C] relative overflow-hidden scroll-mt-16">
+  <section id="ecosystem" className="py-20 min-h-screen bg-gradient-to-b from-[#0F1623] to-[#0B0F19] border-t border-[#2A3B4C] relative overflow-hidden scroll-mt-16">
     <div className="absolute inset-0">
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#4DA6FF]/5 rounded-full blur-[100px]"></div>
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#EDA333]/5 rounded-full blur-[100px]"></div>
