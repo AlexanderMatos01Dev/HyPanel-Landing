@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github, Twitter, Linkedin, Globe, Code2, Palette, Server, Users, Heart, Sparkles, ExternalLink } from 'lucide-react';
+import { Users, Heart, Sparkles } from 'lucide-react';
 
 interface TeamMember {
   name: string;

@@ -1,7 +1,7 @@
 /* TEAM */
 Project: HyPanel
 Description: The first complete platform for Hytale
-Site: https://hypanel.dev
+Site: https://hypanel.net
 Twitter: @HyPanel
 Discord: https://discord.gg/QBVCzUq4TT
 GitHub: https://github.com/HyPanel

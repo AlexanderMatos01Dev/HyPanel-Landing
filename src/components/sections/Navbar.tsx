@@ -52,7 +52,7 @@ export const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ease-out ${scrolled ? 'bg-[#0B0F19]/95 backdrop-blur-xl shadow-lg shadow-black/10' : 'bg-gradient-to-b from-[#0B0F19]/80 to-transparent'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ease-out bg-[#0B0F19]/90 ${scrolled ? 'backdrop-blur-xl shadow-lg shadow-black/10 bg-[#0B0F19]/100' : ''}`}>
       <div className={`border-b transition-all duration-500 ${scrolled ? 'border-[#2A3B4C]/50' : 'border-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
           <a href="/" className="flex items-center gap-2 group">
