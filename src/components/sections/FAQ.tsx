@@ -74,7 +74,7 @@ const FAQItemComponent: React.FC<{ item: FAQItem; isOpen: boolean; onToggle: () 
 );
 
 export const FAQ: React.FC = () => {
-  const [openIndexGeneral, setOpenIndexGeneral] = useState<number | null>(0);
+  const [openIndexGeneral, setOpenIndexGeneral] = useState<number | null>(null);
   const [openIndexUsage, setOpenIndexUsage] = useState<number | null>(null);
 
   return (

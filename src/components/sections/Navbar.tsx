@@ -77,29 +77,13 @@ export const Navbar: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    const element = document.getElementById(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    // Trigger a short animation on the logo, delay scroll slightly so the animation is noticed
-    setLogoAnimating(true);
-    // Delay the scroll a bit so the animation is visible and doesn't feel abrupt
-    try { window.setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 120); } catch {}
-    // Restore animation state after it finishes
-    window.setTimeout(() => setLogoAnimating(false), 600);
-  };
+  // Navigation handled by native anchor behavior (no JS handlers)
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ease-out bg-[#0B0F19]/90 ${scrolled ? 'backdrop-blur-xl shadow-lg shadow-black/10 bg-[#0B0F19]/100' : ''}`}>
       <div className={`border-b transition-all duration-500 ${scrolled ? 'border-[#2A3B4C]/50' : 'border-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
-          <a href="/" onClick={handleLogoClick} title="HyPanel home" className="flex items-center gap-2 group">
+          <a href="/" title="HyPanel home" className="flex items-center gap-2 group">
             <div className="relative">
               <HexagonIcon
                 className={`text-[#EDA333] fill-[#EDA333]/10 w-7 h-7 md:w-8 md:h-8 transform-gpu transition-transform duration-500 ease-out origin-center ${logoAnimating ? 'scale-125 rotate-6' : 'group-hover:scale-110'}`}
@@ -110,14 +94,14 @@ export const Navbar: React.FC = () => {
             <span className={`font-bold text-lg md:text-xl tracking-tight text-white transform-gpu transition-transform duration-500 ease-out origin-center ${logoAnimating ? 'scale-105' : ''}`}>HyPanel</span>
           </a>
           <div className="hidden lg:flex items-center gap-4 xl:gap-6 text-sm font-medium text-[#8B9BB4]">
-            <a href="#why-hypanel" title="About HyPanel" onClick={(e) => handleNavClick(e, 'why-hypanel')} className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'why-hypanel' ? 'after:w-full' : 'after:w-0'} whitespace-nowrap`}>About</a>
-            <a href="#server-infrastructure" title="Server infrastructure" onClick={(e) => handleNavClick(e, 'server-infrastructure')} className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'server-infrastructure' ? 'after:w-full' : 'after:w-0'}`}>Infrastructure</a>
-            <a href="#the-forge" title="The Forge visual editor" onClick={(e) => handleNavClick(e, 'the-forge')} className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'the-forge' ? 'after:w-full' : 'after:w-0'}`}>The Forge</a>
-            <a href="#ecosystem" title="Ecosystem" onClick={(e) => handleNavClick(e, 'ecosystem')} className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'ecosystem' ? 'after:w-full' : 'after:w-0'}`}>Ecosystem</a>
-            <a href="#roadmap" title="Roadmap" onClick={(e) => handleNavClick(e, 'roadmap')} className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'roadmap' ? 'after:w-full' : 'after:w-0'}`}>Roadmap</a>
-            <a href="#faq" title="FAQ" onClick={(e) => handleNavClick(e, 'faq')} className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'faq' ? 'after:w-full' : 'after:w-0'}`}>FAQ</a>
+            <a href="#why-hypanel" title="About HyPanel" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'why-hypanel' ? 'after:w-full' : 'after:w-0'} whitespace-nowrap`}>About</a>
+            <a href="#server-infrastructure" title="Server infrastructure" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'server-infrastructure' ? 'after:w-full' : 'after:w-0'}`}>Infrastructure</a>
+            <a href="#the-forge" title="The Forge visual editor" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'the-forge' ? 'after:w-full' : 'after:w-0'}`}>The Forge</a>
+            <a href="#ecosystem" title="Ecosystem" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'ecosystem' ? 'after:w-full' : 'after:w-0'}`}>Ecosystem</a>
+            <a href="#roadmap" title="Roadmap" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'roadmap' ? 'after:w-full' : 'after:w-0'}`}>Roadmap</a>
+            <a href="#faq" title="FAQ" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'faq' ? 'after:w-full' : 'after:w-0'}`}>FAQ</a>
             <span className="text-[#565b5b] py-1 cursor-default">Blog</span>
-            <a href="#supporters" title="Support & Early Supporters" onClick={(e) => handleNavClick(e, 'supporters')} className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'supporters' ? 'after:w-full' : 'after:w-0'} whitespace-nowrap`}>Support</a>
+            <a href="#supporters" title="Support & Early Supporters" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'supporters' ? 'after:w-full' : 'after:w-0'} whitespace-nowrap`}>Support</a>
           </div>
           <div className="flex items-center gap-2 md:gap-3">
             <div className="hidden md:flex items-center gap-0.5 border-r border-[#2A3B4C] pr-2 md:pr-3">
