@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Analytics from '@vercel/analytics/astro';
 
 interface Props {
 	title?: string;
@@ -483,5 +484,6 @@ const faqData = {
 		<main id="main-content" class="min-h-screen focus:outline-none" role="main" tabindex="-1">
 			<slot />
 		</main>
+		<Analytics />
 	</body>
 </html>
