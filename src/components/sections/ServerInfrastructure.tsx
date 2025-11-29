@@ -70,7 +70,7 @@ export const ServerInfrastructure: React.FC = () => (
               <Zap size={20} className="text-[#4DA6FF]" />
             </div>
             <div>
-              <h4 className="text-white font-bold mb-1">Smart Orchestration</h4>
+              <h3 className="text-white font-bold mb-1">Smart Orchestration</h3>
               <p className="text-[#8B9BB4] text-sm">Servers sleep when empty and wake up in &lt;1s. Maximum efficiency.</p>
             </div>
           </div>
@@ -80,7 +80,7 @@ export const ServerInfrastructure: React.FC = () => (
               <GitBranch size={20} className="text-[#A78BFA]" />
             </div>
             <div>
-              <h4 className="text-white font-bold mb-1">Dev → Staging → Production</h4>
+              <h3 className="text-white font-bold mb-1">Dev → Staging → Production</h3>
               <p className="text-[#8B9BB4] text-sm">Professional environments. Test before deploying to production.</p>
             </div>
           </div>
@@ -90,7 +90,7 @@ export const ServerInfrastructure: React.FC = () => (
               <Copy size={20} className="text-[#4ADE80]" />
             </div>
             <div>
-              <h4 className="text-white font-bold mb-1">Isolated and Clonable Worlds</h4>
+              <h3 className="text-white font-bold mb-1">Isolated and Clonable Worlds</h3>
               <p className="text-[#8B9BB4] text-sm">Each world is independent. Duplicate configurations with one click.</p>
             </div>
           </div>
@@ -100,7 +100,7 @@ export const ServerInfrastructure: React.FC = () => (
               <Database size={20} className="text-[#EDA333]" />
             </div>
             <div>
-              <h4 className="text-white font-bold mb-1">Backups, Snapshots & Audit</h4>
+              <h3 className="text-white font-bold mb-1">Backups, Snapshots & Audit</h3>
               <p className="text-[#8B9BB4] text-sm">Full control of your project. Restore any previous state.</p>
             </div>
           </div>
@@ -110,7 +110,7 @@ export const ServerInfrastructure: React.FC = () => (
               <Shield size={20} className="text-[#F87171]" />
             </div>
             <div>
-              <h4 className="text-white font-bold mb-1">Integrated Anti-DDoS</h4>
+              <h3 className="text-white font-bold mb-1">Integrated Anti-DDoS</h3>
               <p className="text-[#8B9BB4] text-sm">UDP proxy filters attacks automatically. Zero configuration.</p>
             </div>
           </div>

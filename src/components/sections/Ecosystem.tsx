@@ -42,7 +42,7 @@ export const Ecosystem: React.FC = () => (
             <div className="w-10 h-10 bg-[#4DA6FF]/10 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
               <Server size={20} className="text-[#4DA6FF]" />
             </div>
-            <h4 className="text-white font-bold text-sm">Hosting</h4>
+              <h3 className="text-white font-bold text-sm">Hosting</h3>
             <p className="text-[#8B9BB4] text-[10px] mt-1">Scalable infrastructure</p>
           </div>
 
@@ -50,7 +50,7 @@ export const Ecosystem: React.FC = () => (
             <div className="w-10 h-10 bg-purple-400/10 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
               <Box size={20} className="text-purple-400" />
             </div>
-            <h4 className="text-white font-bold text-sm">Content</h4>
+              <h3 className="text-white font-bold text-sm">Content</h3>
             <p className="text-[#8B9BB4] text-[10px] mt-1">Hytahub marketplace</p>
           </div>
 
@@ -58,7 +58,7 @@ export const Ecosystem: React.FC = () => (
             <div className="w-10 h-10 bg-orange-400/10 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
               <Palette size={20} className="text-orange-400" />
             </div>
-            <h4 className="text-white font-bold text-sm">Creation</h4>
+              <h3 className="text-white font-bold text-sm">Creation</h3>
             <p className="text-[#8B9BB4] text-[10px] mt-1">The Forge editor</p>
           </div>
 
@@ -66,7 +66,7 @@ export const Ecosystem: React.FC = () => (
             <div className="w-10 h-10 bg-green-400/10 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
               <Users size={20} className="text-green-400" />
             </div>
-            <h4 className="text-white font-bold text-sm">Community</h4>
+              <h3 className="text-white font-bold text-sm">Community</h3>
             <p className="text-[#8B9BB4] text-[10px] mt-1">Management tools</p>
           </div>
 
@@ -74,7 +74,7 @@ export const Ecosystem: React.FC = () => (
             <div className="w-10 h-10 bg-[#EDA333]/10 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:scale-110 transition-transform">
               <Coins size={20} className="text-[#EDA333]" />
             </div>
-            <h4 className="text-white font-bold text-sm">Business</h4>
+              <h3 className="text-white font-bold text-sm">Business</h3>
             <p className="text-[#8B9BB4] text-[10px] mt-1">Integrated monetization</p>
           </div>
         </div>

@@ -9,7 +9,7 @@ export const InstanceNode: React.FC<InstanceNodeProps> = ({ position, label, sta
         ? 'bg-[#0F1623]/90 border-[#4DA6FF] shadow-[#4DA6FF]/30 scale-100' 
         : status === 'waking'
         ? 'bg-[#0F1623]/80 border-[#EDA333] shadow-[#EDA333]/20 scale-[0.98] animate-pulse'
-        : 'bg-[#0B0F19]/60 border-gray-800 shadow-none scale-95 opacity-70 grayscale'
+        : 'bg-[#0B0F19]/60 border-gray-800 scale-95 opacity-70 grayscale'
       }`}
     style={position}
   >

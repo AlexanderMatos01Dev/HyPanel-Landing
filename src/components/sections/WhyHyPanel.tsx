@@ -23,6 +23,7 @@ const Pillar: React.FC<PillarProps> = ({ icon, title, description, bgColor, href
   return (
     <a 
       href={href}
+      title={external ? `Visit ${title}` : `${title} section`}
       onClick={handleClick}
       target={external ? "_blank" : undefined}
       rel={external ? "noopener noreferrer" : undefined}
@@ -245,6 +246,7 @@ export const WhyHyPanel: React.FC = () => {
             </p>
             <a 
               href="#server-infrastructure"
+              title="Explore server infrastructure"
               onClick={(e) => {
                 e.preventDefault();
                 document.querySelector('#server-infrastructure')?.scrollIntoView({ behavior: 'smooth' });

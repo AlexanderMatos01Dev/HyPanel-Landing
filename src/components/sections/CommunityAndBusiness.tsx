@@ -37,7 +37,7 @@ export const CommunityAndBusiness: React.FC = () => (
             <div className="flex items-start gap-3 p-3 rounded-xl bg-[#0B0F19]/50 border border-[#2A3B4C]">
               <Shield size={18} className="text-green-400 mt-0.5" />
               <div>
-                <h4 className="text-white font-bold text-sm">Roles and advanced permissions</h4>
+                <h3 className="text-white font-bold text-sm">Roles and advanced permissions</h3>
                 <p className="text-[#8B9BB4] text-xs">Centralized control. Define who can do what.</p>
               </div>
             </div>
@@ -47,7 +47,7 @@ export const CommunityAndBusiness: React.FC = () => (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
               </svg>
               <div>
-                <h4 className="text-white font-bold text-sm">Integrated moderation</h4>
+                <h3 className="text-white font-bold text-sm">Integrated moderation</h3>
                 <p className="text-[#8B9BB4] text-xs">Filters, reports and automatic actions.</p>
               </div>
             </div>
@@ -55,7 +55,7 @@ export const CommunityAndBusiness: React.FC = () => (
             <div className="flex items-start gap-3 p-3 rounded-xl bg-[#0B0F19]/50 border border-[#2A3B4C]">
               <BarChart3 size={18} className="text-purple-400 mt-0.5" />
               <div>
-                <h4 className="text-white font-bold text-sm">Analytics and insights</h4>
+                <h3 className="text-white font-bold text-sm">Analytics and insights</h3>
                 <p className="text-[#8B9BB4] text-xs">Understand your players. Activity, retention, behavior.</p>
               </div>
             </div>
@@ -63,7 +63,7 @@ export const CommunityAndBusiness: React.FC = () => (
             <div className="flex items-start gap-3 p-3 rounded-xl bg-[#0B0F19]/50 border border-[#2A3B4C]">
               <MessageSquare size={18} className="text-[#5865F2] mt-0.5" />
               <div>
-                <h4 className="text-white font-bold text-sm">Discord integration</h4>
+                <h3 className="text-white font-bold text-sm">Discord integration</h3>
                 <p className="text-[#8B9BB4] text-xs">Sync roles, notifications and events with your server.</p>
               </div>
             </div>
@@ -86,7 +86,7 @@ export const CommunityAndBusiness: React.FC = () => (
             <div className="flex items-start gap-3 p-3 rounded-xl bg-[#0B0F19]/50 border border-[#2A3B4C]">
               <ShoppingBag size={18} className="text-[#EDA333] mt-0.5" />
               <div>
-                <h4 className="text-white font-bold text-sm">Integrated stores</h4>
+                <h3 className="text-white font-bold text-sm">Integrated stores</h3>
                 <p className="text-[#8B9BB4] text-xs">Sell ranks, cosmetics and perks directly in-game.</p>
               </div>
             </div>
@@ -94,7 +94,7 @@ export const CommunityAndBusiness: React.FC = () => (
             <div className="flex items-start gap-3 p-3 rounded-xl bg-[#0B0F19]/50 border border-[#2A3B4C]">
               <CreditCard size={18} className="text-blue-400 mt-0.5" />
               <div>
-                <h4 className="text-white font-bold text-sm">Subscriptions and passes</h4>
+                <h3 className="text-white font-bold text-sm">Subscriptions and passes</h3>
                 <p className="text-[#8B9BB4] text-xs">Recurring income. Exclusive access for subscribers.</p>
               </div>
             </div>
@@ -104,7 +104,7 @@ export const CommunityAndBusiness: React.FC = () => (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
               </svg>
               <div>
-                <h4 className="text-white font-bold text-sm">Creator marketplace</h4>
+                <h3 className="text-white font-bold text-sm">Creator marketplace</h3>
                 <p className="text-[#8B9BB4] text-xs">Sell your mods and assets. Passive income for creators.</p>
               </div>
             </div>
@@ -112,7 +112,7 @@ export const CommunityAndBusiness: React.FC = () => (
             <div className="flex items-start gap-3 p-3 rounded-xl bg-[#0B0F19]/50 border border-[#2A3B4C]">
               <TrendingUp size={18} className="text-green-400 mt-0.5" />
               <div>
-                <h4 className="text-white font-bold text-sm">Automatic revenue sharing</h4>
+                <h3 className="text-white font-bold text-sm">Automatic revenue sharing</h3>
                 <p className="text-[#8B9BB4] text-xs">Transparent system. Creators, servers and community win.</p>
               </div>
             </div>

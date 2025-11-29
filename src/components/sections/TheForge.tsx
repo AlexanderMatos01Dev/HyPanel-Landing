@@ -574,7 +574,7 @@ export const TheForge: React.FC = () => {
                 <GitBranch size={20} className="text-orange-400 sm:w-6 sm:h-6" />
               </div>
               <div>
-                <h4 className="text-white font-bold text-base sm:text-lg mb-1 sm:mb-2">Intuitive visual editor</h4>
+                  <h3 className="text-white font-bold text-base sm:text-lg mb-1 sm:mb-2">Intuitive visual editor</h3>
                 <p className="text-[#8B9BB4] text-xs sm:text-sm">Drag, connect and configure. Design complex logic as if you were drawing a flowchart.</p>
               </div>
             </div>
@@ -584,7 +584,7 @@ export const TheForge: React.FC = () => {
                 <FileJson size={20} className="text-blue-400 sm:w-6 sm:h-6" />
               </div>
               <div>
-                <h4 className="text-white font-bold text-base sm:text-lg mb-1 sm:mb-2">Automatic valid JSON generation</h4>
+                  <h3 className="text-white font-bold text-base sm:text-lg mb-1 sm:mb-2">Automatic valid JSON generation</h3>
                 <p className="text-[#8B9BB4] text-xs sm:text-sm">The Forge exports Hytale-compatible format automatically. Click "View JSON" to see it in action.</p>
               </div>
             </div>
@@ -594,7 +594,7 @@ export const TheForge: React.FC = () => {
                 <Copy size={20} className="text-purple-400 sm:w-6 sm:h-6" />
               </div>
               <div>
-                <h4 className="text-white font-bold text-base sm:text-lg mb-1 sm:mb-2">Reusable templates</h4>
+                  <h3 className="text-white font-bold text-base sm:text-lg mb-1 sm:mb-2">Reusable templates</h3>
                 <p className="text-[#8B9BB4] text-xs sm:text-sm">Save and share your logic modules. Create once, use in all your projects.</p>
               </div>
             </div>
@@ -604,14 +604,14 @@ export const TheForge: React.FC = () => {
                 <Zap size={20} className="text-green-400 sm:w-6 sm:h-6" />
               </div>
               <div>
-                <h4 className="text-white font-bold text-base sm:text-lg mb-1 sm:mb-2">Direct server integration</h4>
+                  <h3 className="text-white font-bold text-base sm:text-lg mb-1 sm:mb-2">Direct server integration</h3>
                 <p className="text-[#8B9BB4] text-xs sm:text-sm">Changes deploy automatically. Test in real time without leaving the editor.</p>
               </div>
             </div>
 
             {/* What can you create */}
             <div className="p-3 sm:p-4 bg-[#0F1623] border border-[#2A3B4C] rounded-xl">
-              <h5 className="text-white font-bold text-xs sm:text-sm mb-2 sm:mb-3">What can you create?</h5>
+                <h4 className="text-white font-bold text-xs sm:text-sm mb-2 sm:mb-3">What can you create?</h4>
               <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-green-500/10 text-green-400 text-[10px] sm:text-xs rounded-full">Quests</span>
                 <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-blue-500/10 text-blue-400 text-[10px] sm:text-xs rounded-full">NPC AI</span>

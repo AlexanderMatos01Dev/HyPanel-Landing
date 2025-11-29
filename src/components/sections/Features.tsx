@@ -45,7 +45,7 @@ export const Features: React.FC = () => (
           </div>
           <h3 className="text-lg font-bold text-white mb-2">One-click mod install</h3>
           <p className="text-[#8B9BB4] text-sm leading-relaxed mb-3">
-            Search on <a href="https://hytahub.com/" target="_blank" rel="noopener noreferrer" className="text-[#4DA6FF] hover:underline">Hytahub</a>, click <strong className="text-[#4DA6FF]">"Install"</strong> and done. Everything verified and nothing breaks.
+            Search on <a href="https://hytahub.com/" title="Visit Hytahub" target="_blank" rel="noopener noreferrer" className="text-[#4DA6FF] hover:underline">Hytahub</a>, click <strong className="text-[#4DA6FF]">"Install"</strong> and done. Everything verified and nothing breaks.
           </p>
           <div className="flex items-center gap-2 text-xs text-[#4DA6FF] font-medium">
             <Zap size={14} />

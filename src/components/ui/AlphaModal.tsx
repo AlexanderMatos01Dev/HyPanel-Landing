@@ -129,6 +129,7 @@ export const AlphaModal: React.FC<AlphaModalProps> = ({ isOpen, onClose }) => {
               </p>
               <a 
                 href="https://discord.gg/QBVCzUq4TT" 
+                title="Join our Discord"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#5865F2] text-white font-bold rounded-lg hover:bg-[#4752c4] transition-all"

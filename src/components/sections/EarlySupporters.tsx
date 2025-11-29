@@ -83,6 +83,7 @@ export const EarlySupporters: React.FC = () => {
             
             <a 
               href="https://buymeacoffee.com/hypanel_team" 
+              title="Buy us a coffee"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-2.5 bg-[#FFDD00] text-black text-sm font-bold rounded-lg hover:bg-[#e6c700] transition-all mt-auto"
@@ -132,6 +133,7 @@ export const EarlySupporters: React.FC = () => {
             
             <a 
               href="https://patreon.com/HyPanel" 
+              title="Support us on Patreon"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-2.5 bg-[#FF424D] text-white text-sm font-bold rounded-lg hover:bg-[#e63946] transition-all mt-auto"
@@ -177,6 +179,7 @@ export const EarlySupporters: React.FC = () => {
             
             <a 
               href="https://discord.gg/QBVCzUq4TT" 
+              title="Join Dev Chat on Discord"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-2.5 bg-[#4DA6FF] text-[#0B0F19] text-sm font-bold rounded-lg hover:bg-[#3b8fd9] transition-all mt-auto"
@@ -198,6 +201,7 @@ export const EarlySupporters: React.FC = () => {
           <div className="flex flex-wrap gap-3 justify-center">
             <a 
               href="https://discord.gg/QBVCzUq4TT" 
+              title="Join our Discord"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 bg-[#5865F2] text-white text-sm font-bold rounded-lg hover:bg-[#4752c4] transition-all"
@@ -206,6 +210,7 @@ export const EarlySupporters: React.FC = () => {
             </a>
             <a 
               href="https://x.com/HyPanel" 
+              title="Share on X"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 bg-[#151D2C] text-white text-sm font-bold rounded-lg hover:bg-[#1F2937] transition-all border border-[#2A3B4C]"

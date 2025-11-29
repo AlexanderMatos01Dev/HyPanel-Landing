@@ -43,16 +43,16 @@ export const Footer: React.FC = () => (
           </p>
         </div>
         <div className="flex gap-3 flex-wrap justify-center">
-           <a href="https://discord.gg/QBVCzUq4TT" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 bg-[#5865F2] hover:bg-[#4752c4] text-white rounded-lg transition-all font-bold shadow-md shadow-[#5865F2]/20">
+           <a href="https://discord.gg/QBVCzUq4TT" title="Join our Discord" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 bg-[#5865F2] hover:bg-[#4752c4] text-white rounded-lg transition-all font-bold shadow-md shadow-[#5865F2]/20">
              <DiscordIcon /> Discord
            </a>
-           <a href="https://x.com/HyPanel" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 bg-white hover:bg-gray-100 text-black rounded-lg transition-all font-bold">
+           <a href="https://x.com/HyPanel" title="HyPanel on X" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 bg-white hover:bg-gray-100 text-black rounded-lg transition-all font-bold">
              <XIcon /> Follow us
            </a>
-           <a href="https://patreon.com/HyPanel" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 bg-[#FF424D] hover:bg-[#e63946] text-white rounded-lg transition-all font-bold shadow-md shadow-[#FF424D]/20">
+           <a href="https://patreon.com/HyPanel" title="Support us on Patreon" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 bg-[#FF424D] hover:bg-[#e63946] text-white rounded-lg transition-all font-bold shadow-md shadow-[#FF424D]/20">
              <PatreonIcon /> Patreon
            </a>
-           <a href="https://buymeacoffee.com/hypanel_team" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 bg-[#FFDD00] hover:bg-[#e6c700] text-black rounded-lg transition-all font-bold">
+           <a href="https://buymeacoffee.com/hypanel_team" title="Buy us a coffee" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 bg-[#FFDD00] hover:bg-[#e6c700] text-black rounded-lg transition-all font-bold">
              <BuyMeCoffeeIcon /> Support us
            </a>
         </div>
@@ -61,10 +61,10 @@ export const Footer: React.FC = () => (
         <div>
           <h3 className="text-white font-bold mb-4 text-base uppercase tracking-wide">Product</h3>
           <ul className="space-y-2">
-            <li><a href="#why-hypanel" className="hover:text-[#EDA333]">About</a></li>
+            <li><a href="#why-hypanel" title="About HyPanel" className="hover:text-[#EDA333]">About</a></li>
             <li><span className="text-muted">Pricing <span className="text-[8px] bg-[#EDA333]/20 text-[#EDA333] px-1.5 py-0.5 rounded ml-1">SOON</span></span></li>
-            <li><a href="#ecosystem" className="hover:text-[#EDA333]">Ecosystem</a></li>
-            <li><a href="#the-forge" className="hover:text-[#EDA333]">The Forge</a></li>
+            <li><a href="#ecosystem" title="Ecosystem" className="hover:text-[#EDA333]">Ecosystem</a></li>
+            <li><a href="#the-forge" title="The Forge visual editor" className="hover:text-[#EDA333]">The Forge</a></li>
           </ul>
         </div>
         <div>
@@ -77,25 +77,25 @@ export const Footer: React.FC = () => (
         <div>
           <h3 className="text-white font-bold mb-4 text-base uppercase tracking-wide">Community</h3>
           <ul className="space-y-2">
-            <li><a href="https://discord.gg/QBVCzUq4TT" target="_blank" rel="noopener noreferrer" className="hover:text-[#EDA333] flex items-center gap-2"><DiscordIcon /> Discord</a></li>
-            <li><a href="https://x.com/HyPanel" target="_blank" rel="noopener noreferrer" className="hover:text-[#EDA333] flex items-center gap-2"><XIcon /> X (Twitter)</a></li>
-            <li><a href="https://patreon.com/HyPanel" target="_blank" rel="noopener noreferrer" className="hover:text-[#EDA333] flex items-center gap-2"><PatreonIcon /> Patreon</a></li>
-            <li><a href="https://www.reddit.com/r/HyPanel/" target="_blank" rel="noopener noreferrer" className="hover:text-[#EDA333] flex items-center gap-2"><RedditIcon /> Reddit</a></li>
+            <li><a href="https://discord.gg/QBVCzUq4TT" title="Join our Discord" target="_blank" rel="noopener noreferrer" className="hover:text-[#EDA333] flex items-center gap-2"><DiscordIcon /> Discord</a></li>
+            <li><a href="https://x.com/HyPanel" title="HyPanel on X" target="_blank" rel="noopener noreferrer" className="hover:text-[#EDA333] flex items-center gap-2"><XIcon /> X (Twitter)</a></li>
+            <li><a href="https://patreon.com/HyPanel" title="Support us on Patreon" target="_blank" rel="noopener noreferrer" className="hover:text-[#EDA333] flex items-center gap-2"><PatreonIcon /> Patreon</a></li>
+            <li><a href="https://www.reddit.com/r/HyPanel/" title="HyPanel subreddit" target="_blank" rel="noopener noreferrer" className="hover:text-[#EDA333] flex items-center gap-2"><RedditIcon /> Reddit</a></li>
           </ul>
         </div>
         <div>
           <h3 className="text-white font-bold mb-4 text-base uppercase tracking-wide">Company</h3>
           <ul className="space-y-2">
-            <li><a href="#team" className="hover:text-[#EDA333]">Team</a></li>
+            <li><a href="#team" title="Team" className="hover:text-[#EDA333]">Team</a></li>
             <li><span className="text-muted">Blog <span className="text-[8px] bg-[#EDA333]/20 text-[#EDA333] px-1.5 py-0.5 rounded ml-1">SOON</span></span></li>
-            <li><a href="#roadmap" className="hover:text-[#EDA333]">Roadmap</a></li>
+            <li><a href="#roadmap" title="Roadmap" className="hover:text-[#EDA333]">Roadmap</a></li>
           </ul>
         </div>
         <div>
           <h3 className="text-white font-bold mb-4 text-base uppercase tracking-wide">Legal</h3>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-[#EDA333]">Privacy</a></li>
-            <li><a href="#" className="hover:text-[#EDA333]">Terms of Use</a></li>
+            <li><a href="#" title="Privacy" className="hover:text-[#EDA333]">Privacy</a></li>
+            <li><a href="#" title="Terms of Use" className="hover:text-[#EDA333]">Terms of Use</a></li>
           </ul>
         </div>
       </div>

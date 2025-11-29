@@ -33,9 +33,9 @@ const FAQ_GENERAL: FAQItem[] = [
 const FAQ_USAGE: FAQItem[] = [
   {
     question: "What is Hytahub?",
-    answer: "Hytahub is an independent partner project building the largest content marketplace for Hytale. Mods, assets, maps and configurations from the community, integrated directly with HyPanel for seamless installation. <a href='https://hytahub.com/' target='_blank' rel='noopener noreferrer' class='text-purple-400 hover:underline'>Visit Hytahub →</a>"
+    answer: "Hytahub is an independent partner project building the largest content marketplace for Hytale. Mods, assets, maps and configurations from the community, integrated directly with HyPanel for seamless installation. <a href='https://hytahub.com/' title='Visit Hytahub' target='_blank' rel='noopener noreferrer' class='text-purple-400 hover:underline'>Visit Hytahub →</a>"
   },
-  {
+    {
     question: "Can I use my own mods and content?",
     answer: "Absolutely. Upload your own mods, manage them manually, or install verified content from Hytahub. You have full flexibility — HyPanel doesn't lock you into any ecosystem."
   },
@@ -98,6 +98,7 @@ export const FAQ: React.FC = () => {
             <p className="text-[#8B9BB4] text-sm mb-4">Still have questions?</p>
             <a
               href="https://discord.gg/QBVCzUq4TT"
+              title="Ask on Discord"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#5865F2] hover:bg-[#4752c4] text-white font-bold rounded-xl transition-all text-sm"

@@ -139,6 +139,7 @@ export const Hytahub: React.FC = () => {
           <h2 className="text-2xl md:text-3xl font-bold text-white">
             <a 
               href="https://hytahub.com/" 
+              title="Visit Hytahub" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors group"
@@ -180,7 +181,7 @@ export const Hytahub: React.FC = () => {
           </div>
           
           <div className="pt-2">
-            <a href="https://hytahub.com/" target="_blank" rel="noopener noreferrer" className="inline-flex px-5 py-2.5 bg-[#4DA6FF] text-[#0B0F19] font-bold rounded-lg hover:bg-[#3b8fd9] transition-all items-center gap-2 text-sm">
+            <a href="https://hytahub.com/" title="Visit Hytahub" target="_blank" rel="noopener noreferrer" className="inline-flex px-5 py-2.5 bg-[#4DA6FF] text-[#0B0F19] font-bold rounded-lg hover:bg-[#3b8fd9] transition-all items-center gap-2 text-sm">
               Explore Hytahub <ExternalLink size={14}/>
             </a>
           </div>

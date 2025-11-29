@@ -13,7 +13,7 @@ export const ContentOS: React.FC = () => (
           <span className="text-purple-400 text-xs font-bold tracking-wide uppercase">Strategic Partnership</span>
         </div>
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          <a href="https://hytahub.com/" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">Hytahub</a>: Your Content Marketplace
+          <a href="https://hytahub.com/" title="Visit Hytahub" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">Hytahub</a>: Your Content Marketplace
         </h2>
         <p className="text-[#8B9BB4] text-lg max-w-2xl mx-auto mb-4">
           An independent project building the largest Hytale content repository. 
@@ -99,7 +99,7 @@ export const ContentOS: React.FC = () => (
               <Download size={24} className="text-purple-400" />
             </div>
             <div>
-              <h4 className="text-white font-bold text-lg mb-2">One-click installation</h4>
+              <h3 className="text-white font-bold text-lg mb-2">One-click installation</h3>
               <p className="text-[#8B9BB4] text-sm">No FTP, no manual files. Click "Install" and everything configures automatically.</p>
             </div>
           </div>
@@ -109,7 +109,7 @@ export const ContentOS: React.FC = () => (
               <GitMerge size={24} className="text-blue-400" />
             </div>
             <div>
-              <h4 className="text-white font-bold text-lg mb-2">Automatic versioning</h4>
+              <h3 className="text-white font-bold text-lg mb-2">Automatic versioning</h3>
               <p className="text-[#8B9BB4] text-sm">Dependencies and compatibility managed automatically. No version conflicts.</p>
             </div>
           </div>
@@ -119,7 +119,7 @@ export const ContentOS: React.FC = () => (
               <ShoppingBag size={24} className="text-[#EDA333]" />
             </div>
             <div>
-              <h4 className="text-white font-bold text-lg mb-2">Integrated marketplace</h4>
+              <h3 className="text-white font-bold text-lg mb-2">Integrated marketplace</h3>
               <p className="text-[#8B9BB4] text-sm">Buy, sell and share content. Protected licenses and automatic payments.</p>
             </div>
           </div>
@@ -129,7 +129,7 @@ export const ContentOS: React.FC = () => (
               <Server size={24} className="text-green-400" />
             </div>
             <div>
-              <h4 className="text-white font-bold text-lg mb-2">Auto-sync with servers</h4>
+              <h3 className="text-white font-bold text-lg mb-2">Auto-sync with servers</h3>
               <p className="text-[#8B9BB4] text-sm">All content syncs automatically. Players don't install anything.</p>
             </div>
           </div>
@@ -148,6 +148,7 @@ export const ContentOS: React.FC = () => (
           {/* CTA Button to Hytahub */}
           <a 
             href="https://hytahub.com/" 
+            title="Visit Hytahub" 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-3 w-full px-6 py-4 bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-500 hover:to-purple-400 text-white font-bold rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-lg shadow-purple-500/20 group"

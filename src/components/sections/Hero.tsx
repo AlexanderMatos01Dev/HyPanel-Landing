@@ -224,10 +224,10 @@ export const Hero: React.FC = () => {
                {currentMessage}
             </span>
             <br/>
-            <span className="text-white">for Hytale</span>
+            <span className="text-white">{' '}for Hytale</span>
           </h1>
           <p className="text-base text-[#8B9BB4] max-w-lg leading-relaxed">
-            Modern infrastructure, centralized content, no-code creation and community tools. Join the <strong className="text-white">private Alpha</strong> and <strong className="text-[#4DA6FF]">help build</strong> the future of Hytale hosting.
+            Modern infrastructure, centralized content, no-code creation and community tools. HyPanel is the platform for Hytale — join the <strong className="text-white">private Alpha</strong> and <strong className="text-[#4DA6FF]">help build</strong> the future of Hytale hosting.
           </p>
           <form onSubmit={handleJoin} className="flex flex-col gap-3 max-w-md">
             {/* Estado: Registro exitoso (nuevo usuario) */}
@@ -249,6 +249,7 @@ export const Hero: React.FC = () => {
                 </div>
                 <a 
                   href={SOCIAL_LINKS.discord}
+                  title="Join our Discord"
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-[#5865F2] hover:bg-[#4752c4] text-white font-bold rounded-xl transition-all text-sm"
@@ -287,6 +288,7 @@ export const Hero: React.FC = () => {
                 </div>
                 <a 
                   href={SOCIAL_LINKS.discord}
+                  title="Join our Discord"
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 w-full px-4 py-2.5 bg-[#5865F2] hover:bg-[#4752c4] text-white font-bold rounded-xl transition-all text-sm"
@@ -334,7 +336,7 @@ export const Hero: React.FC = () => {
                   </div>
                 </div>
                 <p className="text-muted text-xs text-center">
-                  Already registered? <a href={SOCIAL_LINKS.discord} target="_blank" rel="noopener noreferrer" className="text-[#4DA6FF] hover:underline">Join Discord</a> while you wait.
+                  Already registered? <a href={SOCIAL_LINKS.discord} title="Join our Discord" target="_blank" rel="noopener noreferrer" className="text-[#4DA6FF] hover:underline">Join Discord</a> while you wait.
                 </p>
               </div>
             )}
