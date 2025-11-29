@@ -157,7 +157,7 @@ export const Roadmap: React.FC = () => {
   ];
 
   return (
-    <section id="roadmap" className="py-24 bg-gradient-to-b from-[#0B0F19] to-[#0F1623] border-t border-[#2A3B4C] relative overflow-hidden scroll-mt-16">
+    <section id="roadmap" className="py-24 min-h-screen bg-gradient-to-b from-[#0B0F19] to-[#0F1623] border-t border-[#2A3B4C] relative overflow-hidden scroll-mt-16">
       {/* Background effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(77,166,255,0.05),transparent_50%)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(237,163,51,0.05),transparent_50%)]"></div>

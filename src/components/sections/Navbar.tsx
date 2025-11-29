@@ -37,6 +37,7 @@ export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
   const [isAlphaModalOpen, setIsAlphaModalOpen] = useState(false);
+  const [logoAnimating, setLogoAnimating] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -68,16 +69,29 @@ export const Navbar: React.FC = () => {
     }
   };
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    // Trigger a short animation on the logo, delay scroll slightly so the animation is noticed
+    setLogoAnimating(true);
+    // Delay the scroll a bit so the animation is visible and doesn't feel abrupt
+    try { window.setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 120); } catch {}
+    // Restore animation state after it finishes
+    window.setTimeout(() => setLogoAnimating(false), 600);
+  };
+
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ease-out bg-[#0B0F19]/90 ${scrolled ? 'backdrop-blur-xl shadow-lg shadow-black/10 bg-[#0B0F19]/100' : ''}`}>
       <div className={`border-b transition-all duration-500 ${scrolled ? 'border-[#2A3B4C]/50' : 'border-transparent'}`}>
         <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2 group">
+          <a href="/" onClick={handleLogoClick} className="flex items-center gap-2 group">
             <div className="relative">
-              <Hexagon className="text-[#EDA333] fill-[#EDA333]/10 w-7 h-7 md:w-8 md:h-8 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.5} />
+              <Hexagon
+                className={`text-[#EDA333] fill-[#EDA333]/10 w-7 h-7 md:w-8 md:h-8 transform-gpu transition-transform duration-500 ease-out origin-center ${logoAnimating ? 'scale-125 rotate-6' : 'group-hover:scale-110'}`}
+                strokeWidth={1.5}
+              />
               <div className="absolute inset-0 bg-[#EDA333] blur-lg opacity-20 group-hover:opacity-40 transition-opacity"></div>
             </div>
-            <span className="font-bold text-lg md:text-xl tracking-tight text-white">HyPanel</span>
+            <span className={`font-bold text-lg md:text-xl tracking-tight text-white transform-gpu transition-transform duration-500 ease-out origin-center ${logoAnimating ? 'scale-105' : ''}`}>HyPanel</span>
           </a>
           <div className="hidden lg:flex items-center gap-4 xl:gap-6 text-sm font-medium text-[#8B9BB4]">
             <a href="#why-hypanel" onClick={(e) => handleNavClick(e, 'why-hypanel')} className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'why-hypanel' ? 'after:w-full' : 'after:w-0'} whitespace-nowrap`}>About</a>
