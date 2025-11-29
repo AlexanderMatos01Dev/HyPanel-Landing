@@ -447,7 +447,7 @@ export const TheForge: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-8 items-start">
           {/* Left: Visual Editor Preview */}
           <div className="relative order-2 lg:order-1 w-full min-w-0">
-            <div className="bg-[#0B0F19] border border-[#2A3B4C] rounded-2xl shadow-2xl">
+            <div className="bg-[#0B0F19] border border-[#2A3B4C] rounded-2xl shadow-2xl flex flex-col overflow-hidden">
               {/* Editor Header */}
               <div className="bg-[#151D2C] px-3 sm:px-4 py-3 flex items-center justify-between border-b border-[#2A3B4C]">
                 <div className="flex items-center gap-2 sm:gap-3 min-w-0">
@@ -476,7 +476,7 @@ export const TheForge: React.FC = () => {
               {!showJson ? (
                 <div 
                   ref={containerRef}
-                  className={`relative h-[260px] sm:h-[300px] bg-[#080B12] overflow-x-auto overflow-y-hidden scrollbar-none ${isDraggingCanvas ? 'cursor-grabbing' : 'cursor-grab'}`}
+                  className={`relative flex-1 min-h-[260px] sm:min-h-[300px] bg-[#080B12] overflow-x-auto overflow-y-hidden scrollbar-none ${isDraggingCanvas ? 'cursor-grabbing' : 'cursor-grab'}`}
                   style={{
                     backgroundImage: 'radial-gradient(circle, #2A3B4C 1px, transparent 1px)',
                     backgroundSize: '20px 20px',
