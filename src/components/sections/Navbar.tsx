@@ -1,22 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Hexagon } from 'lucide-react';
 import AlphaModal from '../ui/AlphaModal';
-
-const HexagonIcon = ({ className = '', size = 28, strokeWidth = 1.5 }: { className?: string; size?: number; strokeWidth?: number }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={strokeWidth}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-    aria-hidden="true"
-  >
-    <polygon points="12 2 20 7 20 17 12 22 4 17 4 7" />
-  </svg>
-);
 
 // Iconos SVG oficiales
 const XIcon = ({ size = 18 }: { size?: number }) => (
@@ -85,7 +69,7 @@ export const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
           <a href="/" title="HyPanel home" className="flex items-center gap-2 group">
             <div className="relative">
-              <HexagonIcon
+              <Hexagon
                 className={`text-[#EDA333] fill-[#EDA333]/10 w-7 h-7 md:w-8 md:h-8 transform-gpu transition-transform duration-500 ease-out origin-center ${logoAnimating ? 'scale-125 rotate-6' : 'group-hover:scale-110'}`}
                 strokeWidth={1.5}
               />
@@ -100,7 +84,7 @@ export const Navbar: React.FC = () => {
             <a href="#ecosystem" title="Ecosystem" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'ecosystem' ? 'after:w-full' : 'after:w-0'}`}>Ecosystem</a>
             <a href="#roadmap" title="Roadmap" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'roadmap' ? 'after:w-full' : 'after:w-0'}`}>Roadmap</a>
             <a href="#faq" title="FAQ" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'faq' ? 'after:w-full' : 'after:w-0'}`}>FAQ</a>
-            <span className="text-[#565b5b] py-1 cursor-default">Blog</span>
+            <a href="/blog" title="Blog" className="relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full after:w-0">Blog</a>
             <a href="#supporters" title="Support & Early Supporters" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'supporters' ? 'after:w-full' : 'after:w-0'} whitespace-nowrap`}>Support</a>
           </div>
           <div className="flex items-center gap-2 md:gap-3">

@@ -1,12 +1,5 @@
 import React from 'react';
-import { Server, Box, Palette, Users, ArrowRight, Zap, Shield, ChevronRight, ExternalLink } from 'lucide-react';
-
-const GlobeIcon = ({ size = 28, className = '', strokeWidth = 1.5 }: { size?: number; className?: string; strokeWidth?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} className={className} aria-hidden="true">
-    <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
-    <path d="M2.05 6.05h19.9M2.05 17.95h19.9M12 2v20M7 4v16M17 4v16" />
-  </svg>
-);
+import { Server, Box, Palette, Users, ArrowRight, Zap, Shield, ChevronRight, ExternalLink, Globe } from 'lucide-react';
 
 interface PillarProps {
   icon: React.ReactNode;
@@ -87,7 +80,7 @@ export const WhyHyPanel: React.FC = () => {
       href: "#community"
     },
     {
-      icon: <GlobeIcon size={28} />,
+      icon: <Globe size={28} />,
       title: "Unified Ecosystem",
       description: "All pillars connected. One platform where everything works together seamlessly.",
       bgColor: "#EDA333",
