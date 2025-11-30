@@ -1,11 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Zap, GitBranch, Swords, Gift, MessageSquare, Timer, Crown } from 'lucide-react';
-
-const PlayIcon = ({ size = 11, className = '' }: { size?: number; className?: string }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-    <path d="M5 3v18l15-9L5 3z" fill="currentColor" />
-  </svg>
-);
+import { Zap, GitBranch, Swords, Gift, MessageSquare, Timer, Crown, Play } from 'lucide-react';
 
 interface LogicNode {
   id: string;
@@ -227,7 +221,7 @@ export const Editor: React.FC = () => {
                 >
                   {showJson ? 'Visual' : 'JSON'}
                 </button>
-                <button className="p-1 hover:bg-[#2A3B4C] rounded text-[#27C93F]"><PlayIcon size={11}/></button>
+                <button className="p-1 hover:bg-[#2A3B4C] rounded text-[#27C93F]"><Play size={11}/></button>
               </div>
             </div>
             
