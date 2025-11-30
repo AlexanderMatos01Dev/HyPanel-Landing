@@ -434,10 +434,8 @@ export const Hero: React.FC = () => {
             <div className="relative z-30 w-28 h-28 md:w-36 md:h-36 bg-gradient-to-br from-[#0B0F19] to-[#151D2C] border-2 border-[#2A3B4C] rounded-full flex flex-col items-center justify-center shadow-2xl">
                <div className={`absolute inset-0 rounded-full border-2 transition-all duration-700 ease-in-out ${simStep >= 1 ? 'border-[#EDA333] opacity-100 scale-110' : 'border-transparent opacity-0 scale-100'}`}></div>
                <div className={`absolute inset-0 rounded-full border-2 transition-all duration-1000 ease-in-out ${simStep >= 1 ? 'border-[#EDA333] opacity-50 scale-125' : 'border-transparent opacity-0 scale-100'}`}></div>
-               <div className="relative">
-                 <Globe className={`w-10 h-10 md:w-12 md:h-12 mb-1 transition-all duration-500 ${simStep >= 1 ? 'text-[#EDA333] drop-shadow-[0_0_8px_rgba(237,163,51,0.5)]' : 'text-gray-600'}`} strokeWidth={1.5} />
-               </div>
-               <span className="text-[9px] md:text-[10px] font-bold text-[#8B9BB4] tracking-[0.2em] uppercase">HyCore</span>
+               <Globe className={`w-10 h-10 md:w-12 md:h-12 mb-1 transition-all duration-500 ${simStep >= 1 ? 'text-[#EDA333] drop-shadow-[0_0_8px_rgba(237,163,51,0.5)]' : 'text-gray-600'}`} strokeWidth={1.5} />
+               <span className="text-[11px] md:text-[12px] font-bold text-[#8B9BB4] uppercase -mr-[0.2em]">HyCore</span>
                <div className={`absolute -bottom-8 px-2.5 py-1 rounded-lg text-[9px] font-medium border backdrop-blur-md shadow-xl transition-all duration-500 whitespace-nowrap ${getCoreStyle()}`}>
                  {getCoreMessage()}
                </div>
