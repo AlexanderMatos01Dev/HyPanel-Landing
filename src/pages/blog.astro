@@ -1,15 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/sections/Navbar';
-import BlogHero from '../components/sections/BlogHero';
 import BlogIndex from '../components/sections/BlogIndex';
 import Footer from '../components/sections/Footer';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
-// Obtener posts de la colección y ordenarlos por fecha
+// Obtener posts de la colección y ordenarlos por ID (descendente)
 const posts = (await getCollection('blog')).sort(
-	(a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => b.data.date.valueOf() - a.data.date.valueOf()
+	(a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => (b.data.id || 0) - (a.data.id || 0)
 );
 ---
 
@@ -26,7 +25,6 @@ const posts = (await getCollection('blog')).sort(
 		<!-- Main content -->
 		<div class="relative z-10">
 			<Navbar client:visible />
-			<BlogHero client:load />
 			<BlogIndex client:load posts={posts} />
 			<Footer />
 		</div>

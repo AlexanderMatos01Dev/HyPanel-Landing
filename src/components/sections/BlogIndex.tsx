@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Calendar, Clock, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Calendar, Clock, ArrowRight, ChevronLeft, ChevronRight, Search } from 'lucide-react';
 
 interface BlogPost {
   slug: string;
@@ -57,29 +57,73 @@ export const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
   }, [activeCategory]);
 
   return (
-    <section className="px-6 pb-32 min-h-screen">
-      <div className="max-w-6xl mx-auto space-y-16">
+    <section className="px-6 pt-32 pb-32 min-h-screen relative">
+      {/* Background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+        <svg className="absolute top-10 right-20 w-16 h-16" viewBox="0 0 50 50">
+          <polygon points="25,2 47,15 47,40 25,48 3,40 3,15" fill="none" stroke="#4DA6FF" strokeWidth="1"/>
+        </svg>
+        <svg className="absolute bottom-20 left-10 w-12 h-12" viewBox="0 0 50 50">
+          <polygon points="25,2 47,15 47,40 25,48 3,40 3,15" fill="none" stroke="#EDA333" strokeWidth="1"/>
+        </svg>
+      </div>
+
+      <div className="max-w-7xl mx-auto space-y-12">
         
-        {/* Category Navigation */}
-        <div className="flex flex-wrap justify-center gap-4">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                activeCategory === cat
-                  ? 'bg-[#EDA333] text-[#0B0F19] font-bold shadow-lg shadow-[#EDA333]/25'
-                  : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+        {/* Combined Header & Filters */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-[#2A3B4C] pb-8">
+            <div className="space-y-4 max-w-2xl">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#1A3A5A]/50 border border-[#2A3B4C] backdrop-blur-sm">
+                    <span className="w-2 h-2 rounded-full bg-[#4DA6FF] animate-pulse"></span>
+                    <span className="text-[#4DA6FF] text-xs font-bold tracking-wide uppercase">HyPanel Blog</span>
+                </div>
+                <h1 className="text-4xl md:text-5xl font-extrabold text-white tracking-tight">
+                    Latest <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4DA6FF] to-[#EDA333]">Updates</span>
+                </h1>
+                <p className="text-lg text-[#8B9BB4] leading-relaxed">
+                    News, development insights and announcements from the HyPanel team.
+                </p>
+            </div>
+
+            {/* Filters & Search */}
+            <div className="flex flex-col gap-4 w-full lg:w-auto">
+                {/* Search Bar (Visual) */}
+                 <div className="relative group">
+                    <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <Search className="h-4 w-4 text-gray-500 group-focus-within:text-[#4DA6FF] transition-colors" />
+                    </div>
+                    <input 
+                        type="text" 
+                        placeholder="Search articles..." 
+                        className="block w-full lg:w-64 pl-10 pr-3 py-2.5 border border-[#2A3B4C] rounded-xl leading-5 bg-[#0F1623] text-gray-300 placeholder-gray-500 focus:outline-none focus:bg-[#151D2C] focus:border-[#4DA6FF] focus:ring-1 focus:ring-[#4DA6FF] sm:text-sm transition-all"
+                    />
+                </div>
+
+                {/* Categories as Tabs */}
+                <div className="flex flex-wrap gap-2">
+                    {categories.map((cat) => (
+                        <button
+                            key={cat}
+                            onClick={() => setActiveCategory(cat)}
+                            className={`px-4 py-2 rounded-lg text-xs font-medium transition-all duration-300 border ${
+                                activeCategory === cat
+                                ? 'bg-[#EDA333]/10 border-[#EDA333] text-[#EDA333]'
+                                : 'bg-[#151D2C] border-transparent text-gray-400 hover:bg-[#1A2633] hover:text-white'
+                            }`}
+                        >
+                            {cat}
+                        </button>
+                    ))}
+                </div>
+            </div>
         </div>
 
         {/* Featured Post (Vertical Layout as requested) */}
         {featuredPost && (
-          <div className="relative group rounded-3xl overflow-hidden bg-[#151D2C]/40 backdrop-blur-xl border border-white/10 hover:border-[#EDA333]/30 transition-all duration-500">
+          <a 
+            href={`/blog/${featuredPost.slug}`}
+            className="block relative group rounded-3xl overflow-hidden bg-[#151D2C]/40 backdrop-blur-xl border border-white/10 hover:border-[#EDA333]/30 transition-all duration-500"
+          >
             <div className="flex flex-col">
               {/* Image Side - Full Width Top */}
               <div className="relative h-[250px] lg:h-[350px] overflow-hidden w-full">
@@ -128,15 +172,12 @@ export const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
                   {featuredPost.data.excerpt}
                 </p>
 
-                <a 
-                  href={`/blog/${featuredPost.slug}`}
-                  className="inline-flex items-center gap-2 text-[#EDA333] font-bold hover:gap-4 transition-all duration-300"
-                >
+                <span className="inline-flex items-center gap-2 text-[#EDA333] font-bold group-hover:gap-4 transition-all duration-300">
                   Read Article <ArrowRight size={20} />
-                </a>
+                </span>
               </div>
             </div>
-          </div>
+          </a>
         )}
 
         {/* Grid of Posts */}
