@@ -165,6 +165,7 @@ This project is part of the HyPanel platform.
 ## 👨‍💻 Authores
 
 -**Alexander Matos** - [@AlexanderMatos01Dev](https://github.com/AlexanderMatos01Dev)
+##
 -**Francisco Daniel Castro** - [@odimsom](https://github.com/odimsom)
 
 ## 🔗 Links
