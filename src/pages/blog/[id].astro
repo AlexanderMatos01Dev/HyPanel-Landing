@@ -354,21 +354,7 @@ if (post.data.relatedPosts && post.data.relatedPosts.length > 0) {
               )
             }
 
-            <!-- Quick Actions -->
-            <div class="p-5 rounded-2xl bg-gradient-to-br from-[#151D2C]/60 to-[#0F1623]/60 border border-[#2A3B4C] backdrop-blur-sm hidden lg:block">
-              <span class="text-[10px] font-bold text-[#8B9BB4] uppercase tracking-wider mb-4 block">
-                Quick actions
-              </span>
-              <div class="flex flex-col gap-2">
-                <button 
-                  id="scroll-to-top"
-                  class="flex items-center gap-2 text-sm text-[#8B9BB4] hover:text-[#EDA333] transition-colors py-2 px-3 rounded-lg hover:bg-[#1a2435] w-full text-left"
-                >
-                  <ChevronUp size={16} />
-                  <span>Back to top</span>
-                </button>
-              </div>
-            </div>
+
           </div>
           
         </div>
@@ -1079,13 +1065,8 @@ if (post.data.relatedPosts && post.data.relatedPosts.length > 0) {
     headings.forEach((heading) => observer.observe(heading));
   }
 
-  // Scroll to top button
-  const scrollToTopBtn = document.getElementById('scroll-to-top');
-  if (scrollToTopBtn) {
-    scrollToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
+
+
 
   // Desktop TOC collapse/expand functionality
   const desktopTocToggle = document.getElementById('desktop-toc-toggle');
