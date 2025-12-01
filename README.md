@@ -162,9 +162,10 @@ The site is optimized for deployment on [Vercel](https://vercel.com):
 
 This project is part of the HyPanel platform.
 
-## 👨‍💻 Author
+## 👨‍💻 Authores
 
 **Alexander Matos** - [@AlexanderMatos01Dev](https://github.com/AlexanderMatos01Dev)
+**Francisco Daniel Castro** - [@odimsom](https://github.com/odimsom)
 
 ## 🔗 Links
 
