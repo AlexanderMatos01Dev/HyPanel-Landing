@@ -35,7 +35,7 @@ const BuyMeCoffeeIcon = ({ size = 18 }: { size?: number }) => (
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('');
+  const [activeSection, setActiveSection,] = useState('');
   const [isAlphaModalOpen, setIsAlphaModalOpen] = useState(false);
   const [logoAnimating, setLogoAnimating] = useState(false);
 
@@ -60,7 +60,6 @@ export const Navbar: React.FC = () => {
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
   }, []);
-
   // Navigation handled by native anchor behavior (no JS handlers)
 
   return (
@@ -84,7 +83,7 @@ export const Navbar: React.FC = () => {
             <a href="#ecosystem" title="Ecosystem" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'ecosystem' ? 'after:w-full' : 'after:w-0'}`}>Ecosystem</a>
             <a href="#roadmap" title="Roadmap" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'roadmap' ? 'after:w-full' : 'after:w-0'}`}>Roadmap</a>
             <a href="#faq" title="FAQ" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'faq' ? 'after:w-full' : 'after:w-0'}`}>FAQ</a>
-            <a href="/blog" title="Blog" className="relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full after:w-0">Blog</a>
+            <a href="/blog" title="Blog" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full after:w-0`}>Blog</a>
             <a href="#supporters" title="Support & Early Supporters" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'supporters' ? 'after:w-full' : 'after:w-0'} whitespace-nowrap`}>Support</a>
           </div>
           <div className="flex items-center gap-2 md:gap-3">

@@ -87,7 +87,7 @@ export const Footer: React.FC = () => (
           <h3 className="text-white font-bold mb-4 text-base uppercase tracking-wide">Company</h3>
           <ul className="space-y-2">
             <li><a href="#team" title="Team" className="hover:text-[#EDA333]">Team</a></li>
-            <li><span className="text-muted">Blog <span className="text-[8px] bg-[#EDA333]/20 text-[#EDA333] px-1.5 py-0.5 rounded ml-1">SOON</span></span></li>
+            <li><a href="/blog" title="Blog" className="hover:text-[#EDA333]">Blog</a></li>
             <li><a href="#roadmap" title="Roadmap" className="hover:text-[#EDA333]">Roadmap</a></li>
           </ul>
         </div>
