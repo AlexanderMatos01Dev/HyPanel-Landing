@@ -10,9 +10,18 @@ import type { CollectionEntry } from 'astro:content';
 const posts = (await getCollection('blog')).sort(
 	(a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => (b.data.id || 0) - (a.data.id || 0)
 );
+
+// SEO Configuration for Blog Index
+const seoTitle = "Blog - HyPanel | News, Tutorials & Updates";
+const seoDescription = "Stay up to date with the latest HyPanel news, development updates, tutorials, and community spotlights. Learn how to build and manage Hytale servers.";
+const canonicalUrl = "https://hypanel.net/blog";
 ---
 
-<Layout title="Blog - HyPanel" description="Latest updates, tutorials, and announcements from the HyPanel team.">
+<Layout 
+	title={seoTitle} 
+	description={seoDescription}
+	canonical={canonicalUrl}
+>
 	<div class="min-h-screen bg-[#0B0F19] text-white overflow-x-hidden">
 		<!-- Fixed decorative background -->
 		<div class="fixed inset-0 pointer-events-none" style="z-index: -1;">

@@ -10,7 +10,7 @@ interface BlogPost {
     readTime: string;
     category: string;
     gradient: string;
-    image?: string;
+    image?: any;
     featured?: boolean;
     author?: string;
   };
@@ -130,7 +130,7 @@ export const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
                 <div className={`absolute inset-0 bg-gradient-to-br ${featuredPost.data.gradient} opacity-20 group-hover:opacity-30 transition-opacity duration-500`}></div>
                 {featuredPost.data.image ? (
                   <img 
-                    src={featuredPost.data.image} 
+                    src={typeof featuredPost.data.image === 'string' ? featuredPost.data.image : featuredPost.data.image.src} 
                     alt={featuredPost.data.title}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                   />
@@ -205,7 +205,7 @@ export const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
                     <div className="h-48 overflow-hidden relative">
                       {post.data.image ? (
                         <img 
-                          src={post.data.image} 
+                          src={typeof post.data.image === 'string' ? post.data.image : post.data.image.src} 
                           alt={post.data.title}
                           className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                         />

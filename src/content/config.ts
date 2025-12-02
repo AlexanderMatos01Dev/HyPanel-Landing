@@ -2,7 +2,7 @@ import { defineCollection, z } from 'astro:content';
 
 const blogCollection = defineCollection({
   type: 'content',
-  schema: z.object({
+  schema: ({ image }) => z.object({
     id: z.number(),
     title: z.string(),
     excerpt: z.string(),
@@ -10,7 +10,7 @@ const blogCollection = defineCollection({
     readTime: z.string(),
     category: z.enum(['Announcement', 'Tutorial', 'Development', 'Technology', 'Community']),
     gradient: z.string(),
-    image: z.string().optional(),
+    image: image().optional(),
     featured: z.boolean().default(false),
     author: z.string().default('HyPanel Team'),
     authorRole: z.string().default('Community'),

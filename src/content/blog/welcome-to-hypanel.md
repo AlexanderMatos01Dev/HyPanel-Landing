@@ -6,6 +6,7 @@ date: 2025-12-01
 readTime: '3 min'
 category: 'Announcement'
 gradient: 'from-[#4DA6FF]/80 to-[#EDA333]/80'
+image: '../../assets/blog/Hypanel-icon.webp'
 featured: true
 author: 'HyPanel Team'
 authorRole: 'The Team'
