@@ -149,7 +149,7 @@ export const Roadmap: React.FC = () => {
       items: [
         'Smart hibernation',
         'Community tools',
-        'Monetization beta'
+        'Business tools beta'
       ],
       status: 'upcoming',
       icon: <Users size={18} />
@@ -175,7 +175,7 @@ export const Roadmap: React.FC = () => {
           </h2>
           
           <p className="text-[#8B9BB4] text-lg max-w-2xl mx-auto">
-            Building in public. Every milestone brings us closer to the complete HyPanel ecosystem.
+            Every milestone brings us closer to the complete HyPanel ecosystem.
           </p>
         </div>
 

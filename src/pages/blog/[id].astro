@@ -30,23 +30,18 @@ interface Props {
 const { post } = Astro.props;
 const { Content, headings } = await render(post);
 
-// Filter to only show h2 and h3 headings for cleaner TOC
 const tocHeadings = headings.filter(h => h.depth === 2 || h.depth === 3);
 
-// Get related posts
 const allPosts = await getCollection("blog");
 let relatedPosts: CollectionEntry<"blog">[] = [];
 
 if (post.data.relatedPosts && post.data.relatedPosts.length > 0) {
-  // Manual selection: Filter posts that match the slugs in relatedPosts array
-  // We use map to preserve the order defined in the frontmatter
   const relatedSlugs = post.data.relatedPosts;
   relatedPosts = relatedSlugs
     .map(slug => allPosts.find(p => p.slug === slug))
     .filter((p): p is CollectionEntry<"blog"> => p !== undefined)
     .slice(0, 3);
 } else {
-  // Fallback: Automatic selection (same category, excluding current post)
   relatedPosts = allPosts
     .filter(p => p.slug !== post.slug)
     .filter(p => p.data.category === post.data.category || p.data.featured)
@@ -388,7 +383,7 @@ if (post.data.relatedPosts && post.data.relatedPosts.length > 0) {
               </p>
               <div class="flex flex-wrap gap-4">
                 <a 
-                  href="https://discord.gg/QBVCzUq4TT" 
+                  href="https://discord.gg/TrcwkU8x" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#5865F2] hover:bg-[#4752C4] text-white font-medium transition-colors"

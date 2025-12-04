@@ -38,8 +38,12 @@ export const Navbar: React.FC = () => {
   const [activeSection, setActiveSection,] = useState('');
   const [isAlphaModalOpen, setIsAlphaModalOpen] = useState(false);
   const [logoAnimating, setLogoAnimating] = useState(false);
+  const [isBlogPage, setIsBlogPage] = useState(false);
 
   useEffect(() => {
+    // Check if we're on a blog page
+    setIsBlogPage(window.location.pathname.startsWith('/blog'));
+    
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -81,14 +85,13 @@ export const Navbar: React.FC = () => {
             <a href="#server-infrastructure" title="Server infrastructure" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'server-infrastructure' ? 'after:w-full' : 'after:w-0'}`}>Infrastructure</a>
             <a href="#the-forge" title="The Forge visual editor" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'the-forge' ? 'after:w-full' : 'after:w-0'}`}>The Forge</a>
             <a href="#ecosystem" title="Ecosystem" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'ecosystem' ? 'after:w-full' : 'after:w-0'}`}>Ecosystem</a>
-            <a href="#roadmap" title="Roadmap" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'roadmap' ? 'after:w-full' : 'after:w-0'}`}>Roadmap</a>
             <a href="#faq" title="FAQ" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'faq' ? 'after:w-full' : 'after:w-0'}`}>FAQ</a>
-            <a href="/blog" title="Blog" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full after:w-0`}>Blog</a>
+            <a href="/blog" title="Blog" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${isBlogPage ? 'after:w-full text-white' : 'after:w-0'}`}>Blog</a>
             <a href="#supporters" title="Support & Early Supporters" className={`relative hover:text-white transition-colors duration-200 py-1 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-[#EDA333] after:transition-all after:duration-300 hover:after:w-full ${activeSection === 'supporters' ? 'after:w-full' : 'after:w-0'} whitespace-nowrap`}>Support</a>
           </div>
           <div className="flex items-center gap-2 md:gap-3">
             <div className="hidden md:flex items-center gap-0.5 border-r border-[#2A3B4C] pr-2 md:pr-3">
-              <a href="https://discord.gg/QBVCzUq4TT" target="_blank" rel="noopener noreferrer" className="p-2 text-[#8B9BB4] hover:text-[#5865F2] hover:bg-[#5865F2]/10 rounded-lg transition-all duration-200" title="Discord">
+              <a href="https://discord.gg/TrcwkU8x" target="_blank" rel="noopener noreferrer" className="p-2 text-[#8B9BB4] hover:text-[#5865F2] hover:bg-[#5865F2]/10 rounded-lg transition-all duration-200" title="Discord">
                 <DiscordIcon />
               </a>
               <a href="https://x.com/HyPanel" target="_blank" rel="noopener noreferrer" className="p-2 text-[#8B9BB4] hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200" title="X / Twitter">
