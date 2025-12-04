@@ -178,7 +178,7 @@ export const EarlySupporters: React.FC = () => {
             </ul>
             
             <a 
-              href="https://discord.gg/QBVCzUq4TT" 
+              href="https://discord.gg/TrcwkU8x" 
               title="Join Dev Chat on Discord"
               target="_blank"
               rel="noopener noreferrer"
@@ -200,7 +200,7 @@ export const EarlySupporters: React.FC = () => {
           </p>
           <div className="flex flex-wrap gap-3 justify-center">
             <a 
-              href="https://discord.gg/QBVCzUq4TT" 
+              href="https://discord.gg/TrcwkU8x" 
               title="Join our Discord"
               target="_blank"
               rel="noopener noreferrer"

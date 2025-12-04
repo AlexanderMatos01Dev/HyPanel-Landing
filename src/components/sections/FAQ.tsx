@@ -10,7 +10,7 @@ interface FAQItem {
 const FAQ_GENERAL: FAQItem[] = [
   {
     question: "What exactly is HyPanel?",
-    answer: "HyPanel is the first complete platform designed specifically for Hytale. It combines server infrastructure, content management (via Hytahub), a visual logic editor (The Forge), community tools and monetization — all in one integrated ecosystem."
+    answer: "HyPanel is the first complete platform designed specifically for Hytale. It combines server infrastructure, content management (via Hytahub), a visual logic editor (The Forge) and community tools — all in one integrated ecosystem."
   },
   {
     question: "Do I need technical knowledge to use it?",
@@ -33,23 +33,23 @@ const FAQ_GENERAL: FAQItem[] = [
 const FAQ_USAGE: FAQItem[] = [
   {
     question: "What is Hytahub?",
-    answer: "Hytahub is an independent partner project building the largest content marketplace for Hytale. Mods, assets, maps and configurations from the community, integrated directly with HyPanel for seamless installation. <a href='https://hytahub.com/' title='Visit Hytahub' target='_blank' rel='noopener noreferrer' class='text-purple-400 hover:underline'>Visit Hytahub →</a>"
+    answer: "Hytahub is an independent project built by the Hytahub team, creating the largest content marketplace for Hytale. Mods, assets, maps and configurations, integrated directly with HyPanel for seamless installation. <a href='https://hytahub.com/' title='Visit Hytahub' target='_blank' rel='noopener noreferrer' class='text-purple-400 hover:underline'>Visit Hytahub →</a>"
   },
-    {
+  {
     question: "Can I use my own mods and content?",
     answer: "Absolutely. Upload your own mods, manage them manually, or install verified content from Hytahub. You have full flexibility — HyPanel doesn't lock you into any ecosystem."
   },
   {
     question: "Is HyPanel free?",
-    answer: "There will be free plans thanks to smart resource management (servers sleep when empty) and marketplace integration. Premium plans offer more resources for larger projects and professional teams."
+    answer: "There will be free plans thanks to smart resource management (servers sleep when empty). Premium plans offer more resources for larger projects and professional teams."
   },
   {
-    question: "Can I monetize my server or creations?",
-    answer: "Yes. HyPanel integrates stores, subscriptions, passes and connects with the Hytahub marketplace. Automatic revenue sharing for creators, communities and server owners."
+    question: "What is The Forge?",
+    answer: "The Forge is a visual logic editor that lets you create game mechanics, quests, and events without writing code. It's designed to make complex server logic accessible to everyone — from beginners to experienced developers."
   },
   {
     question: "Why is HyPanel different?",
-    answer: "Because it's not just a hosting panel. It's a complete ecosystem built from scratch for Hytale: infrastructure, content, no-code creation, community and business tools — all connected and working together."
+    answer: "Because it's not just a hosting panel. It's a complete ecosystem built from scratch for Hytale: infrastructure, content, no-code creation, and tools — all connected and working together."
   }
 ];
 
@@ -97,7 +97,7 @@ export const FAQ: React.FC = () => {
           <div className="text-center mt-8">
             <p className="text-[#8B9BB4] text-sm mb-4">Still have questions?</p>
             <a
-              href="https://discord.gg/QBVCzUq4TT"
+              href="https://discord.gg/TrcwkU8x"
               title="Ask on Discord"
               target="_blank"
               rel="noopener noreferrer"

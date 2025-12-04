@@ -10,21 +10,14 @@ export const ContentOS: React.FC = () => (
       <div className="text-center mb-12">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/30 backdrop-blur-sm mb-4">
           <Handshake size={16} className="text-purple-400" />
-          <span className="text-purple-400 text-xs font-bold tracking-wide uppercase">Strategic Partnership</span>
+          <span className="text-purple-400 text-xs font-bold tracking-wide uppercase">The Umbrella Organization</span>
         </div>
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
           <a href="https://hytahub.com/" title="Visit Hytahub" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors">Hytahub</a>: Your Content Marketplace
         </h2>
-        <p className="text-[#8B9BB4] text-lg max-w-2xl mx-auto mb-4">
-          An independent project building the largest Hytale content repository. 
-          Mods, assets and configurations from the community, for the community.
+        <p className="text-[#8B9BB4] text-lg max-w-2xl mx-auto">
+          Share and download Hytale content from the largest Hytale marketplace online.
         </p>
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#0F1623] border border-purple-500/20">
-          <span className="text-[#8B9BB4] text-xs">Powered by</span>
-          <span className="text-purple-400 font-bold text-sm">Hytahub Team</span>
-          <span className="text-[#8B9BB4] text-xs">×</span>
-          <span className="text-[#EDA333] font-bold text-sm">HyPanel</span>
-        </div>
       </div>
 
       <div className="grid lg:grid-cols-2 gap-10 items-center">

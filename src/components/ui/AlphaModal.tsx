@@ -128,7 +128,7 @@ export const AlphaModal: React.FC<AlphaModalProps> = ({ isOpen, onClose }) => {
                 We'll notify you when Alpha access is ready. In the meantime, join our Discord community.
               </p>
               <a 
-                href="https://discord.gg/QBVCzUq4TT" 
+                href="https://discord.gg/TrcwkU8x" 
                 title="Join our Discord"
                 target="_blank"
                 rel="noopener noreferrer"

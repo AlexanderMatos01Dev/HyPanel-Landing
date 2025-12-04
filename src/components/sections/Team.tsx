@@ -72,31 +72,13 @@ const TeamMemberCard: React.FC<{ member: TeamMember }> = ({ member }) => {
 export const Team: React.FC = () => {
   const teamMembers: TeamMember[] = [
     {
-      name: "Alexander",
-      role: "Founder & Lead Developer",
-      description: "Visionary behind HyPanel. Full-stack developer passionate about creating tools that empower communities.",
-      avatar: "A",
-      color: "#EDA333",
-      socials: {},
-      skills: ["Full-Stack", "Architecture", "DevOps"]
-    },
-    {
-      name: "Francisco",
-      role: "Co-Founder & Developer",
-      description: "Jack of all trades. Handles development, community organization, and helps shape HyPanel's direction.",
-      avatar: "F",
-      color: "#4DA6FF",
-      socials: {},
-      skills: ["Development", "Community", "Organization"]
-    },
-    {
-      name: "You?",
-      role: "Open Positions",
-      description: "Developers, designers, community managers, content creators... We're looking for passionate people to join us!",
-      avatar: "+",
+      name: "Hytahub Team",
+      role: "Building the Future of Hytale",
+      description: "A passionate team dedicated to creating the best platform for the Hytale community.",
+      avatar: "H",
       color: "#A78BFA",
       socials: {},
-      skills: ["Any Skill", "Passion for Hytale"]
+      skills: ["Development", "Design"]
     }
   ];
 
@@ -116,19 +98,13 @@ export const Team: React.FC = () => {
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
             Building the <span className="text-[#EDA333]">future</span> together
           </h2>
-          
-          <p className="text-[#8B9BB4] text-lg max-w-2xl mx-auto">
-            A small but passionate team creating the infrastructure for Hytale's creative community.
-          </p>
         </div>
 
-        {/* Team Carousel (mobile) / Grid (desktop) */}
-        <div className="flex md:grid md:grid-cols-3 gap-6 mb-16 overflow-x-auto roadmap-scrollbar pb-4 md:pb-0 md:overflow-visible snap-x snap-mandatory min-h-[320px] pt-4">
-          {teamMembers.map((member, index) => (
-            <div key={index} className="flex-shrink-0 w-[280px] md:w-auto snap-center">
-                  <TeamMemberCard member={member} />
-            </div>
-          ))}
+        {/* Single Team Card - Centered */}
+        <div className="flex justify-center mb-16">
+          <div className="w-full max-w-sm">
+            <TeamMemberCard member={teamMembers[0]} />
+          </div>
         </div>
 
         {/* Join the team CTA */}
@@ -151,7 +127,7 @@ export const Team: React.FC = () => {
             </p>
             
             <a 
-              href="https://discord.gg/QBVCzUq4TT" 
+              href="https://discord.gg/TrcwkU8x" 
               title="Join our Discord"
               target="_blank"
               rel="noopener noreferrer"

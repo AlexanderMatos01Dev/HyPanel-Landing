@@ -109,7 +109,7 @@ export const Features: React.FC = () => (
           </div>
           <h3 className="text-lg font-bold text-white mb-2">Everyone wins</h3>
           <p className="text-[#8B9BB4] text-sm leading-relaxed mb-3">
-            Creators sell mods, servers access professional content. <strong className="text-[#EDA333]">Monetize easily</strong>.
+            Creators share mods, servers access professional content. <strong className="text-[#EDA333]">Connected ecosystem</strong>.
           </p>
           <div className="flex items-center gap-2 text-xs text-[#EDA333] font-medium">
             <DollarSign size={14} />

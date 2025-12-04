@@ -214,7 +214,7 @@ export const Hero: React.FC = () => {
         <div className="space-y-6 animate-fade-in-up relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A3A5A]/50 border border-[#2A3B4C] backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-[#4DA6FF] animate-pulse"></span>
-            <span className="text-[#4DA6FF] text-xs font-bold tracking-wide uppercase">Build in Public • Community Driven</span>
+            <span className="text-[#4DA6FF] text-xs font-bold tracking-wide uppercase">Build for Public • powered by Hytahub</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white tracking-tight">
             <span 
@@ -228,7 +228,7 @@ export const Hero: React.FC = () => {
             <span className="text-white">{' '}for Hytale</span>
           </h1>
           <p className="text-base text-[#8B9BB4] max-w-lg leading-relaxed">
-            Modern infrastructure, centralized content, no-code creation and community tools. HyPanel is the platform for Hytale — join the <strong className="text-white">private Alpha</strong> and <strong className="text-[#4DA6FF]">help build</strong> the future of Hytale hosting.
+            Modern infrastructure, centralized content, no-code creation and tools for the community. HyPanel is the platform for Hytale join the <strong className="text-white">private Alpha</strong> and <strong className="text-[#4DA6FF]">help build</strong> the future of Hytale hosting.
           </p>
           <form onSubmit={handleJoin} className="flex flex-col gap-3 max-w-md">
             {/* Estado: Registro exitoso (nuevo usuario) */}

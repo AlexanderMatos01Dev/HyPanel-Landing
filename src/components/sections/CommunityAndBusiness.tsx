@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Shield, BarChart3, MessageSquare, Coins, ShoppingBag, CreditCard, TrendingUp } from 'lucide-react';
+import { Users, Shield, BarChart3, MessageSquare } from 'lucide-react';
 
 export const CommunityAndBusiness: React.FC = () => (
   <section id="community" className="py-20 bg-gradient-to-b from-[#0B0F19] to-[#0F1623] border-t border-[#2A3B4C] relative overflow-hidden scroll-mt-16">
@@ -10,17 +10,17 @@ export const CommunityAndBusiness: React.FC = () => (
       <div className="text-center mb-12">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/30 backdrop-blur-sm mb-4">
           <Users size={16} className="text-green-400" />
-          <span className="text-green-400 text-xs font-bold tracking-wide uppercase">How do I manage my community and monetize?</span>
+          <span className="text-green-400 text-xs font-bold tracking-wide uppercase">How do I manage my community?</span>
         </div>
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
           Grow your world, grow your community
         </h2>
         <p className="text-[#8B9BB4] text-lg max-w-2xl mx-auto">
-          Tools to manage, moderate and monetize. All integrated in one place.
+          Tools to manage, moderate and grow. All integrated in one place.
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-8">
+      <div className="max-w-2xl mx-auto">
         {/* Community */}
         <div className="bg-gradient-to-br from-[#0F1623] to-[#0B0F19] border border-[#2A3B4C] rounded-2xl p-6">
           <div className="flex items-center gap-3 mb-6">
@@ -68,69 +68,6 @@ export const CommunityAndBusiness: React.FC = () => (
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Monetization */}
-        <div className="bg-gradient-to-br from-[#0F1623] to-[#0B0F19] border border-[#2A3B4C] rounded-2xl p-6">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-12 h-12 bg-[#EDA333]/10 rounded-xl flex items-center justify-center">
-              <Coins size={24} className="text-[#EDA333]" />
-            </div>
-            <div>
-              <h3 className="text-white font-bold text-xl">Monetization</h3>
-              <p className="text-[#8B9BB4] text-sm">Generate revenue</p>
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <div className="flex items-start gap-3 p-3 rounded-xl bg-[#0B0F19]/50 border border-[#2A3B4C]">
-              <ShoppingBag size={18} className="text-[#EDA333] mt-0.5" />
-              <div>
-                <h3 className="text-white font-bold text-sm">Integrated stores</h3>
-                <p className="text-[#8B9BB4] text-xs">Sell ranks, cosmetics and perks directly in-game.</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3 p-3 rounded-xl bg-[#0B0F19]/50 border border-[#2A3B4C]">
-              <CreditCard size={18} className="text-blue-400 mt-0.5" />
-              <div>
-                <h3 className="text-white font-bold text-sm">Subscriptions and passes</h3>
-                <p className="text-[#8B9BB4] text-xs">Recurring income. Exclusive access for subscribers.</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3 p-3 rounded-xl bg-[#0B0F19]/50 border border-[#2A3B4C]">
-              <svg className="w-[18px] h-[18px] text-purple-400 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-              </svg>
-              <div>
-                <h3 className="text-white font-bold text-sm">Creator marketplace</h3>
-                <p className="text-[#8B9BB4] text-xs">Sell your mods and assets. Passive income for creators.</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3 p-3 rounded-xl bg-[#0B0F19]/50 border border-[#2A3B4C]">
-              <TrendingUp size={18} className="text-green-400 mt-0.5" />
-              <div>
-                <h3 className="text-white font-bold text-sm">Automatic revenue sharing</h3>
-                <p className="text-[#8B9BB4] text-xs">Transparent system. Creators, servers and community win.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom message */}
-      <div className="text-center mt-10">
-        <div className="inline-flex flex-wrap justify-center items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 bg-gradient-to-r from-green-500/10 to-[#EDA333]/10 border border-[#2A3B4C] rounded-xl">
-          <Users size={18} className="text-green-400 hidden sm:block" />
-          <span className="text-white font-medium text-sm sm:text-base">Creators</span>
-          <span className="text-[#8B9BB4]">+</span>
-          <span className="text-white font-medium text-sm sm:text-base">Communities</span>
-          <span className="text-[#8B9BB4]">+</span>
-          <span className="text-white font-medium text-sm sm:text-base">Servers</span>
-          <span className="text-[#8B9BB4]">=</span>
-          <span className="text-[#EDA333] font-bold text-sm sm:text-base">Everyone wins</span>
         </div>
       </div>
     </div>
