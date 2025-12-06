@@ -153,7 +153,8 @@ export const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
                       {new Date(featuredPost.data.date).toLocaleDateString('en-US', {
                         month: 'long',
                         day: 'numeric',
-                        year: 'numeric'
+                        year: 'numeric',
+                        timeZone: 'UTC'
                       })}
                     </time>
                   </div>
@@ -226,7 +227,8 @@ export const BlogIndex: React.FC<BlogIndexProps> = ({ posts }) => {
                           {new Date(post.data.date).toLocaleDateString('en-US', {
                             month: 'short',
                             day: 'numeric',
-                            year: 'numeric'
+                            year: 'numeric',
+                            timeZone: 'UTC'
                           })}
                         </time>
                         <span>•</span>
