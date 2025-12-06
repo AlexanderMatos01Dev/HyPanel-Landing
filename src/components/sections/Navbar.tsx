@@ -37,7 +37,7 @@ export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection,] = useState('');
   const [isAlphaModalOpen, setIsAlphaModalOpen] = useState(false);
-  const [logoAnimating, setLogoAnimating] = useState(false);
+  const [logoAnimating] = useState(false);
   const [isBlogPage, setIsBlogPage] = useState(false);
 
   useEffect(() => {

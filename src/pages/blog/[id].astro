@@ -6,7 +6,6 @@ import { Image } from "astro:assets";
 import {
   Clock,
   Link as LinkIcon,
-  Facebook,
   ArrowLeft,
   ArrowRight,
 } from "lucide-react";
@@ -129,10 +128,7 @@ if (post.data.relatedPosts && post.data.relatedPosts.length > 0) {
               class="p-2.5 rounded-xl bg-[#151D2C]/50 border border-[#2A3B4C] text-[#8B9BB4] hover:text-[#1877F2] hover:border-[#1877F2]/50 hover:bg-[#1877F2]/10 transition-all group"
               title="Share on Facebook"
             >
-              <Facebook
-                size={18}
-                className="group-hover:scale-110 transition-transform"
-              />
+             
             </button>
             <button
               id="share-discord"
@@ -338,7 +334,7 @@ if (post.data.relatedPosts && post.data.relatedPosts.length > 0) {
                     </div>
                   </div>
                   <nav id="toc-nav" class="flex flex-col gap-1 overflow-hidden transition-all duration-300 max-h-[50vh] overflow-y-auto scrollbar-hide">
-                    {tocHeadings.map((heading, index) => (
+                    {tocHeadings.map((heading) => (
                       <a
                         href={`#${heading.slug}`}
                         data-heading={heading.slug}
@@ -480,11 +476,7 @@ if (post.data.relatedPosts && post.data.relatedPosts.length > 0) {
                   ></path>
                 </svg></button
               >
-              <button
-                class="p-3 rounded-xl bg-[#151D2C]/50 border border-[#2A3B4C] text-[#8B9BB4] hover:text-[#1877F2] hover:border-[#1877F2]/50 transition-all"
-                title="Share on Facebook"
-                ><Facebook size={18} /></button
-              >
+              
               <button
                 class="p-3 rounded-xl bg-[#151D2C]/50 border border-[#2A3B4C] text-[#8B9BB4] hover:text-[#5865F2] hover:border-[#5865F2]/50 transition-all"
                 title="Share on Discord"
