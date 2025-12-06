@@ -2,7 +2,7 @@
 id: 2
 title: 'Hytahub & HyPanel Are Officially Merging'
 excerpt: 'Big news! Hytahub.com and HyPanel.net are merging under one brand: HYTAHUB. Together, we will deliver better tools and experiences for the Hytale community.'
-date: 2025-12-02
+date: 2025-12-06
 readTime: '4 min'
 category: 'Announcement'
 gradient: 'from-[#A78BFA]/80 to-[#EDA333]/80'
