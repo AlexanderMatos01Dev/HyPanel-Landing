@@ -6,11 +6,11 @@ date: 2025-12-02
 readTime: '4 min'
 category: 'Announcement'
 gradient: 'from-[#A78BFA]/80 to-[#EDA333]/80'
-image: '../../assets/blog/Hypanel-icon.webp'
+image: '../../assets/blog/hypanel-partnership.png'
 featured: true
-author: 'Hytahub Team'
+author: 'HyPanel Team'
 authorRole: 'The Team'
-authorImage: 'https://pbs.twimg.com/profile_images/1993991729796546560/jWqU4FF7_400x400.jpg'
+authorImage: 'https://pbs.twimg.com/profile_images/1994402976673230848/BeWkPhHU_400x400.jpg'
 ---
 
 <p class="lead">We're excited to announce that Hytahub.com and HyPanel.net are merging under one unified brand: <strong>HYTAHUB</strong>. By joining forces, we'll deliver better tools, services, and experiences for the entire Hytale community.</p>
