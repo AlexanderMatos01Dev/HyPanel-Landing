@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Twitter, Link, Facebook, MessageCircle } from 'lucide-react';
+import { Twitter, Link, Facebook } from 'lucide-react';
 
 interface ShareButtonsProps {
   title: string;
@@ -31,17 +31,10 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
       icon: Facebook,
       href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
       color: 'hover:text-[#1877F2]'
-    },
-    {
-      name: 'Discord',
-      icon: MessageCircle,
-      href: `https://discord.com/channels/@me?content=${encodeURIComponent(title + ' ' + url)}`, // Note: Discord doesn't have a direct share URL like this, but it's a placeholder or we can omit. Actually, let's use Reddit or just omit Discord web share as it's tricky. Let's stick to Copy Link and Twitter mainly.
-      color: 'hover:text-[#5865F2]'
     }
   ];
 
-  // Filter out Discord for now as it's not a standard web share target
-  const activeLinks = shareLinks.filter(l => l.name !== 'Discord');
+  const activeLinks = shareLinks;
 
   return (
     <div className="flex flex-row lg:flex-col gap-4 items-center p-4 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm">
