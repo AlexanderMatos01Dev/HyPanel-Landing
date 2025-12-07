@@ -1,23 +1,26 @@
-/* TEAM */
-Project: HyPanel
-Description: The first complete platform for Hytale
-Site: https://hypanel.net
-Twitter: @HyPanel
-Discord: https://discord.gg/QBVCzUq4TT
-GitHub: https://github.com/HyPanel
-Location: Worldwide
+﻿/* TEAM */
+  Name: HyPanel Team
+  Members: Alexander, Francisco
+  Site: https://hypanel.net
+  Location: Worldwide
+
+/* SOCIALS */
+  Discord: https://discord.gg/TrcwkU8x
+  Twitter: https://x.com/HyPanel
+  Reddit: https://www.reddit.com/r/HyPanel/
+  GitHub: https://github.com/hypanel
+  Patreon: https://patreon.com/HyPanel
+  BuyMeACoffee: https://buymeacoffee.com/hypanel_team
 
 /* SITE */
-Last update: 2025/01/01
-Language: English
-Standards: HTML5, CSS3, ES6+
-Framework: Astro, React, TypeScript
-Styling: Tailwind CSS
-Hosting: Vercel
+  Last update: 2025/12/07
+  Language: English
+  Doctype: HTML5
+  IDE: VS Code
 
-/* THANKS */
-Hytale by Hypixel Studios
-Astro Framework
-React
-Tailwind CSS
-Lucide Icons
+/* TECHNOLOGY */
+  Framework: Astro, React
+  Styling: Tailwind CSS
+  Icons: Lucide React
+  Hosting: Vercel
+  Analytics: Vercel Analytics & Speed Insights
