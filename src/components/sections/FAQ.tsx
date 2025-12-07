@@ -18,11 +18,11 @@ const FAQ_GENERAL: FAQItem[] = [
   },
   {
     question: "When will HyPanel be available?",
-    answer: "Hytale Early Access launches January 13, 2025. From that date, we can start building with the real game. We don't have a fixed launch date for HyPanel yet, but we're building the community, infrastructure and foundations now so we're ready."
+    answer: "Following the Hytale Early Access launch, we are in active development and refining the platform with real-world usage. We haven't set a fixed public release date yet, but we are running tests and building the infrastructure to ensure a rock-solid launch."
   },
   {
-    question: "Why build this before the game is out?",
-    answer: "Because Hytale is new and nothing exists yet. We're the pioneers — no panels, no ecosystems, no standards. By starting now, we'll be ready when the community needs us, and early supporters help shape the tools everyone will use."
+    question: "Why did you start building so early?",
+    answer: "We wanted to be pioneers. By starting before the game's release, we established the standards and infrastructure early. Now, we're positioned to offer the most mature and feature-rich ecosystem, ready to support the community's needs from Day 1."
   },
   {
     question: "How can I support or get involved?",
@@ -41,11 +41,15 @@ const FAQ_USAGE: FAQItem[] = [
   },
   {
     question: "Is HyPanel free?",
-    answer: "There will be free plans thanks to smart resource management (servers sleep when empty). Premium plans offer more resources for larger projects and professional teams."
+    answer: "There will be free plans thanks to smart resource management . Premium plans offer more resources for larger projects and professional teams."
   },
   {
     question: "What is The Forge?",
     answer: "The Forge is a visual logic editor that lets you create game mechanics, quests, and events without writing code. It's designed to make complex server logic accessible to everyone — from beginners to experienced developers."
+  },
+  {
+    question: "What types of servers can I create?",
+    answer: "Anything from standard Survival worlds to complex RPGs and Minigame networks. HyPanel supports multi-world setups and live events, allowing you to orchestrate complex server architectures visually."
   },
   {
     question: "Why is HyPanel different?",
