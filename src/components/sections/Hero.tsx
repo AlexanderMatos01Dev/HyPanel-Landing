@@ -385,10 +385,10 @@ export const Hero: React.FC = () => {
           </form>
           <div className="flex items-center gap-5 text-xs font-medium text-muted">
              <div className="flex items-center gap-2">
-               <Heart size={12} className="text-[#EDA333]"/> Made for the community
+               <Heart size={12} className="text-[#EDA333]"/>Made for Hytale    
              </div>
              <div className="flex items-center gap-2">
-               <Zap size={12} className="text-[#EDA333]"/> Hassle-free
+               <Zap size={12} className="text-[#EDA333]"/>powered by Hytahub
              </div>
           </div>
         </div>
