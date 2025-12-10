@@ -1,0 +1,45 @@
+---
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  prevPost: CollectionEntry<"blog"> | null;
+  nextPost: CollectionEntry<"blog"> | null;
+}
+
+const { prevPost, nextPost } = Astro.props;
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 pt-12 border-t border-[#2A3B4C]">
+  {prevPost ? (
+    <a 
+      href={`/blog/${prevPost.slug}`}
+      class="group flex flex-col p-6 rounded-2xl bg-[#151D2C]/40 border border-[#2A3B4C] hover:border-[#EDA333]/30 transition-all hover:-translate-y-1"
+    >
+      <span class="flex items-center gap-2 text-xs font-bold text-[#8B9BB4] uppercase tracking-wider mb-3 group-hover:text-[#EDA333] transition-colors">
+        <ArrowLeft size={14} /> Previous Article
+      </span>
+      <h4 class="text-lg font-bold text-white group-hover:text-[#4DA6FF] transition-colors line-clamp-2">
+        {prevPost.data.title}
+      </h4>
+    </a>
+  ) : (
+    <div class="hidden md:block"></div>
+  )}
+
+  {nextPost ? (
+    <a 
+      href={`/blog/${nextPost.slug}`}
+      class="group flex flex-col items-end text-right p-6 rounded-2xl bg-[#151D2C]/40 border border-[#2A3B4C] hover:border-[#EDA333]/30 transition-all hover:-translate-y-1"
+    >
+      <span class="flex items-center gap-2 text-xs font-bold text-[#8B9BB4] uppercase tracking-wider mb-3 group-hover:text-[#EDA333] transition-colors">
+        Next Article <ArrowRight size={14} />
+      </span>
+      <h4 class="text-lg font-bold text-white group-hover:text-[#4DA6FF] transition-colors line-clamp-2">
+        {nextPost.data.title}
+      </h4>
+    </a>
+  ) : (
+    <div class="hidden md:block"></div>
+  )}
+</div>
