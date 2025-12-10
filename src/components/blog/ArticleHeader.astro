@@ -1,0 +1,101 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+---
+
+<div class="mb-8">
+  <div class="flex items-center gap-3 mb-4 text-sm flex-wrap">
+    <span class="text-[#EDA333] font-bold uppercase tracking-wider">
+      {post.data.category}
+    </span>
+    <span class="text-[#2A3B4C]">•</span>
+    <span class="text-[#8B9BB4]">
+      {
+        post.data.date.toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+          timeZone: "UTC",
+        })
+      }
+    </span>
+    <span class="text-[#2A3B4C]">•</span>
+    <span class="text-[#8B9BB4]">{post.data.readTime} read</span>
+  </div>
+
+  <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+    {post.data.title}
+  </h1>
+
+  <p class="text-lg sm:text-xl text-[#8B9BB4] leading-relaxed mb-8">
+    {post.data.excerpt}
+  </p>
+
+  <!-- Author inline for mobile, hidden on desktop -->
+  <div class="flex items-center gap-3 lg:hidden mb-8">
+    <div class="relative shrink-0">
+      <div class="absolute inset-0 bg-gradient-to-br from-[#4DA6FF] to-[#EDA333] rounded-full blur-[2px] opacity-70"></div>
+      <img
+        src={post.data.authorImage || "https://api.dicebear.com/7.x/avataaars/svg?seed=hypanel"}
+        alt={post.data.author || "HyPanel Team"}
+        class="relative w-10 h-10 rounded-full border border-[#151D2C] object-cover"
+      />
+    </div>
+    <div class="text-left">
+      <div class="text-white font-medium text-sm">
+        {post.data.author || "HyPanel Team"}
+      </div>
+      <div class="text-[#8B9BB4] text-xs">
+        {post.data.authorRole || "The Team"}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Featured Image -->
+<div
+  class="relative w-full aspect-video md:aspect-[21/9] rounded-2xl overflow-hidden mb-10 shadow-2xl shadow-black/50 border border-[#2A3B4C]"
+>
+  {post.data.image ? (
+    <Image 
+      src={post.data.image} 
+      alt={post.data.title} 
+      class="w-full h-full object-cover"
+      width={1200}
+      height={600}
+      format="webp"
+      quality={80}
+    />
+  ) : (
+    <>
+      <div
+        class={`absolute inset-0 bg-gradient-to-br ${post.data.gradient} opacity-90`}
+      >
+        <div
+          class="absolute inset-0 opacity-20 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"
+        >
+        </div>
+      </div>
+      <div class="absolute inset-0 flex items-center justify-center">
+        <div class="text-center">
+          <div class="w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center mb-4 mx-auto">
+            <svg
+              class="w-10 h-10 text-white/80"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <span class="text-white/60 text-sm font-medium uppercase tracking-wider">HyPanel Blog</span>
+        </div>
+      </div>
+    </>
+  )}
+</div>

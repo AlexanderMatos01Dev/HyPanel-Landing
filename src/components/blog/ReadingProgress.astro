@@ -1,0 +1,29 @@
+---
+---
+<div 
+  id="reading-progress" 
+  class="fixed top-0 left-0 h-1 bg-gradient-to-r from-[#4DA6FF] via-[#EDA333] to-[#4DA6FF] z-[100] transition-all duration-150"
+  style="width: 0%"
+></div>
+
+<script>
+  const progressBar = document.getElementById('reading-progress');
+  const articleContent = document.getElementById('article-content');
+  
+  if (progressBar && articleContent) {
+    window.addEventListener('scroll', () => {
+      const articleRect = articleContent.getBoundingClientRect();
+      const articleTop = articleRect.top + window.scrollY;
+      const articleHeight = articleContent.offsetHeight;
+      const windowHeight = window.innerHeight;
+      const scrollY = window.scrollY;
+      
+      const progress = Math.min(
+        Math.max((scrollY - articleTop + windowHeight * 0.3) / articleHeight * 100, 0),
+        100
+      );
+      
+      progressBar.style.width = `${progress}%`;
+    });
+  }
+</script>
