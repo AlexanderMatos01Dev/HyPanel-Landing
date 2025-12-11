@@ -148,7 +148,7 @@ export const Hero: React.FC = () => {
             <span className="text-white">{' '}for Hytale</span>
           </h1>
           <p className="text-base text-[#8B9BB4] max-w-lg leading-relaxed">
-            Modern infrastructure, centralized content, no-code creation and tools for the community. HyPanel is the platform for Hytale join the <strong className="text-white">private Alpha</strong> and <strong className="text-[#4DA6FF]">help build</strong> the future of Hytale hosting.
+            More than just hosting. HyPanel is the engine that powers your imagination. Create unique experiences, manage your community, and scale effortlessly. Join the <strong className="text-white">private Alpha</strong> and start building your legacy.
           </p>
           <form onSubmit={handleJoin} className="flex flex-col gap-3 max-w-md">
             {/* Estado: Registro exitoso (nuevo usuario) */}
@@ -305,10 +305,10 @@ export const Hero: React.FC = () => {
           </form>
           <div className="flex items-center gap-5 text-xs font-medium text-muted">
              <div className="flex items-center gap-2">
-               <Heart size={12} className="text-[#EDA333]"/> Made for the community
+               <Heart size={12} className="text-[#EDA333]"/>Made for Hytale    
              </div>
              <div className="flex items-center gap-2">
-               <Zap size={12} className="text-[#EDA333]"/> Hassle-free
+               <Zap size={12} className="text-[#EDA333]"/>powered by Hytahub
              </div>
           </div>
         </div>

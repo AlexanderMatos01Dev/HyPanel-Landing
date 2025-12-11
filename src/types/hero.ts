@@ -10,9 +10,9 @@ export interface HeroState {
 
 // Short and descriptive phrases representing the complete platform
 export const HERO_MESSAGES: HeroMessage[] = [
-  "Complete Platform",
-  "Smart Hosting",
-  "No-Code Creation",
-  "Content Ecosystem",
-  "Community Tools",
+  "Create Your World",
+  "Build Experiences",
+  "Scale Instantly",
+  "Empower Players",
+  "Unleash Creativity",
 ];

@@ -61,7 +61,7 @@ export const WhyHyPanel: React.FC = () => {
       icon: <Box size={28} />,
       title: "Hytahub",
       description: "The Hytale content marketplace. Mods, assets and configurations integrated directly into your servers.",
-      bgColor: "#A78BFA",
+      bgColor: "#4ef4d2",
       href: "https://hytahub.com/",
       external: true
     },
@@ -96,14 +96,12 @@ export const WhyHyPanel: React.FC = () => {
           </div>
           
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            The <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4DA6FF] to-[#EDA333]">complete platform</span> to create,<br className="hidden md:block" />
-            manage and scale experiences in Hytale
+            Don't just host a server.<br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4DA6FF] to-[#EDA333]">Build a Universe.</span>
           </h2>
           
           <p className="text-[#8B9BB4] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-8">
-            HyPanel is not just a hosting panel. It's an <strong className="text-white">integrated ecosystem</strong> that unifies 
-            server infrastructure, content management, no-code creation and community tools 
-            in <strong className="text-white">one place</strong>.
+            HyPanel is the <strong className="text-white">engine for creators</strong>. We provide the tools to turn your ideas into reality—from visual scripting to instant asset deployment—so you can focus on building the next big experience in Hytale.
           </p>
 
           {/* Key differentiators */}
@@ -127,10 +125,10 @@ export const WhyHyPanel: React.FC = () => {
         <div>
           <div className="text-center mb-10">
             <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Four pillars, <span className="text-[#EDA333]">one platform</span>
+              Your Creative <span className="text-[#EDA333]">Toolkit</span>
             </h3>
             <p className="text-[#8B9BB4] text-lg max-w-2xl mx-auto">
-              One platform where everything works together seamlessly.
+              Everything you need to build, launch, and grow your game.
             </p>
           </div>
 
