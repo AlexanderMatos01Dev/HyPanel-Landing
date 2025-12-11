@@ -4,12 +4,33 @@ import Navbar from '../components/sections/Navbar';
 import BlogIndex from '../components/sections/BlogIndex';
 import Footer from '../components/sections/Footer';
 import { getCollection } from 'astro:content';
+import { getImage } from "astro:assets";
 import type { CollectionEntry } from 'astro:content';
 
 // Obtener posts de la colección y ordenarlos por ID (descendente)
-const posts = (await getCollection('blog')).sort(
+const rawPosts = (await getCollection('blog')).sort(
 	(a: CollectionEntry<'blog'>, b: CollectionEntry<'blog'>) => (b.data.id || 0) - (a.data.id || 0)
 );
+
+// Optimize images for the React component
+const posts = await Promise.all(rawPosts.map(async (post) => {
+  if (post.data.image) {
+    const optimized = await getImage({
+      src: post.data.image,
+      format: 'webp',
+      width: 1200,
+      quality: 80
+    });
+    return {
+      ...post,
+      data: {
+        ...post.data,
+        image: optimized.src
+      }
+    };
+  }
+  return post;
+}));
 
 // SEO Configuration for Blog Index
 const seoTitle = "Blog - HyPanel | News, Tutorials & Updates";

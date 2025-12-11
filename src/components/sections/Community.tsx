@@ -1,7 +1,7 @@
 import React from 'react';
 import { Users, Shield, BarChart3, MessageSquare } from 'lucide-react';
 
-export const CommunityAndBusiness: React.FC = () => (
+export const Community: React.FC = () => (
   <section id="community" className="py-20 bg-gradient-to-b from-[#0B0F19] to-[#0F1623] border-t border-[#2A3B4C] relative overflow-hidden scroll-mt-16">
     <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(74,222,128,0.03),transparent_50%),radial-gradient(circle_at_70%_50%,rgba(237,163,51,0.03),transparent_50%)]"></div>
     
@@ -75,3 +75,4 @@ export const CommunityAndBusiness: React.FC = () => (
 );
 
 export default CommunityAndBusiness;
+export default Community;
