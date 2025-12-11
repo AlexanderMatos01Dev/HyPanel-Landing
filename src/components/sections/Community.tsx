@@ -74,5 +74,4 @@ export const Community: React.FC = () => (
   </section>
 );
 
-export default CommunityAndBusiness;
 export default Community;
