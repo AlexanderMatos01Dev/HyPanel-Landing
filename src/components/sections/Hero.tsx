@@ -130,13 +130,13 @@ export const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(77,166,255,0.03)_0%,transparent_60%)]"></div>
       </div>
       
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full">
-        <div className="space-y-6 animate-fade-in-up relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A3A5A]/50 border border-[#2A3B4C] backdrop-blur-sm">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
+        <div className="space-y-6 animate-fade-in-up relative z-10 mx-auto lg:mx-0 w-full max-w-3xl lg:max-w-none text-center lg:text-left">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A3A5A]/50 border border-[#2A3B4C] backdrop-blur-sm mx-auto lg:mx-0">
             <span className="w-2 h-2 rounded-full bg-[#4DA6FF] animate-pulse"></span>
-            <span className="text-[#4DA6FF] text-xs font-bold tracking-wide uppercase">Build for Public • powered by Hytahub</span>
+            <span className="text-[#4DA6FF] text-xs font-bold tracking-wide uppercase">Private Alpha • Coming Soon</span>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white tracking-tight">
+          <h1 className="text-4xl md:text-6xl lg:text-6xl font-extrabold leading-tight text-white tracking-tight">
             <span 
               className={`inline-block text-transparent bg-clip-text bg-gradient-to-r from-[#EDA333] to-[#F5D76E] transition-all duration-500 ease-out min-h-[1.2em] ${
                 isTransitioning ? 'opacity-0 blur-sm scale-95' : 'opacity-100 blur-0 scale-100'
@@ -147,10 +147,12 @@ export const Hero: React.FC = () => {
             <br/>
             <span className="text-white">{' '}for Hytale</span>
           </h1>
-          <p className="text-base text-[#8B9BB4] max-w-lg leading-relaxed">
-            More than just hosting. HyPanel is the engine that powers your imagination. Create unique experiences, manage your community, and scale effortlessly. Join the <strong className="text-white">private Alpha</strong> and start building your legacy.
+          <p className="text-base md:text-lg text-[#8B9BB4] max-w-full md:max-w-2xl lg:max-w-lg leading-relaxed mx-auto lg:mx-0">
+            More than just hosting. HyPanel is the engine that powers your imagination. Create unique experiences, manage your community, and scale effortlessly. 
+            <br/>
+            Join the <strong className="text-white">private Alpha</strong> and start building.
           </p>
-          <form onSubmit={handleJoin} className="flex flex-col gap-3 max-w-md">
+          <form onSubmit={handleJoin} className="flex flex-col gap-3 max-w-full md:max-w-xl lg:max-w-md mx-auto lg:mx-0">
             {/* Estado: Registro exitoso (nuevo usuario) */}
             {status === 'success' && (
               <div className="space-y-3 animate-fade-in-up">
@@ -303,18 +305,17 @@ export const Hero: React.FC = () => {
               </>
             )}
           </form>
-          <div className="flex items-center gap-5 text-xs font-medium text-muted">
+          <div className="flex items-center justify-center lg:justify-start gap-5 text-xs font-medium text-muted">
              <div className="flex items-center gap-2">
                <Heart size={12} className="text-[#EDA333]"/>Made for Hytale    
-             </div>
-             <div className="flex items-center gap-2">
-               <Zap size={12} className="text-[#EDA333]"/>powered by Hytahub
              </div>
           </div>
         </div>
 
         {/* HyCore Visualization */}
-        <HyCoreVisualization />
+        <div className="flex justify-center items-center w-full mx-auto lg:mx-0">
+          <HyCoreVisualization />
+        </div>
       </div>
     </header>
   );
