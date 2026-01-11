@@ -1,5 +1,5 @@
 import React from 'react';
-import { Server, Box, Palette, Users, Zap, Shield, ChevronRight, ExternalLink } from 'lucide-react';
+import { Server, Box, Palette, Users, Zap, Shield, ChevronRight, ExternalLink, Coins } from 'lucide-react';
 
 interface PillarProps {
   icon: React.ReactNode;
@@ -48,19 +48,19 @@ const Pillar: React.FC<PillarProps> = ({ icon, title, description, bgColor, href
   );
 };
 
-export const WhyHyPanel: React.FC = () => {
+export const WhatIsHyPanel: React.FC = () => {
   const pillars: PillarProps[] = [
     {
       icon: <Server size={28} />,
       title: "Smart Infrastructure",
-      description: "Servers that scale automatically based on demand. Pay only for what you use with intelligent orchestration.",
+      description: "Orchestrate instances anywhere. Use our managed cloud or bring your own servers (BYO) to cut costs and scale dynamically.",
       bgColor: "#4DA6FF",
       href: "#server-infrastructure"
     },
     {
       icon: <Box size={28} />,
-      title: "Hytahub",
-      description: "The Hytale content marketplace. Mods, assets and configurations integrated directly into your servers.",
+      title: "Hytahub & Openness",
+      description: "A truly open ecosystem. Install mods from HytaHub or external sources seamlessly. Your content, your choice.",
       bgColor: "#4ef4d2",
       href: "https://hytahub.com/",
       external: true
@@ -68,21 +68,28 @@ export const WhyHyPanel: React.FC = () => {
     {
       icon: <Palette size={28} />,
       title: "The Forge",
-      description: "Create game logic without coding. Visual editor to design events, quests and unique mechanics.",
+      description: "Visual logic editor. Create events, cinematics, and mechanics that sync in real-time between the web and the game.",
       bgColor: "#FB923C",
       href: "#the-forge"
     },
     {
       icon: <Users size={28} />,
-      title: "Community",
-      description: "Roles, moderation, stores. Everything you need to build and manage your community.",
+      title: "Community Intelligence",
+      description: "Go beyond roles. Access deep player analytics, heatmaps, and automated moderation to grow and retain your audience.",
       bgColor: "#4ADE80",
+      href: "#community"
+    },
+    {
+      icon: <Coins size={28} />,
+      title: "Fair Economy",
+      description: "Monetize transparently. Earn from your experiences while automatically sharing revenue with the mod creators you rely on.",
+      bgColor: "#A78BFA",
       href: "#community"
     }
   ];
 
   return (
-    <section id="why-hypanel" className="py-24 bg-gradient-to-b from-[#0B0F19] to-[#0F1623] border-t border-[#2A3B4C] relative overflow-hidden scroll-mt-16">
+    <section id="what-is-hypanel" className="py-24 bg-gradient-to-b from-[#0B0F19] to-[#0F1623] border-t border-[#2A3B4C] relative overflow-hidden scroll-mt-16">
       {/* Background effects */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(77,166,255,0.05),transparent_50%)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(237,163,51,0.05),transparent_50%)]"></div>
@@ -101,7 +108,7 @@ export const WhyHyPanel: React.FC = () => {
           </h2>
           
           <p className="text-[#8B9BB4] text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-8">
-            HyPanel is the <strong className="text-white">engine for creators</strong>. We provide the tools to turn your ideas into reality—from visual scripting to instant asset deployment—so you can focus on building the next big experience in Hytale.
+            HyPanel is the <strong className="text-white">engine for creators</strong>. We provide the tools to turn your ideas into reality, from visual scripting to instant asset deployment, so you can focus on building the next big experience in Hytale.
           </p>
 
           {/* Key differentiators */}
@@ -128,20 +135,38 @@ export const WhyHyPanel: React.FC = () => {
               Your Creative <span className="text-[#EDA333]">Toolkit</span>
             </h3>
             <p className="text-[#8B9BB4] text-lg max-w-2xl mx-auto">
-              Everything you need to build, launch, and grow your game.
+              Everything you need to build, launch, and monetize your game.
             </p>
           </div>
 
-          {/* Pillars Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {pillars.map((pillar, index) => (
-              <Pillar key={index} {...pillar} />
+          {/* Pillars Grid: Responsive layout */}
+          {/* lg and up: 3 + 2 */}
+          <div className="hidden lg:grid grid-cols-3 gap-5 mb-5">
+            {pillars.slice(0, 3).map((pillar, index) => (
+              <Pillar key={`lg-first-${index}`} {...pillar} />
             ))}
-          </div>          
+          </div>
+          <div className="hidden lg:grid grid-cols-2 gap-5 max-w-3xl mx-auto">
+            {pillars.slice(3).map((pillar, index) => (
+              <Pillar key={`lg-second-${index}`} {...pillar} />
+            ))}
+          </div>
+
+          {/* md only: 2, 2, 1 with Fair Economy at the end */}
+          <div className="grid md:grid-cols-2 lg:hidden gap-5 mb-5">
+            {pillars.slice(0, 4).map((pillar, index) => (
+              <Pillar key={`md-first-${index}`} {...pillar} />
+            ))}
+          </div>
+          <div className="grid md:grid-cols-1 lg:hidden gap-5 max-w-sm mx-auto">
+            {pillars.slice(4).map((pillar, index) => (
+              <Pillar key={`md-last-${index}`} {...pillar} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default WhyHyPanel;
+export default WhatIsHyPanel;
