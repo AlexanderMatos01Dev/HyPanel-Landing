@@ -59,11 +59,10 @@ export const WhatIsHyPanel: React.FC = () => {
     },
     {
       icon: <Box size={28} />,
-      title: "Hytahub & Openness",
-      description: "A truly open ecosystem. Install mods from HytaHub or external sources seamlessly. Your content, your choice.",
+      title: "Content Ecosystem",
+      description: "Built for Hytahub integration, open by design. Native support for Hytahub with the flexibility to load from any external source. Your server, your rules.",
       bgColor: "#4ef4d2",
-      href: "https://hytahub.com/",
-      external: true
+      href: "#content-os"
     },
     {
       icon: <Palette size={28} />,
@@ -82,7 +81,7 @@ export const WhatIsHyPanel: React.FC = () => {
     {
       icon: <Coins size={28} />,
       title: "Fair Economy",
-      description: "Monetize transparently. Earn from your experiences while automatically sharing revenue with the mod creators you rely on.",
+      description: "Designed with ethics in mind. Our roadmap includes automatic revenue sharing, ensuring mod creators get rewarded when their content powers your success.",
       bgColor: "#A78BFA",
       href: "#community"
     }
