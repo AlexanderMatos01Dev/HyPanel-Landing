@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Palette, FileJson, Code, Copy, Zap, GitBranch, Swords, Gift, MessageSquare, Crown, GripVertical,  Check } from 'lucide-react';
+import { GitBranch, Terminal, Radio, RefreshCw, Cpu, Zap, Code, Copy, Check, GripVertical, MessageSquare, Gift, Swords, Crown } from 'lucide-react';
 
 interface NodeData {
   id: string;
@@ -426,203 +426,249 @@ export const TheForge: React.FC = () => {
   };
 
   return (
-    <section id="the-forge" className="py-20 min-h-screen bg-gradient-to-b from-[#0F1623] to-[#0B0F19] border-t border-[#2A3B4C] relative overflow-hidden scroll-mt-16">
+    <section id="the-forge" className="py-20 bg-gradient-to-b from-[#0F1623] to-[#0B0F19] border-t border-[#2A3B4C] relative overflow-hidden scroll-mt-16">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(237,163,51,0.05),transparent_60%)]"></div>
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-orange-500/10 border border-orange-500/30 backdrop-blur-sm mb-3 sm:mb-4">
-            <Palette size={14} className="text-orange-400 sm:w-4 sm:h-4" />
-            <span className="text-orange-400 text-[10px] sm:text-xs font-bold tracking-wide uppercase">Visual Logic Editor</span>
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 backdrop-blur-sm mb-6">
+            <GitBranch size={16} className="text-orange-400" />
+            <span className="text-orange-400 text-xs font-bold tracking-wide uppercase">The Logic Bridge</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4">
-            The Forge
+          
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            The Forge: Event & Logic Bridge
           </h2>
-          <p className="text-[#8B9BB4] text-sm sm:text-lg max-w-2xl mx-auto">
-            Create quests, AI and game systems with nodes. No code needed. <span className="text-orange-400 hidden sm:inline">Try dragging the nodes!</span>
+          
+          <p className="text-[#8B9BB4] text-lg max-w-3xl mx-auto mb-4">
+            Connect the web to the game world. A visual editor that generates standard JSON configurations to trigger in-game events, tutorials, and server actions in real-time via the HyCore agent.
           </p>
+
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500/10 to-[#EDA333]/10 border border-[#2A3B4C] rounded-xl">
+            <Terminal size={16} className="text-orange-400" />
+            <span className="text-[#8B9BB4] text-sm">Visual orchestration for <strong className="text-white">real-time game loops</strong>.</span>
+          </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 items-start">
-          {/* Left: Visual Editor Preview */}
-          <div className="relative order-2 lg:order-1 w-full min-w-0">
-            <div className="bg-[#0B0F19] border border-[#2A3B4C] rounded-2xl shadow-2xl overflow-hidden">
-              {/* Editor Header */}
-              <div className="bg-[#151D2C] px-3 sm:px-4 py-3 flex items-center justify-between border-b border-[#2A3B4C]">
-                <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-                  <div className="flex gap-1.5 flex-shrink-0">
-                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#FF5F56]"></div>
-                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#FFBD2E]"></div>
-                    <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#27C93F]"></div>
-                  </div>
-                  <span className="text-[#8B9BB4] text-[10px] sm:text-xs font-mono truncate">The Forge</span>
+        {/* Main Content Grid - 7/5 Layout like ContentOS */}
+        <div className="grid lg:grid-cols-12 gap-8 items-start lg:items-center">
+          
+          {/* Left: Visual Workflow Editor (Large Card) */}
+          <div className="lg:col-span-7 bg-gradient-to-br from-[#0F1623] to-[#1A2332] border border-[#2A3B4C] rounded-2xl py-10 px-8 relative overflow-hidden group hover:border-orange-500/30 transition-all">
+            {/* Glow effect */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/5 rounded-full blur-3xl group-hover:bg-orange-500/10 transition-all"></div>
+            
+            <div className="relative z-10">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-orange-500/10 rounded-xl flex items-center justify-center">
+                  <Terminal size={24} className="text-orange-400" />
                 </div>
-                <div className="flex items-center gap-2 flex-shrink-0">
-                  <button 
-                    onClick={() => setShowJson(!showJson)}
-                    className={`px-2 py-1 text-[9px] sm:text-[10px] font-bold rounded flex items-center gap-1 transition-colors ${
-                      showJson 
-                        ? 'bg-[#EDA333] text-[#0B0F19]' 
-                        : 'bg-[#EDA333]/20 text-[#EDA333] hover:bg-[#EDA333]/30'
-                    }`}
-                  >
-                    <Code size={10} /> {showJson ? 'Hide' : 'JSON'}
-                  </button>
+                <div>
+                  <h3 className="text-2xl font-bold text-white">Visual Workflow Editor</h3>
+                  <p className="text-[#8B9BB4] text-sm">Bridge game events with server actions</p>
                 </div>
               </div>
 
-              {/* Editor Canvas or JSON View */}
-              {!showJson ? (
-                <div 
-                  ref={containerRef}
-                  className={`relative h-[260px] sm:h-[300px] bg-[#080B12] overflow-y-auto overflow-x-hidden roadmap-scrollbar ${isDraggingCanvas ? 'cursor-grabbing' : 'cursor-grab'}`}
-                  style={{
-                    backgroundImage: 'radial-gradient(circle, #2A3B4C 1px, transparent 1px)',
-                    backgroundSize: '20px 20px',
-                    WebkitOverflowScrolling: 'touch'
-                  }}
-                  onMouseDown={handleCanvasMouseDown}
-                  onMouseMove={handleCanvasMouseMove}
-                  onMouseUp={handleCanvasMouseUp}
-                  onMouseLeave={handleCanvasMouseLeave}
-                  onTouchStart={handleCanvasTouchStart}
-                  onTouchMove={handleCanvasTouchMove}
-                  onTouchEnd={handleCanvasTouchEnd}
-                >
-                  {/* Inner scrollable area - min-width ensures nodes fit, allows scroll on small screens */}
-                  <div className="relative min-w-[520px] w-max h-full select-none">
-                    {/* Connection lines */}
-                    <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ minWidth: '520px' }}>
-                    {connections.map((conn, i) => (
-                      <path 
-                        key={i}
-                        d={getConnectionPath(conn.from, conn.to)}
-                        fill="none" 
-                        stroke="#4ADE80" 
-                        strokeWidth="2" 
-                        strokeDasharray="4"
-                        className="transition-all duration-200"
-                      />
-                    ))}
-                  </svg>
-
-                  {/* Draggable Nodes */}
-                  {nodes.map(node => (
-                    <DraggableNode 
-                      key={node.id} 
-                      node={node} 
-                      onDrag={handleDrag}
-                      containerRef={containerRef as React.RefObject<HTMLDivElement>}
-                    />
-                  ))}
+              {/* Node Editor Container */}
+              <div className="bg-[#080B12] border border-[#2A3B4C] rounded-xl overflow-hidden shadow-2xl mb-6">
+                {/* Editor Header */}
+                <div className="bg-[#151D2C] px-4 py-3 flex items-center justify-between border-b border-[#2A3B4C]">
+                  <div className="flex items-center gap-3">
+                    <div className="flex gap-1.5">
+                      <div className="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
+                      <div className="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
+                      <div className="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+                    </div>
+                    <span className="text-[#8B9BB4] text-xs font-mono">workflow_designer.json</span>
                   </div>
-                </div>
-              ) : (
-                <div className="h-[300px] bg-[#080B12] p-4 overflow-auto roadmap-scrollbar">
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="text-[#8B9BB4] text-xs font-mono">Generated JSON</span>
+                  <div className="flex items-center gap-2">
                     <button 
-                      onClick={copyJson}
-                      className="px-2 py-1 bg-[#4DA6FF]/20 text-[#4DA6FF] text-[10px] font-bold rounded flex items-center gap-1 hover:bg-[#4DA6FF]/30 transition-colors"
-                    >
-                      {copied ? <><Check size={10} /> Copied!</> : <><Copy size={10} /> Copy</>}
-                    </button>
-                  </div>
-                  <pre className="text-[11px] text-green-400 font-mono leading-relaxed">
-                    {generateJson()}
-                  </pre>
-                </div>
-              )}
-
-              {/* Example Selector */}
-              <div className="bg-[#151D2C] px-3 sm:px-4 py-2 sm:py-3 border-t border-[#2A3B4C]">
-                <div 
-                  ref={examplesRef}
-                  className={`flex items-center gap-2 overflow-x-auto scrollbar-none select-none ${isDraggingExamples ? 'cursor-grabbing' : 'cursor-grab'}`}
-                  onMouseDown={handleExamplesMouseDown}
-                  onMouseMove={handleExamplesMouseMove}
-                  onMouseUp={handleExamplesMouseUp}
-                  onMouseLeave={handleExamplesMouseUp}
-                  onTouchStart={handleExamplesTouchStart}
-                  onTouchMove={handleExamplesTouchMove}
-                  onTouchEnd={handleExamplesTouchEnd}
-                >
-                  <span className="text-[#8B9BB4] text-[10px] sm:text-xs whitespace-nowrap flex-shrink-0">Examples:</span>
-                  {EXAMPLES.map((ex) => (
-                    <button
-                      key={ex.id}
-                      onClick={() => !hasDragged && setActiveExample(ex.id)}
-                      className={`flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg text-[10px] sm:text-xs font-medium transition-all whitespace-nowrap flex-shrink-0 cursor-pointer ${
-                        activeExample === ex.id
-                          ? 'bg-[#EDA333] text-[#0B0F19]'
-                          : 'bg-[#0B0F19] text-[#8B9BB4] hover:text-white'
+                      onClick={() => setShowJson(!showJson)}
+                      className={`px-2 py-1 text-[10px] font-bold rounded flex items-center gap-1 transition-colors ${
+                        showJson 
+                          ? 'bg-[#EDA333] text-[#0B0F19]' 
+                          : 'bg-[#EDA333]/20 text-[#EDA333] hover:bg-[#EDA333]/30'
                       }`}
                     >
-                      {ex.icon} {ex.name}
+                      <Code size={10} /> {showJson ? 'Nodes' : 'JSON'}
                     </button>
-                  ))}
+                  </div>
+                </div>
+
+                {/* Editor Canvas or JSON View */}
+                {!showJson ? (
+                  <div 
+                    ref={containerRef}
+                    className={`relative h-[280px] bg-[#080B12] overflow-y-auto overflow-x-hidden roadmap-scrollbar ${isDraggingCanvas ? 'cursor-grabbing' : 'cursor-grab'}`}
+                    style={{
+                      backgroundImage: 'radial-gradient(circle, #2A3B4C 1px, transparent 1px)',
+                      backgroundSize: '20px 20px',
+                      WebkitOverflowScrolling: 'touch'
+                    }}
+                    onMouseDown={handleCanvasMouseDown}
+                    onMouseMove={handleCanvasMouseMove}
+                    onMouseUp={handleCanvasMouseUp}
+                    onMouseLeave={handleCanvasMouseLeave}
+                    onTouchStart={handleCanvasTouchStart}
+                    onTouchMove={handleCanvasTouchMove}
+                    onTouchEnd={handleCanvasTouchEnd}
+                  >
+                    <div className="relative min-w-[520px] w-max h-full select-none">
+                      {/* Connection lines */}
+                      <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ minWidth: '520px' }}>
+                        {connections.map((conn, i) => (
+                          <path 
+                            key={i}
+                            d={getConnectionPath(conn.from, conn.to)}
+                            fill="none" 
+                            stroke="#4ADE80" 
+                            strokeWidth="2" 
+                            strokeDasharray="4"
+                            className="transition-all duration-200"
+                          />
+                        ))}
+                      </svg>
+
+                      {/* Draggable Nodes */}
+                      {nodes.map(node => (
+                        <DraggableNode 
+                          key={node.id} 
+                          node={node} 
+                          onDrag={handleDrag}
+                          containerRef={containerRef as React.RefObject<HTMLDivElement>}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="h-[280px] bg-[#080B12] p-4 overflow-auto roadmap-scrollbar">
+                    <div className="flex justify-between items-center mb-3">
+                      <span className="text-[#8B9BB4] text-xs font-mono">Generated JSON</span>
+                      <button 
+                        onClick={copyJson}
+                        className="px-2 py-1 bg-[#4DA6FF]/20 text-[#4DA6FF] text-[10px] font-bold rounded flex items-center gap-1 hover:bg-[#4DA6FF]/30 transition-colors"
+                      >
+                        {copied ? <><Check size={10} /> Copied!</> : <><Copy size={10} /> Copy</>}
+                      </button>
+                    </div>
+                    <pre className="text-[11px] text-green-400 font-mono leading-relaxed">
+                      {generateJson()}
+                    </pre>
+                  </div>
+                )}
+
+                {/* Example Selector */}
+                <div className="bg-[#151D2C] px-4 py-3 border-t border-[#2A3B4C]">
+                  <div 
+                    ref={examplesRef}
+                    className={`flex items-center gap-2 overflow-x-auto scrollbar-none select-none ${isDraggingExamples ? 'cursor-grabbing' : 'cursor-grab'}`}
+                    onMouseDown={handleExamplesMouseDown}
+                    onMouseMove={handleExamplesMouseMove}
+                    onMouseUp={handleExamplesMouseUp}
+                    onMouseLeave={handleExamplesMouseUp}
+                    onTouchStart={handleExamplesTouchStart}
+                    onTouchMove={handleExamplesTouchMove}
+                    onTouchEnd={handleExamplesTouchEnd}
+                  >
+                    <span className="text-[#8B9BB4] text-xs whitespace-nowrap flex-shrink-0">Examples:</span>
+                    {EXAMPLES.map((ex) => (
+                      <button
+                        key={ex.id}
+                        onClick={() => !hasDragged && setActiveExample(ex.id)}
+                        className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all whitespace-nowrap flex-shrink-0 cursor-pointer ${
+                          activeExample === ex.id
+                            ? 'bg-[#EDA333] text-[#0B0F19]'
+                            : 'bg-[#0B0F19] text-[#8B9BB4] hover:text-white'
+                        }`}
+                      >
+                        {ex.icon} {ex.name}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Infrastructure Logic Bridge */}
+              <div className="pt-6 border-t border-[#2A3B4C]/50">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 bg-orange-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Zap size={20} className="text-orange-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold text-base mb-1">Infrastructure Logic Bridge</h4>
+                    <p className="text-[#8B9BB4] text-sm leading-relaxed">
+                      Transform gameplay interactions into infrastructure commands. In Hytale, a node says <span className="text-green-400 font-semibold">"Kill Boss"</span>; in The Forge, it connects to HyCore to <span className="text-orange-400 font-semibold">"Spin down the instance"</span> and save costs instantly.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right: Features */}
-          <div className="space-y-4 sm:space-y-6 order-1 lg:order-2">
-            <div className="flex items-start gap-3 sm:gap-4">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-orange-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <GitBranch size={20} className="text-orange-400 sm:w-6 sm:h-6" />
-              </div>
-              <div>
-                  <h3 className="text-white font-bold text-base sm:text-lg mb-1 sm:mb-2">Intuitive visual editor</h3>
-                <p className="text-[#8B9BB4] text-xs sm:text-sm">Drag, connect and configure. Design complex logic as if you were drawing a flowchart.</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3 sm:gap-4">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <FileJson size={20} className="text-blue-400 sm:w-6 sm:h-6" />
-              </div>
-              <div>
-                  <h3 className="text-white font-bold text-base sm:text-lg mb-1 sm:mb-2">Automatic valid JSON generation</h3>
-                <p className="text-[#8B9BB4] text-xs sm:text-sm">The Forge exports Hytale-compatible format automatically. Click "View JSON" to see it in action.</p>
+          {/* Right Column: Feature Cards */}
+          <div className="lg:col-span-5 space-y-4">
+            
+            {/* Feature 1: The Technical Bridge */}
+            <div className="bg-gradient-to-br from-[#0F1623] to-[#1A2332] border border-[#2A3B4C] rounded-xl p-6 hover:border-orange-500/30 transition-all group">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-orange-500/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <GitBranch size={20} className="text-orange-400" />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-base mb-2">1. The Technical Bridge</h3>
+                  <p className="text-[#8B9BB4] text-sm leading-relaxed">
+                    Web ↔ Agent ↔ Game. The Forge acts as a communication layer. It sends instructions from the dashboard to the Agent inside the container, which then triggers the Mod Toolkit in-game.
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="flex items-start gap-3 sm:gap-4">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Copy size={20} className="text-purple-400 sm:w-6 sm:h-6" />
-              </div>
-              <div>
-                  <h3 className="text-white font-bold text-base sm:text-lg mb-1 sm:mb-2">Reusable templates</h3>
-                <p className="text-[#8B9BB4] text-xs sm:text-sm">Save and share your logic modules. Create once, use in all your projects.</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-3 sm:gap-4">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Zap size={20} className="text-green-400 sm:w-6 sm:h-6" />
-              </div>
-              <div>
-                  <h3 className="text-white font-bold text-base sm:text-lg mb-1 sm:mb-2">Direct server integration</h3>
-                <p className="text-[#8B9BB4] text-xs sm:text-sm">Changes deploy automatically. Test in real time without leaving the editor.</p>
+            {/* Feature 2: Real-Time Sync */}
+            <div className="bg-gradient-to-br from-[#0F1623] to-[#1A2332] border border-[#2A3B4C] rounded-xl p-6 hover:border-blue-500/30 transition-all group">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <Radio size={20} className="text-blue-400" />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-base mb-2">2. Real-Time Sync</h3>
+                  <p className="text-[#8B9BB4] text-sm leading-relaxed">
+                    Live updates without restarts. Edit a JSON parameter or event trigger in the web editor and see the changes reflect instantly inside the active game instance.
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* What can you create */}
-            <div className="p-3 sm:p-4 bg-[#0F1623] border border-[#2A3B4C] rounded-xl">
-                <h4 className="text-white font-bold text-xs sm:text-sm mb-2 sm:mb-3">What can you create?</h4>
-              <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-green-500/10 text-green-400 text-[10px] sm:text-xs rounded-full">Quests</span>
-                <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-blue-500/10 text-blue-400 text-[10px] sm:text-xs rounded-full">NPC AI</span>
-                <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-purple-500/10 text-purple-400 text-[10px] sm:text-xs rounded-full">Events</span>
-                <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-orange-500/10 text-orange-400 text-[10px] sm:text-xs rounded-full">Dialogues</span>
-                <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-[#EDA333]/10 text-[#EDA333] text-[10px] sm:text-xs rounded-full">Economies</span>
-                <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-red-500/10 text-red-400 text-[10px] sm:text-xs rounded-full">Combos</span>
-                <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-cyan-500/10 text-cyan-400 text-[10px] sm:text-xs rounded-full">Puzzles</span>
-                <span className="px-2 sm:px-3 py-0.5 sm:py-1 bg-pink-500/10 text-pink-400 text-[10px] sm:text-xs rounded-full">And more...</span>
+            {/* Feature 3: Versionable Event Templates */}
+            <div className="bg-gradient-to-br from-[#0F1623] to-[#1A2332] border border-[#2A3B4C] rounded-xl p-6 hover:border-purple-500/30 transition-all group">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <RefreshCw size={20} className="text-purple-400" />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-base mb-2">3. Versionable Event Templates</h3>
+                  <p className="text-[#8B9BB4] text-sm leading-relaxed">
+                    Reusable JSON logic. Create tutorials, cinematics, or game loops once, save them as standardized JSON templates, and deploy them across multiple instances or versions.
+                  </p>
+                </div>
               </div>
             </div>
+
+            {/* Feature 4: Native Compatibility */}
+            <div className="bg-gradient-to-br from-[#0F1623] to-[#1A2332] border border-[#2A3B4C] rounded-xl p-6 hover:border-green-500/30 transition-all group">
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 bg-green-500/10 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <Cpu size={20} className="text-green-400" />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-base mb-2">4. Native Compatibility</h3>
+                  <p className="text-[#8B9BB4] text-sm leading-relaxed">
+                    Built on Hytale's standards. We don't replace the game's native node system; we utilize it. The Forge orchestrates when and how those native nodes are triggered from the cloud.
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
